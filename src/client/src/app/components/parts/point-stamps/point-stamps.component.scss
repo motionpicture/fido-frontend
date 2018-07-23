@@ -1,0 +1,80 @@
+.swiper-container {
+    margin: 0 -15px;
+    .swiper-slide {
+        padding: 0 15px;
+    }
+    ul {
+        width: 290px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 30px 19px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding-top: 30px;
+        li {
+            height: 84px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            position: relative;
+            .label {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .stamp {
+                border-radius: 50%;
+                background-color: #1063c6;
+                color: #FFF;
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                right: -1px;
+                bottom: -1px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:after {
+                    content: '';  
+                    position: absolute;
+                    width: 80px;
+                    height: 80px;
+                    top: 50%;
+                    left: 50%;
+                    margin: -40px 0 0 -40px;
+                    border: 3px solid #000;
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                }
+            }
+            .description {
+                position: absolute;
+                top: -24px;
+                left: 50%;
+                margin-left: -60px;
+                width: 120px;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 14px;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-top: 5px solid #FFF;
+                    border-right: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    border-left: 5px solid transparent;
+                }
+            }
+        }
+        
+    }
+}
+
+.pagination-wrapper {
+    position: static;
+    padding-top: 20px;
+    .swiper-pagination {
+        background-color: transparent;
+    }
+}

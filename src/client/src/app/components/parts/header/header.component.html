@@ -1,0 +1,13 @@
+<header class="d-flex align-items-center justify-content-between px-3">
+    <div class="logo">
+        <img src="/assets/images/common/logo_text_02.svg">
+    </div>
+    <div class="large-text">{{ page.title }}</div>
+    <div class="menu-button" [class.active]="isMenuOpen" (click)="(isMenuOpen) ? menuClose() : menuOpen()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<app-header-menu [isMember]="user.isMember()" [isOpen]="isMenuOpen" (close)="menuClose()"></app-header-menu>

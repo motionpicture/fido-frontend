@@ -1,0 +1,103 @@
+<div class="inner">
+    <p class="read">
+        <strong class="large-text red-text">まだ購入は完了していません。</strong>
+        <br>ご購入内容をご確認頂き「購入完了」ボタンを押して購入を確定してください。</p>
+
+    <div class="large-text mb-2">
+        作品情報
+        <!-- <div class="right ticket-app-hide">
+                <div class="button light-gray-button change-button">
+                    <a href="{{ purchase.data.movieTheaterOrganization?.url }}">変更</a>
+                </div>
+            </div>
+            <div class="right ticket-app-show">
+                <div class="button light-gray-button change-button">
+                    <a href="{{ environment.APP_SITE_URL }}/#/purchase">変更</a>
+                </div>
+            </div> -->
+    </div>
+    <ul class="bg-white p-3 text-dark mb-4">
+        <li class="mb-3">
+            <div class="mb-2">劇場 / スクリーン</div>
+            <div>{{ purchase.getTheaterName() }} / {{ purchase.getScreenName() }}</div>
+        </li>
+        <li class="mb-3">
+            <div class="mb-2">作品名</div>
+            <div>{{ purchase.getTitle() }}</div>
+        </li>
+        <li class="mb-3">
+            <div class="mb-2">鑑賞日時</div>
+            <div>
+                <div class="mb-xx-small">
+                    <strong class="red-text">
+                        {{ purchase.getAppreciationDate() }} {{ purchase.getStartDate() }} - {{ purchase.getEndDate() }}
+                    </strong>
+                </div>
+                <p class="small-x-text red-text">※鑑賞日時を必ずご確認ください。</p>
+            </div>
+        </li>
+        <li class="mb-3">
+            <div class="mb-2">座席</div>
+            <div class="mb-2" *ngFor="let offer of purchase.data.seatReservationAuthorization?.object.offers">
+                {{ offer.seatNumber }} {{ offer.ticketInfo.ticketName }} ￥{{ offer.ticketInfo.salePrice }}
+            </div>
+        </li>
+        <!-- <li *ngIf="user.isMember()">
+                
+                    <div>獲得ポイント</div>
+                    <div>
+                        <strong class="red-text">0ポイント</strong>
+                    </div>
+                
+            </li> -->
+    </ul>
+
+    <div class="large-text mb-2">
+        購入情報
+        <!-- <div class="right">
+                <div class="button light-gray-button change-button">
+                    <a routerLink="/purchase/input">変更</a>
+                </div>
+            </div> -->
+    </div>
+    <ul class="bg-white p-3 text-dark mb-4">
+        <li class="mb-3">
+            <div class="mb-2">お名前（ひらがな）</div>
+            <div>{{ purchase.data.customerContact?.familyName }} {{ purchase.data.customerContact?.givenName }}</div>
+        </li>
+        <li class="mb-3">
+            <div class="mb-2">メールアドレス</div>
+            <div>{{ purchase.data.customerContact?.email }}</div>
+        </li>
+        <li class="mb-3">
+            <div class="mb-2">電話番号</div>
+            <div>{{ (purchase.data.customerContact?.telephone | libphonenumberFormat) }}</div>
+        </li>
+
+        <li *ngIf="purchase.getTotalPrice() > 0">
+            <div class="mb-2">カード番号</div>
+            <div *ngIf="purchase.data.gmoTokenObject !== undefined">{{ purchase.data.gmoTokenObject?.maskedCardNo }}</div>
+            <div *ngIf="purchase.data.gmoTokenObject === undefined && user.data.creditCards !== undefined">{{ user.data.creditCards[0].cardNo }}</div>
+
+        </li>
+
+    </ul>
+
+    <!-- <div class="large-text mb-2">注意事項(重要)</div>
+<p class="mb-2">下記項目をご確認いただきチェックを入れて「購入完了」ボタンを押してください。</p> -->
+
+    <form [formGroup]="confirmForm" (ngSubmit)="onSubmit()">
+        <!-- <div class="mb-x-large text-center">
+        <input type="checkbox" formControlName="notes" id="notes">
+        <label for="notes">
+            <strong>上記内容に同意する</strong>
+        </label>
+        <div *ngIf="confirmForm.controls['notes'].invalid && (confirmForm.controls['notes'].dirty || confirmForm.controls['notes'].touched)"
+            class="validation-text">利用規約に同意してください</div>
+    </div> -->
+        <app-buttons nextLabel="購入完了" prevLabel="戻る" prevLink="/purchase/input"></app-buttons>
+    </form>
+</div>
+
+
+<app-loading [show]="isLoading"></app-loading>

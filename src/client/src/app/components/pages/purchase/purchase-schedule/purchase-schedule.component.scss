@@ -1,0 +1,86 @@
+.bg-02 {
+    padding-bottom: 0;
+}
+
+.conditions {
+    .control-label {
+        position: relative;
+    }
+    .preSale {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -0.5em;
+    }
+    .dateList {
+        margin: 0 -15px;
+        border-top: 1px solid #6D6D6D;
+        border-bottom: 1px solid #6D6D6D;
+    }
+    .scroll {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        display: flex; 
+        li {
+            padding: 15px 0;
+            position: relative;
+            .inner {
+                width: 33.3vW;
+            }
+            &.active {
+                color: #FFF !important;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #00A0E9;
+                }
+            }
+        }
+    }
+}
+
+.update-button {
+    position: absolute;
+    top: -20px;
+    right: 0;
+}
+
+.film-order {
+    display: block;
+    background-color: #FFF;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.info {
+    padding: 10px;
+    color: #333;
+    background-color: #E3E3E3;
+    .date {
+        &:before {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+}
+
+.sort {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #2B2B2B;
+    li {
+        padding: 15px 0;
+        border-bottom: 2px solid #4C4C4C;
+        opacity: 0.7;
+        &.active {
+            background-color: #383838;
+            border-bottom-color: #00A0E9;
+            opacity: 2;
+        }
+    }
+}

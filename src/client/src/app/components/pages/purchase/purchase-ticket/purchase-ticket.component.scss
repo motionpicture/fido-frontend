@@ -1,0 +1,22 @@
+.seats {
+    li {
+        grid-template-columns: 1fr 2fr;
+        &:last-child {
+            border: none !important;
+        }
+    }
+}
+
+.tickets-modal {
+    li {
+        grid-template-columns: 2fr 1fr;
+        &:last-child {
+            border: none !important;
+        }
+    }
+}
+
+
+.disabled {
+    display: none;
+}

@@ -1,0 +1,31 @@
+$tablet: 1024px;
+$mobile: 767px;
+
+.credit-image {
+    display: inline-block;
+    @media screen and (max-width: $mobile) {
+        display: block;
+    }
+    img {
+        width: auto;
+        height: 22px;
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+    }
+}
+
+.security-code-modal {
+    dl {
+        dd {
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    }
+}

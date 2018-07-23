@@ -1,0 +1,21 @@
+.history {
+    position: relative;
+    padding: 20px 20px 20px 50px;
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    align-items:center;
+    border-bottom: 1px solid #FFF;
+}
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: red;
+}
+.circle-blue {
+    background-color: #00A0E9;
+}

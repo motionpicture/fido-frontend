@@ -1,0 +1,13 @@
+<app-page class="bg-02">
+    <div class="inner position-center">
+        <p class="read text-center mb-4">
+            ログアウトします。
+            <br>再びログインする際にユーザーネームとパスワードをご入力いただきます。
+        </p>
+
+        <div>
+            <button type="button" class="small-text btn btn-primary btn-block py-3 rounded-0 mx-auto" (click)="signOut()">ログアウト</button>
+        </div>
+    </div>
+</app-page>
+<app-loading [show]="isLoading"></app-loading>

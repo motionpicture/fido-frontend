@@ -1,0 +1,21 @@
+<app-page class="bg-02">
+    <div class="inner">
+        <p class="mb-3 text-center small-text">
+            貯まったポイントの確認ができます。
+        </p>
+        <div class="mb-4 text-center">
+            現在
+            <span class="large-xx-text">{{ user.data.accounts[0].availableBalance }}</span>
+            ポイント
+        </div>
+        <ul class="mb-4">
+            <li *ngFor="let action of accountMoneyTransferActions">
+                <app-point-history-list [action]="action" [accountNumber]="user.data.accounts[0].accountNumber"></app-point-history-list>
+            </li>
+        </ul>
+        <div class="text-center">
+            <a routerLink="/member/point" class="prev-link"><app-icon iconName="prev-circle-white" width="15" height="15"></app-icon>会員ポイントへ戻る</a>
+        </div>
+    </div>
+</app-page>
+<app-loading [show]="isLoading"></app-loading>

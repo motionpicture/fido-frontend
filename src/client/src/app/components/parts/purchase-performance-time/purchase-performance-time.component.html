@@ -1,0 +1,28 @@
+<div class="performance mb-1" [ngClass]="(salseFlg) ? (performance.offer.availability | availability).className : ''"
+    (click)="(salseFlg) ? select.emit() : null;">
+    <div class="date">
+        <div class="mb-1 text-center">
+            <strong class="large-text">{{ performance.startDate | timeFormat: performance.coaInfo.dateJouei }}</strong>
+        </div>
+        <div class="text-center">
+            <span>～ {{ performance.endDate | timeFormat: performance.coaInfo.dateJouei }}</span>
+        </div>
+    </div>
+    <div class="status-cover">
+        <div *ngIf="salseFlg" class="status">
+            <app-icon [iconName]="(performance.offer.availability | availability).icon" width="15" height="15"></app-icon>
+        </div>
+        <div *ngIf="!salseFlg" class="status window small-x-text">窓口</div>
+    </div>
+    <div class="info">
+        <div class="screen small-x-text mb-1">{{ performance.location.name.ja }}</div>
+        <div class="duration small-x-text">{{ performance.workPerformed.duration | duration: 'minutes' }}分</div>
+        <p class="title">{{ performance.name.ja }}</p>
+    </div>
+    <div *ngIf="performance.coaInfo.kbnService?.kubunCode === '001'" class="service">
+        <app-icon iconName="first-show-white" width="10" height="10"></app-icon>
+    </div>
+    <div *ngIf="performance.coaInfo.kbnService?.kubunCode === '002'" class="service">
+        <app-icon iconName="late-show-white" width="10" height="10"></app-icon>
+    </div>
+</div>

@@ -1,0 +1,178 @@
+:host {
+    display: inline-block;
+}
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+@mixin icon($width: 15px, $height: 15px) {
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+    background-repeat: no-repeat;
+}
+
+.ticket-holder-white {
+    @include icon();
+    background-image: url(/assets/images/icon/ticket_holder_white.svg);
+}
+
+.purchase-white {
+    @include icon();
+    background-image: url(/assets/images/icon/purchase_white.svg);
+}
+
+.film-name-gray {
+    @include icon();
+    background-image: url(/assets/images/icon/film_name_gray.svg);
+}
+
+.date-gray {
+    @include icon();
+    background-image: url(/assets/images/icon/date_gray.svg);
+}
+
+.location-gray {
+    @include icon();
+    background-image: url(/assets/images/icon/location_gray.svg);
+}
+
+.time-gray {
+    @include icon();
+    background-image: url(/assets/images/icon/time_gray.svg);
+}
+
+.prev-white {
+    @include icon();
+    background-image: url(/assets/images/icon/prev_white.svg);
+}
+
+.prev-circle-white {
+    @include icon();
+    background-image: url(/assets/images/icon/prev_circle_white.svg);
+}
+
+.about-white {
+    @include icon();
+    background-image: url(/assets/images/icon/about_white.svg);
+}
+
+.external-link-white {
+    @include icon();
+    background-image: url(/assets/images/icon/external_link_white.svg);
+}
+
+.logout-white {
+    @include icon();
+    background-image: url(/assets/images/icon/logout_white.svg);
+}
+
+.text-white {
+    @include icon();
+    background-image: url(/assets/images/icon/text_white.svg);
+}
+
+.user-white {
+    @include icon();
+    background-image: url(/assets/images/icon/user_white.svg);
+}
+
+.late-show-white {
+    @include icon();
+    background-image: url(/assets/images/icon/late_show_white.svg);
+}
+
+.late-show-black {
+    @include icon();
+    background-image: url(/assets/images/icon/late_show_black.svg);
+}
+
+.first-show-white {
+    @include icon();
+    background-image: url(/assets/images/icon/first_show_white.svg);
+}
+
+.first-show-black {
+    @include icon();
+    background-image: url(/assets/images/icon/first_show_black.svg);
+}
+
+.vacancy-large-white {
+    @include icon();
+    background-image: url(/assets/images/icon/vacancy_large_white.svg);
+}
+
+.vacancy-little-white {
+    @include icon();
+    background-image: url(/assets/images/icon/vacancy_little_white.svg);
+}
+
+.vacancy-full-white {
+    @include icon();
+    background-image: url(/assets/images/icon/vacancy_full_white.svg);
+}
+
+.close-white {
+    @include icon();
+    background-image: url(/assets/images/icon/close_white.svg);
+}
+
+.credit-expire-white {
+    @include icon();
+    background-image: url(/assets/images/icon/credit_expire_white.svg);
+}
+
+.credit-no-white {
+    @include icon();
+    background-image: url(/assets/images/icon/credit_no_white.svg);
+}
+
+.home-white {
+    @include icon();
+    background-image: url(/assets/images/icon/home_white.svg);
+}
+
+.email-white {
+    @include icon();
+    background-image: url(/assets/images/icon/email_white.svg);
+}
+
+.point-white {
+    @include icon();
+    background-image: url(/assets/images/icon/point_white.svg);
+}
+
+.telephone-white {
+    @include icon();
+    background-image: url(/assets/images/icon/telephone_white.svg);
+}
+
+.account-white {
+    @include icon();
+    background-image: url(/assets/images/icon/account_white.svg);
+}
+
+.login-white {
+    @include icon();
+    background-image: url(/assets/images/icon/login_white.svg);
+}
+
+.my-theater-white {
+    @include icon();
+    background-image: url(/assets/images/icon/my_theater_white.svg);
+}
+
+.benefits-white {
+    @include icon();
+    background-image: url(/assets/images/icon/benefits_white.svg);
+}
+
+.arrow-red {
+    @include icon();
+    background-image: url(/assets/images/icon/arrow_red.svg);
+}
+
+.update-white {
+    @include icon();
+    background-image: url(/assets/images/icon/update_white.svg);
+}

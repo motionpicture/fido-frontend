@@ -1,0 +1,44 @@
+<div *ngIf="reservation.reservedTickets.length > 0" class="inner">
+    <div class="info">
+        <dl class="film">
+            <dt><app-icon iconName="film-name-gray" width="15" height="15"></app-icon></dt>
+            <dd>{{ reservation.reservationsFor[0].name.ja }}</dd>
+        </dl>
+        <dl class="date">
+            <dt><app-icon iconName="date-gray" width="15" height="15"></app-icon></dt>
+            <dd>
+                {{ reservation.reservationsFor[0].coaInfo.dateJouei | amLocal | amDateFormat: 'YYYY/MM/DD' }} {{
+                reservation.reservationsFor[0].startDate | timeFormat: reservation.reservationsFor[0].coaInfo.dateJouei
+                }}-{{ reservation.reservationsFor[0].endDate | timeFormat: reservation.reservationsFor[0].coaInfo.dateJouei
+                }}
+            </dd>
+        </dl>
+        <dl class="theater">
+            <dt><app-icon iconName="location-gray" width="15" height="15"></app-icon></dt>
+            <dd>
+                {{ reservation.reservationsFor[0].superEvent.location.name.ja }} / {{ reservation.reservationsFor[0].location.name.ja
+                }}
+            </dd>
+        </dl>
+    </div>
+    <div class="details">
+        <div *ngFor="let reservedTicket of reservation.reservedTickets; let index = index;" class="detail">
+            <div class="ticket-info">
+                <div class="index small-text">{{ (index + 1) }}/{{ reservation.reservedTickets.length }}</div>
+                <div class="mb-1 small-text">{{ confirmationNumber }}</div>
+                <div class="large-x-text mb-1">{{ reservedTicket.ticketedSeat.seatNumber }}</div>
+                <div class="small-text">{{ reservedTicket.coaTicketInfo.ticketName }}</div>
+            </div>
+            <div *ngIf="!showQrCodeList[index]" class="not-qr">
+                <p class="inner small-text text-center">
+                    鑑賞日前日から
+                    <br>QRコードが
+                    <br>表示されます。
+                </p>
+            </div>
+            <div *ngIf="showQrCodeList[index]" class="qr">
+                <img [src]="qrCodeList[index]">
+            </div>
+        </div>
+    </div>
+</div>

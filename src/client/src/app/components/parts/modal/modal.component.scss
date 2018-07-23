@@ -1,0 +1,64 @@
+$tablet: 1024px;
+$mobile: 767px;
+.parent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+.cover {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    animation: fadein 0.4s both;
+}
+
+.content {
+    width: 80%;
+    z-index: 10;
+    animation: fadein 0.4s both;
+    .inner {
+        padding: 0;
+        border-radius: 5px;
+        max-height: 70vh;
+        overflow-y: auto;
+        .box {
+            border-radius: 0;
+        }
+    }
+
+    .modal-body {
+        color: #333;
+        background-color: #FFF;
+        padding: 20px;
+    }
+    
+    .close-button {
+        position: absolute;
+        top: -30px;
+        right: 0px;
+        a {
+            display: block;
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+.prev-link {
+    text-align: center;
+    a, button {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        position: relative;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

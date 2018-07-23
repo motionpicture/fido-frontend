@@ -1,0 +1,36 @@
+<app-page>
+    <div class="inner">
+        <div *ngIf="!isLoading" class="text-center mb-4">
+            <div class="mb-4">{{ user.getName() }}様</div>
+            <div class="mb-4">
+                現在
+                <span class="large-xx-text">{{ user.data.accounts[0].availableBalance }}</span>
+                ポイント
+            </div>
+            <div *ngIf="user.data.accounts[0].availableBalance < 6" class="mb-4">
+                あと{{ (6 - user.data.accounts[0].availableBalance) }}ポイントで無料鑑賞
+            </div>
+            <div *ngIf="user.data.accounts[0].availableBalance >= 6" class="mb-4">
+                無料鑑賞券を使用できます
+            </div>
+            <app-point-slider class="px-3" [point]="user.data.accounts[0].availableBalance"></app-point-slider>
+        </div>
+        <ul class="menu mb-0">
+            <li (click)="redirectToPurchaseTime()">
+                <div class="text-center caption">今スグ観る</div>
+            </li>
+            <li (click)="redirectToPurchaseFilm()">
+                <div class="text-center caption">チケット購入</div>
+            </li>
+            <li routerLink="/member/edit">
+                <div class="text-center caption">登録情報確認・変更</div>
+            </li>
+            <li routerLink="/member/point/benefits">
+                <div class="text-center caption">会員特典一覧</div>
+            </li>
+        </ul>
+    </div>
+</app-page>
+
+<app-loading [show]="isLoading"></app-loading>
+<app-information [isMember]="true"></app-information>

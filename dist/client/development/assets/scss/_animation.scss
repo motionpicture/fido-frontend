@@ -1,0 +1,28 @@
+
+@keyframes loading {
+    30% {
+        transform: scaleY(2);
+    }
+}
+
+@keyframes fadein {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}

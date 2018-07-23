@@ -1,0 +1,17 @@
+<div class="swiper-container mb-3" [swiper]="config">
+    <div class="swiper-wrapper">
+        <div *ngFor="let stampGroup of stamps" class="swiper-slide">
+            <ul class="mb-0">
+                <li *ngFor="let stamp of stampGroup">
+                    <div *ngIf="stamp.status" class="stamp small-x-text text-center">CINEMA<br>SUNSHINE</div>
+                    <div *ngIf="!stamp.status" class="label text-center">{{ stamp.label }}</div>
+                    <!-- <div *ngIf="stamp.label === 2" class="description text-center small-x-text">1,100円鑑賞券 GET</div> -->
+                    <div *ngIf="stamp.label === 6" class="description text-center small-x-text">無料鑑賞券 GET</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="pagination-wrapper">
+    <div class="swiper-pagination"></div>
+</div>

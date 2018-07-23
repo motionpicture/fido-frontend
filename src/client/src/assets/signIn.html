@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FrontendApp</title>
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
+<script>
+    if (window.opener !== null) {
+      console.log('posting message to opner window...', window.location.hash.slice(0, 30), '...');
+      window.opener.postMessage(window.location.hash, '*');
+    } else {
+      console.log('posting message to parent window...', window.location.hash.slice(0, 30), '...');
+      window.parent.postMessage(window.location.hash, '*');
+    }
+</script>
+</head>
+<body>
+</body>
+</html>
+

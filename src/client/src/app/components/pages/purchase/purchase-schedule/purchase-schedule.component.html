@@ -1,0 +1,76 @@
+<app-page class="bg-02">
+    <div *ngIf="!isLoading && !maintenanceInfo.isMaintenance">
+        <div class="inner">
+            <p class="read mb-4 small-text">鑑賞劇場、鑑賞作品、鑑賞日時を選択してください。</p>
+            <ul class="conditions">
+                <li class="mb-3 position-relative">
+                    <div class="control-label mb-1 small-x-text text-secondary">鑑賞劇場</div>
+                    <select class="w-100" name="theater" [(ngModel)]="conditions.theater" (change)="changeConditions()">
+                        <option value="">選択してください</option>
+                        <option *ngFor="let theater of theaters" value="{{ theater.location.branchCode }}">{{ theater.name.ja }}</option>
+                    </select>
+                    <div class="btn btn-secondary btn-sm rounded-0 update-button small-text" (click)="update()">
+                        <app-icon iconName="update-white" width="12" height="12"></app-icon> 更新</div>
+                </li>
+                <li *ngIf="conditions.theater !==''">
+                    <div class="control-label mb-1">
+                        <span class="text-secondary small-x-text">鑑賞日時</span>
+                        <div *ngIf="isPreSale" class="preSale small-text text-red">先行販売
+                            <app-icon iconName="arrow-red" width="12" height="12"></app-icon>
+                        </div>
+                    </div>
+                    <div class="dateList">
+                        <ul class="scroll mb-0">
+                            <li *ngFor="let date of dateList" class="text-center text-secondary" [class.active]="conditions.date === date.value" (click)="selectDate(date)">
+                                <div class="inner">
+                                    <div class="month mb-1">{{ date.display.month }}</div>
+                                    <div class="day mb-1">
+                                        <strong class="large-text">{{ date.display.day }}</strong>
+                                        <span class="small-x-text">({{ date.display.week }})</span>
+                                    </div>
+                                    <div class="service-day small-text mb-1">{{ date.serviceDay }}</div>
+                                    <div *ngIf="date.preSale" class="pre-sale small-text">先行販売</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="date" [(ngModel)]="conditions.date">
+                </li>
+            </ul>
+        </div>
+        <div class="inner">
+            <p *ngIf="conditions.date !== '' && conditions.theater !==''" class="text-center mb-1">{{ conditions.date | dateFormat:'YYYY年MM月DD日(ddd)' }}</p>
+            <ul *ngIf="conditions.theater !==''" class="sort mb-3">
+                <li [class.active]="conditions.sort === purchaseSort.Film" class="small-text text-center" (click)="changeSort(purchaseSort.Film)">作品順</li>
+                <li [class.active]="conditions.sort === purchaseSort.Time" class="small-text text-center" (click)="changeSort(purchaseSort.Time)">上映時間順</li>
+            </ul>
+
+            <div *ngIf="!isLoading && filmOrder.length > 0 && conditions.sort === purchaseSort.Film">
+                <div *ngFor="let filmData of filmOrder" class="film-order mb-1">
+                    <div class="info">
+                        <p class="title mb-1">{{ filmData.films[0].name.ja }}</p>
+                        <div class="date small-x-text text-secondary">
+                            <app-icon iconName="time-gray" width="15" height="15"></app-icon>
+                            {{ filmData.films[0].workPerformed.duration | duration: 'minutes' }}分
+                        </div>
+                    </div>
+                    <app-purchase-performance-film *ngFor="let performance of filmData.films" [performance]="performance" (select)="performanceSelect(performance)"></app-purchase-performance-film>
+                </div>
+            </div>
+
+            <div *ngIf="!isLoading && timeOrder.length > 0 && conditions.sort === purchaseSort.Time">
+                <app-purchase-performance-time *ngFor="let performance of timeOrder" [performance]="performance" (select)="performanceSelect(performance)"></app-purchase-performance-time>
+            </div>
+
+            <div class="no-schedule" *ngIf="!isLoading && filmOrder.length === 0">
+                <div class="mb-1" *ngIf="conditions.theater === ''">鑑賞劇場が選択されていません。</div>
+                <div class="mb-1" *ngIf="conditions.date === '' && conditions.theater !== ''">鑑賞日時が選択されていません。</div>
+                <div class="mb-1" *ngIf="conditions.theater !== '' && conditions.date !== ''">上映作品がありません。</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!isLoading && maintenanceInfo.isMaintenance" class="inner">
+        <app-maintenance [maintenanceInfo]="maintenanceInfo"></app-maintenance>
+    </div>
+</app-page>
+<app-loading [show]="isLoading"></app-loading>

@@ -1,0 +1,25 @@
+<app-page class="bg-02">
+    <div class="inner position-center">
+        <p class="read text-center mb-4">
+            退会を行います。
+            <br> 下記注意文言をご確認のうえ
+            <br> 問題なければ退会ボタンを押してください。
+        </p>
+
+        <div>
+            <button type="button" class="small-text btn btn-primary btn-block py-3 rounded-0 mx-auto" (click)="confirmModal = true">退会</button>
+        </div>
+    </div>
+</app-page>
+
+<app-modal class="confirm-modal" [open]="confirmModal" [layout]="true" (close)="confirmModal = false">
+    <div class="mb-1 text-center">
+        <strong>本当に退会しますか？</strong>
+    </div>
+    <p class="small-text mb-3">
+        退会注意文言！
+    </p>
+    <button type="button" class="button button-danger btn-block py-3 rounded-0 mx-auto" (click)="withdraw()">退会する</button>
+</app-modal>
+
+<app-loading [show]="isLoading"></app-loading>

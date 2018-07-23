@@ -1,0 +1,44 @@
+.performance {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 15px 1fr;
+    grid-column-gap: 15px;
+    padding: 10px 10px 10px 20px;
+    background-color: #B2B2B2;
+}
+
+.vacancy-large {
+    background-color: #0563C1;
+}
+
+.vacancy-little {
+    background-color: #F2C300;
+}
+
+.date {
+    align-self: center;
+}
+
+.status-cover {
+    align-self: center;
+    width: 15px;
+}
+
+.info {
+    align-self: center;
+    .screen {
+        padding: 4px;
+        border: 1px solid #FFF;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .duration {
+        display: inline-block;
+    }
+}
+
+.service {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}

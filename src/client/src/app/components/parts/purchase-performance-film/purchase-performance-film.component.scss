@@ -1,0 +1,37 @@
+:host:last-child .performance {
+    border-bottom: none;
+}
+.performance {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr 100px;
+    grid-column-gap: 15px;
+    align-items: center;
+    color: #333;
+    border-bottom: 1px dotted #B2B2B2;
+}
+.date {
+    align-self: center;
+}
+
+.btn {
+    background-color: #B2B2B2;
+    color: #FFF;
+    app-icon {
+        margin-right: 10px;
+    }
+}
+
+.vacancy-large .btn {
+    background-color: #0563C1;
+}
+
+.vacancy-little .btn {
+    background-color: #F2C300;
+}
+
+.service {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+}

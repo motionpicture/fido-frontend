@@ -1,0 +1,18 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+$body-bg: #000;
+$body-color: #FFF;
+$theme-colors: (
+    primary: #0563C1, 
+    secondary: #646464, 
+    success: $green, 
+    info: $cyan, 
+    warning: $yellow, 
+    danger: $red, 
+    light: $gray-100, 
+    dark: $gray-800
+);
+
+@import "node_modules/bootstrap/scss/bootstrap";

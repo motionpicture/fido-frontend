@@ -1,0 +1,121 @@
+<app-page class="bg-02">
+    <div class="inner">
+        <p class="read mb-4">
+            基本情報を変更してください。
+        </p>
+        <div class="profile">
+            <form *ngIf="!isLoading" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+                <dl class="mb-4">
+                    <dt class="mb-3">
+                        <strong>お名前（カタカナ）</strong>
+                        <span class="text-red small-text">必須</span>
+                    </dt>
+                    <dd class="mb-3">
+                        <div>セイ</div>
+                        <div class="mb-1">
+                            <input [class.validation]="profileForm.controls['familyName'].invalid && profileForm.controls['familyName'].touched" type="text"
+                                formControlName="familyName" autocomplete="family-name" placeholder="全角カタカナで入力してください">
+                        </div>
+                        <div *ngIf="profileForm.controls['familyName'].invalid && profileForm.controls['familyName'].touched">
+                            <div *ngIf="profileForm.controls['familyName'].errors.required" class="validation-text text-red mb-1">セイが未入力です</div>
+                            <div *ngIf="profileForm.controls['familyName'].errors.maxlength" class="validation-text text-red mb-1">セイは{{ profileForm.controls['familyName'].errors.maxlength.requiredLength }}文字以下で入力してください</div>
+                            <div *ngIf="profileForm.controls['familyName'].errors.pattern" class="validation-text text-red mb-1">セイは全角カタカナで入力してください</div>
+                        </div>
+                    </dd>
+                    <dd>
+                        <div>メイ</div>
+                        <div class="mb-1">
+                            <input [class.validation]="profileForm.controls['givenName'].invalid && profileForm.controls['givenName'].touched" type="text"
+                                formControlName="givenName" autocomplete="given-name" placeholder="全角カタカナで入力してください">
+                        </div>
+                        <div *ngIf="profileForm.controls['givenName'].invalid && profileForm.controls['givenName'].touched">
+                            <div *ngIf="profileForm.controls['givenName'].errors.required" class="validation-text text-red mb-1">メイが未入力です</div>
+                            <div *ngIf="profileForm.controls['givenName'].errors.maxlength" class="validation-text text-red mb-1">メイは{{ profileForm.controls['givenName'].errors.maxlength.requiredLength }}文字以下で入力してください</div>
+                            <div *ngIf="profileForm.controls['givenName'].errors.pattern" class="validation-text text-red mb-1">メイは全角カタカナで入力してください</div>
+                        </div>
+                    </dd>
+                </dl>
+
+                <dl class="mb-4">
+                    <dt class="mb-3">
+                        <strong>メールアドレス</strong>
+                    </dt>
+                    <dd>
+                        {{ staticProfile.email }}
+                    </dd>
+                </dl>
+
+                <dl class="mb-4">
+                    <dt>
+                        <strong>電話番号</strong>
+                        <span class="text-red small-text">必須</span>
+                    </dt>
+                    <dd>
+                        <div class="mb-1">
+                            <input [class.validation]="profileForm.controls['telephone'].invalid && profileForm.controls['telephone'].touched" type="tel"
+                                formControlName="telephone" autocomplete="tel" placeholder="電話番号を入力してください">
+                        </div>
+                        <div class="mb-1" *ngIf="profileForm.controls['telephone'].invalid && profileForm.controls['telephone'].touched">
+                            <div *ngIf="profileForm.controls['telephone'].errors.required" class="validation-text text-red mb-1">電話番号が未入力です</div>
+                            <div *ngIf="profileForm.controls['telephone'].errors.minlength" class="validation-text text-red mb-1">電話番号は{{ profileForm.controls['telephone'].errors.minlength.requiredLength }}文字以上で入力してください</div>
+                            <div *ngIf="profileForm.controls['telephone'].errors.maxlength" class="validation-text text-red mb-1">電話番号は{{ profileForm.controls['telephone'].errors.maxlength.requiredLength }}文字以下で入力してください</div>
+                            <div *ngIf="profileForm.controls['telephone'].errors.pattern" class="validation-text text-red mb-1">電話番号は数字で入力してください</div>
+                            <div *ngIf="profileForm.controls['telephone'].errors.telephone" class="validation-text text-red mb-1">電話番号が正しくありません</div>
+                        </div>
+                        <p class="small-text">※半角数字、ハイフン「-」なしで入力してください</p>
+                    </dd>
+                </dl>
+
+                <dl class="mb-4">
+                    <dt class="mb-3">
+                        <strong>よく行く劇場</strong>
+                    </dt>
+                    <dd>
+                        {{ user.getTheaterName(0) }}
+                    </dd>
+                </dl>
+                <dl class="mb-4">
+                    <dt class="mb-3">
+                        <strong>会員コード</strong>
+                    </dt>
+                    <dd>
+                        {{ user.getAccount(0)?.accountNumber }}
+                    </dd>
+                </dl>
+                <!-- <dl class="mb-4">
+                            <dt>生年月日
+                                <span class="text-red small-text">必須</span>
+                            </dt>
+                            <dd>
+                                
+                            </dd>
+                        </dl>
+                        <dl class="mb-4">
+                            <dt>性別
+                                <span class="text-red small-text">必須</span>
+                            </dt>
+                            <dd>
+                                
+                            </dd>
+                        </dl> -->
+                <!-- <dl class="mb-4">
+                    <dt>
+                        <strong>郵便番号</strong>
+                        <span class="text-red small-text">必須</span>
+                    </dt>
+                    <dd>
+                        <input [class.validation]="profileForm.controls['postalCode'].invalid && profileForm.controls['postalCode'].touched" type="text"
+                            formControlName="postalCode" autocomplete="zip" placeholder="電話番号を入力してください">
+                    </dd>
+                </dl> -->
+                <button type="submit" class="small-text btn btn-primary center btn-block py-3 rounded-0 mb-4" [class.invalid]="profileForm.invalid">変更する</button>
+                <div class="text-center">
+                    <a routerLink="/member/edit" class="prev-link"><app-icon iconName="prev-circle-white" width="15" height="15"></app-icon>戻る</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-page>
+
+<app-loading [show]="isLoading"></app-loading>
