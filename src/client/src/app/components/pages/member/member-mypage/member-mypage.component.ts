@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { CallNativeService } from '../../../../services/call-native/call-native.service';
 import { PurchaseSort, SelectService } from '../../../../services/select/select.service';
 import { UserService } from '../../../../services/user/user.service';
 
@@ -15,7 +16,8 @@ export class MemberMypageComponent implements OnInit {
     constructor(
         public user: UserService,
         private select: SelectService,
-        private router: Router
+        private router: Router,
+        private native: CallNativeService
     ) { }
 
     /**
@@ -24,6 +26,14 @@ export class MemberMypageComponent implements OnInit {
      */
     public async ngOnInit() {
         this.isLoading = true;
+        try {
+            const device = await this.native.device();
+            alert('success');
+            alert(device);
+        } catch (err) {
+            alert('fail');
+            alert(err);
+        }
         try {
             await this.user.updateAccount();
         } catch (err) {
