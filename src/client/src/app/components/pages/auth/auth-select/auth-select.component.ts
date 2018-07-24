@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CallNativeService } from '../../../../services/call-native/call-native.service';
 import { SasakiService } from '../../../../services/sasaki/sasaki.service';
 import { MemberType, UserService } from '../../../../services/user/user.service';
 
@@ -13,15 +14,24 @@ export class AuthSelectComponent implements OnInit {
 
     constructor(
         private sasaki: SasakiService,
-        private user: UserService
+        private user: UserService,
+        private native: CallNativeService
     ) { }
 
     /**
      * 初期化
      * @method ngOnInit
      */
-    public ngOnInit() {
+    public async ngOnInit() {
         this.isLoading = false;
+        try {
+            const device = await this.native.device();
+            alert('success');
+            alert(device);
+        } catch (err) {
+            alert('fail');
+            alert(err);
+        }
     }
 
     /**

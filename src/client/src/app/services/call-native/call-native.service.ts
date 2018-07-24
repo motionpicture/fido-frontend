@@ -80,14 +80,63 @@ export interface IlocalNotificationArgs {
     foreground?: boolean;
 }
 
+export enum FidoAction {
+    /**
+     * 登録
+     */
+    Register = 'register',
+    /**
+     * 認証
+     */
+    Authentication = 'authentication',
+    /**
+     * 取り消し
+     */
+    Remove = 'remove',
+    /**
+     * 登録リスト
+     */
+    RegisterList = 'registerList'
+}
+
+export interface IFidoArgs {
+    action: FidoAction;
+    user: string;
+    handle?: string;
+}
+
+export interface IDeviceResult {
+    cordova: string;
+    model: string;
+    platform: string;
+    uuid: string;
+    version: string;
+    isVirtual: string;
+    serial: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
 export class CallNativeService {
+    private reserveData: string | null;
 
-    constructor() { }
+    constructor() {
+        this.reserveData = null;
+        window.addEventListener('message', (res) => {
+            if (res.origin === location.origin) {
+                return;
+            }
+            try {
+                this.reserveData = JSON.parse(res.data);
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    }
 
     /**
+     * 送信
      * @method postMessage
      * @param data {any}
      */
@@ -97,6 +146,75 @@ export class CallNativeService {
             (<any>window).wizViewMessenger.postMessage(json, TARGET_VIEW);
         } catch (err) {
             console.error(err);
+        }
+    }
+
+    /**
+     * 受信
+     * @method reserveMessage
+     */
+    private reserveMessage() {
+        return new Promise<any>((resolve) => {
+            const time = 600;
+            const timer = setInterval(() => {
+                const data = this.reserveData;
+                if (data !== null) {
+                    resolve(data);
+                    this.reserveData = null;
+                    clearInterval(timer);
+                }
+            }, time);
+        });
+    }
+
+    /**
+     * FIDO呼び出し
+     * @method fido
+     * @param args {IFidoArgs}
+     */
+    public async fido(args: IFidoArgs) {
+        try {
+            const data = {
+                method: 'fido',
+                option: args
+            };
+            let result;
+            if ((<any>window).wizViewMessenger !== undefined) {
+                this.postMessage(data);
+                result = await this.reserveMessage();
+                console.log(result);
+            } else {
+                result = {
+                    isSuccess: true
+                };
+            }
+
+            return result;
+        } catch (err) {
+            console.error(err);
+            return null;
+        }
+    }
+
+    /**
+     * device呼び出し
+     * @method device
+     */
+    public async device(): Promise<IDeviceResult | null> {
+        try {
+            const data = { method: 'device' };
+            let result;
+            if ((<any>window).wizViewMessenger !== undefined) {
+                this.postMessage(data);
+                result = await this.reserveMessage();
+                console.log(result);
+                return result;
+            } else {
+                return null;
+            }
+        } catch (err) {
+            console.error(err);
+            return null;
         }
     }
 
