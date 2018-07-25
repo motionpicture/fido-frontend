@@ -1877,6 +1877,7 @@ var FidoRegisterComponent = /** @class */ (function () {
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 4, , 5]);
+                        alert('device before');
                         return [4 /*yield*/, this.native.device()];
                     case 2:
                         device = _a.sent();

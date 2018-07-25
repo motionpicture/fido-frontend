@@ -22,6 +22,7 @@ export class FidoRegisterComponent implements OnInit {
     public async ngOnInit() {
         this.isLoading = true;
         try {
+            alert('device before');
             const device = await this.native.device();
             alert(JSON.stringify(device));
             if (device === null) {
