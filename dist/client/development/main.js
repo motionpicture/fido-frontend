@@ -11957,12 +11957,9 @@ var CallNativeService = /** @class */ (function () {
                         result = void 0;
                         if (!(window.wizViewMessenger !== undefined)) return [3 /*break*/, 2];
                         this.postMessage(data);
-                        alert('postMessage');
                         return [4 /*yield*/, this.reserveMessage()];
                     case 1:
                         result = _a.sent();
-                        alert('reserveMessage');
-                        alert(JSON.stringify(result));
                         console.log(result);
                         return [3 /*break*/, 3];
                     case 2:
