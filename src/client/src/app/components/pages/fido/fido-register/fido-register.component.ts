@@ -22,9 +22,7 @@ export class FidoRegisterComponent implements OnInit {
     public async ngOnInit() {
         this.isLoading = true;
         try {
-            alert('device before');
             const device = await this.native.device();
-            alert(JSON.stringify(device));
             if (device === null) {
                 throw new Error('device is null');
             }
@@ -33,18 +31,14 @@ export class FidoRegisterComponent implements OnInit {
                 action: FidoAction.RegisterList,
                 user: device.uuid
             });
-            alert(JSON.stringify(registerListResult));
-
             if (!registerListResult.isSuccess) {
                 throw new Error('registerList fail');
             }
-
             if (registerListResult.result.length > 0) {
                 this.router.navigate(['/']);
 
                 return;
             }
-
             this.isLoading = false;
         } catch (err) {
             this.router.navigate(['/error']);
