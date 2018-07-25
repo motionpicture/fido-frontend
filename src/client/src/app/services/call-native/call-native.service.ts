@@ -181,7 +181,10 @@ export class CallNativeService {
             let result;
             if ((<any>window).wizViewMessenger !== undefined) {
                 this.postMessage(data);
+                alert('postMessage');
                 result = await this.reserveMessage();
+                alert('reserveMessage');
+                alert(JSON.stringify(result));
                 console.log(result);
             } else {
                 result = {

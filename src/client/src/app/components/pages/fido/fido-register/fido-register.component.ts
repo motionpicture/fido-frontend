@@ -23,6 +23,7 @@ export class FidoRegisterComponent implements OnInit {
         this.isLoading = true;
         try {
             const device = await this.native.device();
+            alert(JSON.stringify(device));
             if (device === null) {
                 throw new Error('device is null');
             }
@@ -31,6 +32,7 @@ export class FidoRegisterComponent implements OnInit {
                 action: FidoAction.RegisterList,
                 user: device.uuid
             });
+            alert(JSON.stringify(registerListResult));
 
             if (!registerListResult.isSuccess) {
                 throw new Error('registerList fail');

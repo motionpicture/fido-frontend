@@ -1880,6 +1880,7 @@ var FidoRegisterComponent = /** @class */ (function () {
                         return [4 /*yield*/, this.native.device()];
                     case 2:
                         device = _a.sent();
+                        alert(JSON.stringify(device));
                         if (device === null) {
                             throw new Error('device is null');
                         }
@@ -1890,6 +1891,7 @@ var FidoRegisterComponent = /** @class */ (function () {
                             })];
                     case 3:
                         registerListResult = _a.sent();
+                        alert(JSON.stringify(registerListResult));
                         if (!registerListResult.isSuccess) {
                             throw new Error('registerList fail');
                         }
@@ -11957,9 +11959,12 @@ var CallNativeService = /** @class */ (function () {
                         result = void 0;
                         if (!(window.wizViewMessenger !== undefined)) return [3 /*break*/, 2];
                         this.postMessage(data);
+                        alert('postMessage');
                         return [4 /*yield*/, this.reserveMessage()];
                     case 1:
                         result = _a.sent();
+                        alert('reserveMessage');
+                        alert(JSON.stringify(result));
                         console.log(result);
                         return [3 /*break*/, 3];
                     case 2:
