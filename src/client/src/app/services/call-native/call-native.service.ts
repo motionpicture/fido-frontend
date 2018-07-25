@@ -185,7 +185,8 @@ export class CallNativeService {
                 console.log(result);
             } else {
                 result = {
-                    isSuccess: true
+                    isSuccess: true,
+                    result: ['test']
                 };
             }
 
@@ -210,7 +211,16 @@ export class CallNativeService {
                 console.log(result);
                 return result;
             } else {
-                return null;
+                const browser = 'browser';
+                return {
+                    cordova: browser,
+                    model: browser,
+                    platform: browser,
+                    uuid: browser,
+                    version: browser,
+                    isVirtual: browser,
+                    serial: browser,
+                };
             }
         } catch (err) {
             console.error(err);

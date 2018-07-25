@@ -23,13 +23,14 @@ export class FidoGuardService implements CanActivate {
             if (device === null) {
                 throw new Error('device is null');
             }
-            const registerList = await this.native.fido({
+            const registerListResult = await this.native.fido({
                 action: FidoAction.RegisterList,
                 user: device.uuid
             });
 
-            if (registerList.length === 0) {
-                throw new Error('registerList not found');
+            if (!registerListResult.isSuccess
+                && registerListResult.result.length === 0) {
+                throw new Error('registerList fail or not found');
             }
 
             return true;

@@ -8,6 +8,7 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
 import { TutorialComponent } from './components/pages/tutorial/tutorial.component';
 import * as auth from './routes/auth.route';
 import * as common from './routes/common.route';
+import * as fido from './routes/fido.route';
 import * as member from './routes/member.route';
 import * as purchase from './routes/purchase.route';
 import * as register from './routes/register.route';
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     auth.logoutRoute,
     register.route,
     member.route,
+    fido.route,
     purchase.route,
     { path: 'tutorial', component: TutorialComponent },
     { path: 'error/:redirect', component: ErrorComponent },

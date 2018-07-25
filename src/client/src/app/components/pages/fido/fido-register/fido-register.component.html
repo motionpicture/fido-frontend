@@ -1,0 +1,21 @@
+<div *ngIf="!isLoading" class="inner position-center">
+    <div class="card text-dark pt-3">
+        <div class="text-center">
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="card-body text-center">
+            <h5 class="card-title">生体認証登録</h5>
+            <p class="card-text">生体認証を登録してください</p>
+            <button type="button" class="btn btn-success btn-block py-3" (click)="register()">登録</button>
+        </div>
+    </div>
+</div>
+
+<app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
+    <div class="modal-ttl large-text text-center mb-3">
+        <strong>エラーが発生しました</strong>
+    </div>
+    <p>{{ errorMessage }}</p>
+</app-modal>
+
+<app-loading [show]="isLoading"></app-loading>

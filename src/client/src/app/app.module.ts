@@ -19,6 +19,8 @@ import { BaseComponent } from './components/pages/base/base.component';
 import { BenefitsComponent } from './components/pages/benefits/benefits.component';
 import { ErrorComponent } from './components/pages/error/error.component';
 import { ExpiredComponent } from './components/pages/expired/expired.component';
+import { FidoRegisterComponent } from './components/pages/fido/fido-register/fido-register.component';
+import { FidoRemoveComponent } from './components/pages/fido/fido-remove/fido-remove.component';
 import { LawComponent } from './components/pages/law/law.component';
 import { MemberBenefitsComponent } from './components/pages/member/member-benefits/member-benefits.component';
 import { MemberEditCreditComponent } from './components/pages/member/member-edit-credit/member-edit-credit.component';
@@ -138,7 +140,9 @@ import { TimeFormatPipe } from './pipes/time-format/time-format.pipe';
         ScreenComponent,
         SeatInfoComponent,
         ButtonsComponent,
-        ExpiredComponent
+        ExpiredComponent,
+        FidoRegisterComponent,
+        FidoRemoveComponent
     ],
     imports: [
         BrowserModule,
