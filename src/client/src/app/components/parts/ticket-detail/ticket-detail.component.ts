@@ -6,7 +6,6 @@ import * as moment from 'moment';
 import * as qrcode from 'qrcode';
 import { CallNativeService, FidoAction, IDeviceResult } from '../../../services/call-native/call-native.service';
 import { IReservation } from '../../../services/reservation/reservation.service';
-import { UtilService } from '../../../services/util/util.service';
 
 @Component({
     selector: 'app-ticket-detail',
@@ -26,8 +25,7 @@ export class TicketDetailComponent implements OnInit {
     public isAuthentication: boolean;
 
     constructor(
-        private native: CallNativeService,
-        private util: UtilService
+        private native: CallNativeService
     ) { }
 
     /**
@@ -69,7 +67,6 @@ export class TicketDetailComponent implements OnInit {
             if (!authenticationResult.isSuccess) {
                 throw Error(authenticationResult.error);
             }
-            await this.util.sleep(3000);
             this.isAuthentication = true;
         } catch (err) {
             this.alert.emit(err.message);
