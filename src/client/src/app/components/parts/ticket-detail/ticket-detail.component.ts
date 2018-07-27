@@ -1,9 +1,11 @@
 /**
  * TicketDetailComponent
  */
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
 import * as qrcode from 'qrcode';
+import { CallNativeService, FidoAction, IDeviceResult } from '../../../services/call-native/call-native.service';
 import { IReservation } from '../../../services/reservation/reservation.service';
 
 @Component({
@@ -13,17 +15,27 @@ import { IReservation } from '../../../services/reservation/reservation.service'
 })
 export class TicketDetailComponent implements OnInit {
     @Input() public reservation: IReservation;
+    @Output() public update = new EventEmitter();
     public showQrCodeList: boolean[];
     public qrCodeList: string[];
     public confirmationNumber: string;
+    public isAuthentication: boolean;
+    public isLoading: boolean;
+    public device: IDeviceResult;
+    public alertModal: boolean;
+    public errorMessage: string;
 
-    constructor() { }
+    constructor(
+        private native: CallNativeService,
+        private router: Router
+    ) { }
 
     /**
      * 初期化
      * @method ngOnInit
      */
     public async ngOnInit() {
+        this.isAuthentication = false;
         this.showQrCodeList = [];
         this.qrCodeList = [];
         this.confirmationNumber = this.reservation.confirmationNumber.split('-')[0];
@@ -43,6 +55,37 @@ export class TicketDetailComponent implements OnInit {
                 this.qrCodeList.push(qrCode);
             }
         }
+        try {
+            const device = await this.native.device();
+            if (device === null) {
+                throw new Error('device is null');
+            }
+            this.device = device;
+        } catch (err) {
+            this.router.navigate(['/error']);
+        }
+    }
+
+    /**
+     * 認証
+     */
+    public async authentication() {
+        this.isLoading = true;
+        try {
+            const authenticationResult = await this.native.fido({
+                action: FidoAction.Authentication,
+                user: `fido-frontend-${this.device.uuid}`
+            });
+            if (!authenticationResult.isSuccess) {
+                throw Error(authenticationResult.error);
+            }
+            this.isAuthentication = true;
+            this.update.emit();
+        } catch (err) {
+            this.errorMessage = err.message;
+            this.alertModal = true;
+        }
+        this.isLoading = false;
     }
 
 }

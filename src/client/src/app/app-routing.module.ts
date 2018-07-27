@@ -12,16 +12,25 @@ import * as fido from './routes/fido.route';
 import * as member from './routes/member.route';
 import * as purchase from './routes/purchase.route';
 import * as register from './routes/register.route';
+import { FidoGuardService } from './services/fido-guard/fido-guard.service';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/member/mypage', pathMatch: 'full' },
-    common.route,
-    auth.route,
-    auth.logoutRoute,
-    register.route,
-    member.route,
-    fido.route,
-    purchase.route,
+    {
+        path: '',
+        canActivate: [
+            FidoGuardService
+        ],
+        children: [
+            common.route,
+            auth.route,
+            auth.logoutRoute,
+            register.route,
+            member.route,
+            fido.route,
+            purchase.route,
+        ]
+    },
     { path: 'tutorial', component: TutorialComponent },
     { path: 'error/:redirect', component: ErrorComponent },
     { path: 'error', component: ErrorComponent },

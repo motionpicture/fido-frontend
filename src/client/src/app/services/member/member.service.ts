@@ -71,7 +71,7 @@ export class MemberService {
      */
     public async isRegister() {
         await this.sasaki.getServices();
-        const time = 3000;
+        const time = 5000;
         const limit = 20;
         let count = 0;
         return new Promise<boolean>((resolve, reject) => {

@@ -46,7 +46,7 @@ export class RegisterProgramMembershipComponent implements OnInit {
             }
         } catch (err) {
             console.log(err);
-            this.router.navigate(['/error', { redirect: '//register/credit' }]);
+            this.router.navigate(['/error', { redirect: '/register/credit' }]);
         }
         this.isLoading = false;
     }
@@ -88,12 +88,14 @@ export class RegisterProgramMembershipComponent implements OnInit {
             });
 
             // 会員登録確認
-            const isRegister = await this.member.isRegister();
-            if (!isRegister) {
-                this.router.navigate(['/error', { redirect: '/auth/select' }]);
+            await this.member.isRegister();
+            // if (!isRegister) {
+            //     this.isLoading = false;
+            //     this.disable = false;
+            //     this.alertModal = true;
 
-                return;
-            }
+            //     return;
+            // }
 
             this.router.navigate(['/']);
         } catch (err) {

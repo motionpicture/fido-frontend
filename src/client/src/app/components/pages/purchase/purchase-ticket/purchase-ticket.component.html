@@ -1,14 +1,14 @@
 <div class="inner">
     <p class="read">ご希望の券種を選択して「次へ」ボタンを押してください。</p>
 
-    <dl *ngIf="user.isMember() && purchase.data.pointTickets.length === 0" class="bg-white mb-3 p-3 point">
+    <!-- <dl *ngIf="user.isMember() && purchase.data.pointTickets.length === 0" class="bg-white mb-3 p-3 point">
         <dt class="mb-2 text-dark">会員ポイントを利用される方</dt>
         <dd class="mb-0">
             <button type="button" class="small-text btn btn-primary btn-block py-3 rounded-0 mx-auto" routerLink="/purchase/point">
                 会員ポイントを利用する
             </button>
         </dd>
-    </dl>
+    </dl> -->
 
     <ul class="bg-white mb-3 p-3 seats">
         <li *ngFor="let offer of offers" class="d-grid align-items-center border-bottom py-3">

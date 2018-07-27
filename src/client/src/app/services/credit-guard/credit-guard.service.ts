@@ -19,7 +19,7 @@ export class CreditGuardService implements CanActivate {
   public async canActivate() {
       if (this.user.data.creditCards === undefined
       || this.user.data.creditCards.length === 0) {
-          this.router.navigate(['//register/credit']);
+          this.router.navigate(['/register/credit']);
 
           return false;
       }

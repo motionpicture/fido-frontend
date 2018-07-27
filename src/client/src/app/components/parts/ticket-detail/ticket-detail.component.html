@@ -1,10 +1,10 @@
 <div *ngIf="reservation.reservedTickets.length > 0" class="inner">
     <div class="info">
-        <dl class="film">
+        <dl class="film mb-0">
             <dt><app-icon iconName="film-name-gray" width="15" height="15"></app-icon></dt>
             <dd>{{ reservation.reservationsFor[0].name.ja }}</dd>
         </dl>
-        <dl class="date">
+        <dl class="date mb-0">
             <dt><app-icon iconName="date-gray" width="15" height="15"></app-icon></dt>
             <dd>
                 {{ reservation.reservationsFor[0].coaInfo.dateJouei | amLocal | amDateFormat: 'YYYY/MM/DD' }} {{
@@ -13,7 +13,7 @@
                 }}
             </dd>
         </dl>
-        <dl class="theater">
+        <dl class="theater mb-0">
             <dt><app-icon iconName="location-gray" width="15" height="15"></app-icon></dt>
             <dd>
                 {{ reservation.reservationsFor[0].superEvent.location.name.ja }} / {{ reservation.reservationsFor[0].location.name.ja
@@ -21,7 +21,10 @@
             </dd>
         </dl>
     </div>
-    <div class="details">
+    <div *ngIf="!isAuthentication" class="details p-3">
+        <button type="button" class="small-text btn btn-success center btn-block py-3 rounded-0" (click)="authentication()">認証して詳細表示</button>
+    </div>
+    <div *ngIf="isAuthentication" class="details">
         <div *ngFor="let reservedTicket of reservation.reservedTickets; let index = index;" class="detail">
             <div class="ticket-info">
                 <div class="index small-text">{{ (index + 1) }}/{{ reservation.reservedTickets.length }}</div>
@@ -42,3 +45,13 @@
         </div>
     </div>
 </div>
+
+
+<app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
+    <div class="modal-ttl large-text text-center mb-3">
+        <strong>エラーが発生しました</strong>
+    </div>
+    <p>{{ errorMessage }}</p>
+</app-modal>
+
+<app-loading [show]="isLoading"></app-loading>

@@ -1,3 +1,4 @@
+import { BaseComponent } from '../components/pages/base/base.component';
 import { FidoRegisterComponent } from '../components/pages/fido/fido-register/fido-register.component';
 import { FidoRemoveComponent } from '../components/pages/fido/fido-remove/fido-remove.component';
 
@@ -8,6 +9,12 @@ export const route = {
     path: 'fido',
     children: [
         { path: 'register', component: FidoRegisterComponent },
-        { path: 'remove', component: FidoRemoveComponent }
+        {
+            path: '',
+            component: BaseComponent,
+            children: [
+                { path: 'remove', component: FidoRemoveComponent }
+            ]
+        }
     ]
 };
