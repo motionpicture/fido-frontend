@@ -2,11 +2,11 @@
     <div class="info">
         <dl class="film mb-0">
             <dt><app-icon iconName="film-name-gray" width="15" height="15"></app-icon></dt>
-            <dd>{{ reservation.reservationsFor[0].name.ja }}</dd>
+            <dd class="mb-0">{{ reservation.reservationsFor[0].name.ja }}</dd>
         </dl>
         <dl class="date mb-0">
             <dt><app-icon iconName="date-gray" width="15" height="15"></app-icon></dt>
-            <dd>
+            <dd class="mb-0">
                 {{ reservation.reservationsFor[0].coaInfo.dateJouei | amLocal | amDateFormat: 'YYYY/MM/DD' }} {{
                 reservation.reservationsFor[0].startDate | timeFormat: reservation.reservationsFor[0].coaInfo.dateJouei
                 }}-{{ reservation.reservationsFor[0].endDate | timeFormat: reservation.reservationsFor[0].coaInfo.dateJouei
@@ -15,7 +15,7 @@
         </dl>
         <dl class="theater mb-0">
             <dt><app-icon iconName="location-gray" width="15" height="15"></app-icon></dt>
-            <dd>
+            <dd class="mb-0">
                 {{ reservation.reservationsFor[0].superEvent.location.name.ja }} / {{ reservation.reservationsFor[0].location.name.ja
                 }}
             </dd>
