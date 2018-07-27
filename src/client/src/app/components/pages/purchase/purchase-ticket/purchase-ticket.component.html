@@ -14,10 +14,10 @@
         <li *ngFor="let offer of offers" class="d-grid align-items-center border-bottom py-3">
             <div class="text-dark">{{ offer.seatNumber }}</div>
             <div>
-                <button class="small-text btn btn-primary btn-block py-2 rounded-0" *ngIf="!offer.selected" type="button" (click)="ticketSelect(offer)">
+                <button class="small-text btn btn-primary btn-block py-3 rounded-0" *ngIf="!offer.selected" type="button" (click)="ticketSelect(offer)">
                     券種を選択してください
                 </button>
-                <button class="small-text btn btn-primary btn-block py-2 rounded-0" *ngIf="offer.selected" type="button" (click)="ticketSelect(offer)">
+                <button class="small-text btn btn-primary btn-block py-3 rounded-0" *ngIf="offer.selected" type="button" (click)="ticketSelect(offer)">
                     {{ offer.ticketInfo.ticketName }} ￥{{ offer.ticketInfo.salePrice }}
                 </button>
             </div>

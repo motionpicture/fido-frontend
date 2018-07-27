@@ -97,7 +97,7 @@
             </div>
 
             <p class="mb-2">クレジットカード決済の必要事項を入力ください。</p>
-            <div *ngIf="creditCardType === 'input'" class="credit-input mb-2">
+            <div *ngIf="creditCardType === 'input'" class="credit-input mb-3">
                 <ul class="mb-4 credit">
                     <li class="price">
                         <dl>
@@ -177,11 +177,11 @@
                     </label>
                 </div> -->
 
-                <button *ngIf="user.isRegisteredCreditCards()" class="btn btn-secondary btn-block small-text py-2 rounded-0" type="button"
+                <button *ngIf="user.isRegisteredCreditCards()" class="btn btn-success btn-block small-text py-3 rounded-0" type="button"
                     (click)="changeRegisteredCreditCard()">登録済みクレジットカードを使用する</button>
             </div>
 
-            <div *ngIf="creditCardType === 'registered'" class="credit-registered mb-2">
+            <div *ngIf="creditCardType === 'registered'" class="credit-registered mb-3">
                 <ul class="mb-4 credit">
                     <li class="price">
                         <dl>
@@ -215,7 +215,7 @@
                 <input type="hidden" formControlName="cardExpirationYear">
                 <input type="hidden" formControlName="securityCode">
                 <input type="hidden" formControlName="holderName">
-                <button (click)="changeInputCreditCard()" class="btn btn-secondary btn-block small-text py-2 rounded-0" type="button">クレジットカードを変更する</button>
+                <button (click)="changeInputCreditCard()" class="btn btn-secondary btn-block small-text py-3 rounded-0" type="button">クレジットカードを変更する</button>
             </div>
             <div>
                 <div class="mb-1">
@@ -270,4 +270,12 @@
     <div class="modal-title large-text mb-3 text-center mb-3">
         <strong>エラーが発生しました</strong>
     </div>
+    <p>クレジットカード情報をご確認ください</p>
+</app-modal>
+
+<app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
+    <div class="modal-ttl large-text text-center mb-3">
+        <strong>エラーが発生しました</strong>
+    </div>
+    <p>{{ errorMessage }}</p>
 </app-modal>

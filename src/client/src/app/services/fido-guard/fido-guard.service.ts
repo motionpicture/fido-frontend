@@ -25,7 +25,7 @@ export class FidoGuardService implements CanActivate {
             }
             const registerListResult = await this.native.fido({
                 action: FidoAction.RegisterList,
-                user: `${device.uuid}`
+                user: `fido-frontend-${device.uuid}`
             });
 
             if (!registerListResult.isSuccess

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import * as libphonenumber from 'libphonenumber-js';
 import * as moment from 'moment';
 import { LibphonenumberFormatPipe } from '../../../../pipes/libphonenumber-format/libphonenumber-format.pipe';
+import { CallNativeService, FidoAction } from '../../../../services/call-native/call-native.service';
 import { IGmoTokenObject, PurchaseService } from '../../../../services/purchase/purchase.service';
 import { SasakiService } from '../../../../services/sasaki/sasaki.service';
 import { UserService } from '../../../../services/user/user.service';
@@ -33,6 +34,8 @@ export class PurchaseInputComponent implements OnInit {
     public creditCardAlertModal: boolean;
     public disable: boolean;
     public creditCardType: CreditCardType;
+    public alertModal: boolean;
+    public errorMessage: string;
 
     constructor(
         public purchase: PurchaseService,
@@ -41,7 +44,8 @@ export class PurchaseInputComponent implements OnInit {
         private formBuilder: FormBuilder,
         private router: Router,
         private sasaki: SasakiService,
-        private utill: UtilService
+        private utill: UtilService,
+        private native: CallNativeService
 
     ) { }
 
@@ -56,6 +60,8 @@ export class PurchaseInputComponent implements OnInit {
         this.disable = false;
         this.creditCardType = CreditCardType.Input;
         this.creditCardAlertModal = this.purchase.data.isCreditCardError;
+        this.alertModal = false;
+        this.errorMessage = '';
         if (this.purchase.data.isCreditCardError) {
             // クレジットカードエラー
             this.purchase.data.isCreditCardError = false;
@@ -75,22 +81,12 @@ export class PurchaseInputComponent implements OnInit {
                 }
                 const contacts = this.user.data.contact;
 
-                if (this.user.data.creditCards === undefined
-                    || this.user.data.creditCards.length === 0) {
-                    throw new Error('creditCards is notfoud');
-                }
-
                 this.inputForm.controls.familyName.setValue(this.utill.convertToHira(contacts.familyName));
                 this.inputForm.controls.givenName.setValue(this.utill.convertToHira(contacts.givenName));
                 this.inputForm.controls.email.setValue(contacts.email);
                 this.inputForm.controls.emailConfirm.setValue(contacts.email);
                 this.inputForm.controls.telephone.setValue(contacts.telephone.replace(/-/g, ''));
 
-                const payment = this.purchase.getTotalPrice();
-                if (payment > 0) {
-                    // クレジット決済ありならクレジットカードタイプを変更
-                    this.changeRegisteredCreditCard();
-                }
             }
         } catch (err) {
             this.router.navigate(['/error']);
@@ -406,13 +402,31 @@ export class PurchaseInputComponent implements OnInit {
     /**
      * 登録済みクレジットカードへ変更
      */
-    public changeRegisteredCreditCard() {
-        this.creditCardType = CreditCardType.Registered;
-        this.inputForm.controls.cardNumber.setValue('4111111111111111');
-        this.inputForm.controls.cardExpirationMonth.setValue('01');
-        this.inputForm.controls.cardExpirationYear.setValue(moment().format('YYYY'));
-        this.inputForm.controls.securityCode.setValue('123');
-        this.inputForm.controls.holderName.setValue('TEST');
+    public async changeRegisteredCreditCard() {
+        this.isLoading = true;
+        try {
+            const device = await this.native.device();
+            if (device === null) {
+                throw new Error('device is null');
+            }
+            const authenticationResult = await this.native.fido({
+                action: FidoAction.Authentication,
+                user: `fido-frontend-${device.uuid}`
+            });
+            if (!authenticationResult.isSuccess) {
+                throw Error(authenticationResult.error);
+            }
+            this.creditCardType = CreditCardType.Registered;
+            this.inputForm.controls.cardNumber.setValue('4111111111111111');
+            this.inputForm.controls.cardExpirationMonth.setValue('01');
+            this.inputForm.controls.cardExpirationYear.setValue(moment().format('YYYY'));
+            this.inputForm.controls.securityCode.setValue('123');
+            this.inputForm.controls.holderName.setValue('TEST');
+        } catch (err) {
+            this.errorMessage = err.message;
+            this.alertModal = true;
+        }
+        this.isLoading = false;
     }
 
 }

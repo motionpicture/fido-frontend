@@ -29,7 +29,7 @@ export class FidoRegisterComponent implements OnInit {
             this.device = device;
             const registerListResult = await this.native.fido({
                 action: FidoAction.RegisterList,
-                user: `${this.device.uuid}`
+                user: `fido-frontend-${this.device.uuid}`
             });
             if (!registerListResult.isSuccess) {
                 throw new Error('registerList fail');
@@ -50,7 +50,7 @@ export class FidoRegisterComponent implements OnInit {
         try {
             const registerResult = await this.native.fido({
                 action: FidoAction.Register,
-                user: `${this.device.uuid}`
+                user: `fido-frontend-${this.device.uuid}`
             });
             if (!registerResult.isSuccess) {
                 throw Error(registerResult.error);

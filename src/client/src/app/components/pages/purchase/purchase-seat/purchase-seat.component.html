@@ -14,9 +14,9 @@
         </app-screen>
     </div>
 
-    <div class="bg-white text-dark p-3 mb-4">
+    <div class="border border-white p-3 mb-4">
         <p class="mb-2">現在、選択されているチケットは下記のとおりです。</p>
-        <dl>
+        <dl class="mb-0">
             <dt class="mb-2">劇場 / スクリーン</dt>
             <dd class="mb-3">
                 {{ purchase.getTheaterName() }} / {{ purchase.getScreenName() }}
@@ -26,7 +26,7 @@
                 {{ purchase.getAppreciationDate() }} {{ purchase.getStartDate() }} - {{ purchase.getEndDate() }}
             </dd>
             <dt class="mb-2">作品名</dt>
-            <dd>{{ purchase.getTitle() }}</dd>
+            <dd class="mb-0">{{ purchase.getTitle() }}</dd>
         </dl>
     </div>
 

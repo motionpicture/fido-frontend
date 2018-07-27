@@ -9,7 +9,7 @@
                 <div class="swiper-container" #swiper [swiper]="config" (slideChangeTransitionStart)="slideChangeTransitionStart()" (slideChangeTransitionEnd)="slideChangeTransitionEnd()">
                     <div class="swiper-wrapper">
                         <div *ngFor="let reservation of reservations" class="swiper-slide">
-                            <app-ticket-detail [reservation]="reservation" [device]="device" (update)="directiveRef.update()" (alert)="openAlert($event)"></app-ticket-detail>
+                            <app-ticket-detail [reservation]="reservation" [device]="device" (update)="directiveRef.update()" (alert)="openAlert($event)" (start)="isLoading = true" (end)="isLoading = false"></app-ticket-detail>
                         </div>
                     </div>
                 </div>

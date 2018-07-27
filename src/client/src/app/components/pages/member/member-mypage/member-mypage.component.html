@@ -15,18 +15,38 @@
             </div>
             <app-point-slider class="px-3" [point]="user.data.accounts[0].availableBalance"></app-point-slider> -->
         </div>
-        <ul class="menu mb-0">
-            <li (click)="redirectToPurchaseTime()">
-                <div class="text-center caption">今スグ観る</div>
+        <ul class="menu mb-0 text-center">
+            <li class="d-flex justify-content-center align-items-center" (click)="redirectToPurchaseTime()">
+                <div>
+                    <div class="large-x-text mb-2">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <div>今スグ観る</div>
+                </div>
             </li>
-            <li (click)="redirectToPurchaseFilm()">
-                <div class="text-center caption">チケット購入</div>
+            <li class="d-flex justify-content-center align-items-center" (click)="redirectToPurchaseFilm()">
+                <div>
+                    <div class="large-x-text mb-2">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div>チケット購入</div>
+                </div>
             </li>
-            <li routerLink="/member/edit">
-                <div class="text-center caption">登録情報確認・変更</div>
+            <li class="d-flex justify-content-center align-items-center" routerLink="/member/edit">
+                <div>
+                    <div class="large-x-text mb-2">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div>登録情報確認・変更</div>
+                </div>
             </li>
-            <li routerLink="/fido/remove">
-                <div class="text-center caption">生体認証削除</div>
+            <li class="d-flex justify-content-center align-items-center" routerLink="/fido/remove">
+                <div>
+                    <div class="large-x-text mb-2">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <div>生体認証削除</div>
+                </div>
             </li>
         </ul>
     </div>

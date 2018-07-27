@@ -21,23 +21,23 @@ app-page {
         background-position: center calc(40px - 25px);
         background-repeat: no-repeat;
         background-size: 50px;
-        .caption {
-            position: absolute;
-            width: 100%;
-            top: 80px;
-            left: 0;
-        }
-        &:nth-child(1) {
-            background-image: url(/assets/images/member/mypage_01.svg);
-        }
-        &:nth-child(2) {
-            background-image: url(/assets/images/member/mypage_02.svg);
-        }
-        &:nth-child(3) {
-            background-image: url(/assets/images/member/mypage_03.svg);
-        }
-        &:nth-child(4) {
-            background-image: url(/assets/images/member/mypage_03.svg);
-        }
+        // .caption {
+        //     position: absolute;
+        //     width: 100%;
+        //     top: 80px;
+        //     left: 0;
+        // }
+        // &:nth-child(1) {
+        //     background-image: url(/assets/images/member/mypage_01.svg);
+        // }
+        // &:nth-child(2) {
+        //     background-image: url(/assets/images/member/mypage_02.svg);
+        // }
+        // &:nth-child(3) {
+        //     background-image: url(/assets/images/member/mypage_03.svg);
+        // }
+        // &:nth-child(4) {
+        //     background-image: url(/assets/images/member/mypage_03.svg);
+        // }
     }
 }
