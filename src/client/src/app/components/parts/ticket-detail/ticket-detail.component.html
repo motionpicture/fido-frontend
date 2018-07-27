@@ -45,13 +45,3 @@
         </div>
     </div>
 </div>
-
-
-<app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
-    <div class="modal-ttl large-text text-center mb-3">
-        <strong>エラーが発生しました</strong>
-    </div>
-    <p>{{ errorMessage }}</p>
-</app-modal>
-
-<app-loading [show]="isLoading"></app-loading>

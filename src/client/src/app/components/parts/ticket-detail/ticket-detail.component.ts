@@ -2,7 +2,6 @@
  * TicketDetailComponent
  */
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import * as moment from 'moment';
 import * as qrcode from 'qrcode';
 import { CallNativeService, FidoAction, IDeviceResult } from '../../../services/call-native/call-native.service';
@@ -15,19 +14,16 @@ import { IReservation } from '../../../services/reservation/reservation.service'
 })
 export class TicketDetailComponent implements OnInit {
     @Input() public reservation: IReservation;
+    @Input() public device: IDeviceResult;
     @Output() public update = new EventEmitter();
+    @Output() public alert = new EventEmitter();
     public showQrCodeList: boolean[];
     public qrCodeList: string[];
     public confirmationNumber: string;
     public isAuthentication: boolean;
-    public isLoading: boolean;
-    public device: IDeviceResult;
-    public alertModal: boolean;
-    public errorMessage: string;
 
     constructor(
-        private native: CallNativeService,
-        private router: Router
+        private native: CallNativeService
     ) { }
 
     /**
@@ -39,42 +35,27 @@ export class TicketDetailComponent implements OnInit {
         this.showQrCodeList = [];
         this.qrCodeList = [];
         this.confirmationNumber = this.reservation.confirmationNumber.split('-')[0];
-        try {
-            this.isLoading = true;
-            const device = await this.native.device();
-            if (device === null) {
-                throw new Error('device is null');
+        for (let i = 0; i < this.reservation.reservedTickets.length; i++) {
+            // QR生成
+            const showQrCode = moment(this.reservation.reservationsFor[i].startDate).subtract(24, 'hours').unix() <= moment().unix();
+            this.showQrCodeList.push(showQrCode);
+            if (showQrCode) {
+                const ticketToken = this.reservation.reservedTickets[i].ticketToken;
+                const basicSize = 21;
+                const option: qrcode.QRCodeToDataURLOptions = {
+                    margin: 0,
+                    scale: (80 / basicSize)
+                };
+                const qrCode = await qrcode.toDataURL(ticketToken, option);
+                this.qrCodeList.push(qrCode);
             }
-            this.device = device;
-            for (let i = 0; i < this.reservation.reservedTickets.length; i++) {
-                // QR生成
-                const showQrCode = moment(this.reservation.reservationsFor[i].startDate).subtract(24, 'hours').unix() <= moment().unix();
-                this.showQrCodeList.push(showQrCode);
-                if (showQrCode) {
-                    const ticketToken = this.reservation.reservedTickets[i].ticketToken;
-                    const basicSize = 21;
-                    const option: qrcode.QRCodeToDataURLOptions = {
-                        margin: 0,
-                        scale: (80 / basicSize)
-                    };
-                    const qrCode = await qrcode.toDataURL(ticketToken, option);
-                    this.qrCodeList.push(qrCode);
-                }
-            }
-        } catch (err) {
-            this.errorMessage = err.message;
-            this.alertModal = true;
-            console.log(this.router.url);
-            // this.router.navigate(['/error']);
         }
-        this.isLoading = false;
     }
 
     /**
      * 認証
      */
     public async authentication() {
-        this.isLoading = true;
         try {
             const authenticationResult = await this.native.fido({
                 action: FidoAction.Authentication,
@@ -86,10 +67,8 @@ export class TicketDetailComponent implements OnInit {
             this.isAuthentication = true;
             this.update.emit();
         } catch (err) {
-            this.errorMessage = err.message;
-            this.alertModal = true;
+            this.alert.emit(err.message);
         }
-        this.isLoading = false;
     }
 
 }

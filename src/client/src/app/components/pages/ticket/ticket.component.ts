@@ -4,6 +4,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwiperComponent, SwiperConfigInterface, SwiperDirective, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
+import { CallNativeService, IDeviceResult } from '../../../services/call-native/call-native.service';
 import { IReservation, ReservationService } from '../../../services/reservation/reservation.service';
 import { UserService } from '../../../services/user/user.service';
 
@@ -24,11 +25,15 @@ export class TicketComponent implements OnInit {
     public isLoading: boolean;
     public reservations: IReservation[];
     public touch: boolean;
+    public device: IDeviceResult;
+    public alertModal: boolean;
+    public errorMessage: string;
 
     constructor(
         private router: Router,
         private reservation: ReservationService,
-        public user: UserService
+        public user: UserService,
+        private native: CallNativeService
     ) { }
 
     /**
@@ -38,6 +43,8 @@ export class TicketComponent implements OnInit {
     public async ngOnInit() {
         this.touch = true;
         this.isLoading = true;
+        this.alertModal = false;
+        this.errorMessage = '';
         this.reservations = [];
         const pagination: SwiperPaginationInterface = {
             el: '.swiper-pagination',
@@ -49,6 +56,11 @@ export class TicketComponent implements OnInit {
         };
         this.reservation.isMember = this.user.isMember();
         try {
+            const device = await this.native.device();
+            if (device === null) {
+                throw new Error('device is null');
+            }
+            this.device = device;
             this.reservations = await this.reservation.getReservationByAppreciationDayOrder();
         } catch (err) {
             this.router.navigate(['/error', { redirect: '/ticket' }]);
@@ -66,6 +78,11 @@ export class TicketComponent implements OnInit {
     public slideChangeTransitionEnd() {
         // console.log('slideChangeTransitionEnd');
         this.touch = true;
+    }
+
+    public openAlert(message: string) {
+        this.errorMessage = message;
+        this.alertModal = true;
     }
 
 }

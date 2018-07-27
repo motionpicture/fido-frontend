@@ -9,7 +9,7 @@
                 <div class="swiper-container" #swiper [swiper]="config" (slideChangeTransitionStart)="slideChangeTransitionStart()" (slideChangeTransitionEnd)="slideChangeTransitionEnd()">
                     <div class="swiper-wrapper">
                         <div *ngFor="let reservation of reservations" class="swiper-slide">
-                            <app-ticket-detail [reservation]="reservation" (update)="directiveRef.update()"></app-ticket-detail>
+                            <app-ticket-detail [reservation]="reservation" (update)="directiveRef.update()" (alert)="openAlert($event)"></app-ticket-detail>
                         </div>
                     </div>
                 </div>
@@ -21,5 +21,12 @@
         </div>
     </div>
 </app-page>
+<app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
+    <div class="modal-ttl large-text text-center mb-3">
+        <strong>エラーが発生しました</strong>
+    </div>
+    <p>{{ errorMessage }}</p>
+</app-modal>
+
 <app-loading [show]="isLoading"></app-loading>
 <app-information *ngIf="!user.isMember()" [isMember]="false"></app-information>

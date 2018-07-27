@@ -8139,21 +8139,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_ticket_detail_ticket_detail_component_ngfactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../parts/ticket-detail/ticket-detail.component.ngfactory */ "./src/app/components/parts/ticket-detail/ticket-detail.component.ngfactory.js");
 /* harmony import */ var _parts_ticket_detail_ticket_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../parts/ticket-detail/ticket-detail.component */ "./src/app/components/parts/ticket-detail/ticket-detail.component.ts");
 /* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-swiper-wrapper */ "../../node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _parts_ticket_not_found_ticket_not_found_component_ngfactory__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../parts/ticket-not-found/ticket-not-found.component.ngfactory */ "./src/app/components/parts/ticket-not-found/ticket-not-found.component.ngfactory.js");
-/* harmony import */ var _parts_ticket_not_found_ticket_not_found_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../parts/ticket-not-found/ticket-not-found.component */ "./src/app/components/parts/ticket-not-found/ticket-not-found.component.ts");
-/* harmony import */ var _parts_information_information_component_ngfactory__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../parts/information/information.component.ngfactory */ "./src/app/components/parts/information/information.component.ngfactory.js");
-/* harmony import */ var _parts_information_information_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../parts/information/information.component */ "./src/app/components/parts/information/information.component.ts");
-/* harmony import */ var _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../services/storage/storage.service */ "./src/app/services/storage/storage.service.ts");
-/* harmony import */ var _parts_page_page_component_ngfactory__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../parts/page/page.component.ngfactory */ "./src/app/components/parts/page/page.component.ngfactory.js");
-/* harmony import */ var _parts_page_page_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../parts/page/page.component */ "./src/app/components/parts/page/page.component.ts");
-/* harmony import */ var _parts_loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../parts/loading/loading.component.ngfactory */ "./src/app/components/parts/loading/loading.component.ngfactory.js");
-/* harmony import */ var _parts_loading_loading_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../parts/loading/loading.component */ "./src/app/components/parts/loading/loading.component.ts");
-/* harmony import */ var _ticket_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./ticket.component */ "./src/app/components/pages/ticket/ticket.component.ts");
-/* harmony import */ var _services_reservation_reservation_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../../services/reservation/reservation.service */ "./src/app/services/reservation/reservation.service.ts");
-/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../../services/user/user.service */ "./src/app/services/user/user.service.ts");
+/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-swiper-wrapper */ "../../node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _parts_ticket_not_found_ticket_not_found_component_ngfactory__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../parts/ticket-not-found/ticket-not-found.component.ngfactory */ "./src/app/components/parts/ticket-not-found/ticket-not-found.component.ngfactory.js");
+/* harmony import */ var _parts_ticket_not_found_ticket_not_found_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../parts/ticket-not-found/ticket-not-found.component */ "./src/app/components/parts/ticket-not-found/ticket-not-found.component.ts");
+/* harmony import */ var _parts_information_information_component_ngfactory__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../parts/information/information.component.ngfactory */ "./src/app/components/parts/information/information.component.ngfactory.js");
+/* harmony import */ var _parts_information_information_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../parts/information/information.component */ "./src/app/components/parts/information/information.component.ts");
+/* harmony import */ var _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../services/storage/storage.service */ "./src/app/services/storage/storage.service.ts");
+/* harmony import */ var _parts_page_page_component_ngfactory__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../parts/page/page.component.ngfactory */ "./src/app/components/parts/page/page.component.ngfactory.js");
+/* harmony import */ var _parts_page_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../parts/page/page.component */ "./src/app/components/parts/page/page.component.ts");
+/* harmony import */ var _parts_modal_modal_component_ngfactory__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../parts/modal/modal.component.ngfactory */ "./src/app/components/parts/modal/modal.component.ngfactory.js");
+/* harmony import */ var _parts_modal_modal_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../parts/modal/modal.component */ "./src/app/components/parts/modal/modal.component.ts");
+/* harmony import */ var _parts_loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../parts/loading/loading.component.ngfactory */ "./src/app/components/parts/loading/loading.component.ngfactory.js");
+/* harmony import */ var _parts_loading_loading_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../parts/loading/loading.component */ "./src/app/components/parts/loading/loading.component.ts");
+/* harmony import */ var _ticket_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./ticket.component */ "./src/app/components/pages/ticket/ticket.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_reservation_reservation_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../../services/reservation/reservation.service */ "./src/app/services/reservation/reservation.service.ts");
+/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../../services/user/user.service */ "./src/app/services/user/user.service.ts");
 /**
  * @fileoverview This file was generated by the Angular template compiler. Do not edit.
  *
@@ -8180,26 +8182,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var styles_TicketComponent = [_ticket_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
 var RenderType_TicketComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_TicketComponent, data: {} });
 
-function View_TicketComponent_3(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "div", [["class", "swiper-slide"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 1, "app-ticket-detail", [], null, [[null, "update"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("update" === en)) {
+function View_TicketComponent_3(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "div", [["class", "swiper-slide"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 1, "app-ticket-detail", [], null, [[null, "update"], [null, "alert"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("update" === en)) {
         var pd_0 = (_co.directiveRef.update() !== false);
         ad = (pd_0 && ad);
-    } return ad; }, _parts_ticket_detail_ticket_detail_component_ngfactory__WEBPACK_IMPORTED_MODULE_2__["View_TicketDetailComponent_0"], _parts_ticket_detail_ticket_detail_component_ngfactory__WEBPACK_IMPORTED_MODULE_2__["RenderType_TicketDetailComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 114688, null, 0, _parts_ticket_detail_ticket_detail_component__WEBPACK_IMPORTED_MODULE_3__["TicketDetailComponent"], [_services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__["CallNativeService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]], { reservation: [0, "reservation"] }, { update: "update" })], function (_ck, _v) { var currVal_0 = _v.context.$implicit; _ck(_v, 2, 0, currVal_0); }, null); }
+    } if (("alert" === en)) {
+        var pd_1 = (_co.openAlert($event) !== false);
+        ad = (pd_1 && ad);
+    } return ad; }, _parts_ticket_detail_ticket_detail_component_ngfactory__WEBPACK_IMPORTED_MODULE_2__["View_TicketDetailComponent_0"], _parts_ticket_detail_ticket_detail_component_ngfactory__WEBPACK_IMPORTED_MODULE_2__["RenderType_TicketDetailComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 114688, null, 0, _parts_ticket_detail_ticket_detail_component__WEBPACK_IMPORTED_MODULE_3__["TicketDetailComponent"], [_services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__["CallNativeService"]], { reservation: [0, "reservation"] }, { update: "update", alert: "alert" })], function (_ck, _v) { var currVal_0 = _v.context.$implicit; _ck(_v, 2, 0, currVal_0); }, null); }
 function View_TicketComponent_2(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 7, "div", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, [["swiper", 1]], null, 4, "div", [["class", "swiper-container"]], null, [[null, "slideChangeTransitionStart"], [null, "slideChangeTransitionEnd"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("slideChangeTransitionStart" === en)) {
         var pd_0 = (_co.slideChangeTransitionStart() !== false);
         ad = (pd_0 && ad);
     } if (("slideChangeTransitionEnd" === en)) {
         var pd_1 = (_co.slideChangeTransitionEnd() !== false);
         ad = (pd_1 && ad);
-    } return ad; }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 5128192, [[2, 4]], 0, ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_6__["SwiperDirective"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["KeyValueDiffers"], [2, ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_6__["SWIPER_CONFIG"]]], { config: [0, "config"] }, { S_SLIDECHANGETRANSITIONEND: "slideChangeTransitionEnd", S_SLIDECHANGETRANSITIONSTART: "slideChangeTransitionStart" }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](3, 0, null, null, 2, "div", [["class", "swiper-wrapper"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_3)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](5, 802816, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]], { ngForOf: [0, "ngForOf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](6, 0, null, null, 1, "div", [["class", "pagination-wrapper"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](7, 0, null, null, 0, "div", [["class", "swiper-pagination"]], null, null, null, null, null))], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.config; _ck(_v, 2, 0, currVal_0); var currVal_1 = _co.reservations; _ck(_v, 5, 0, currVal_1); }, null); }
-function View_TicketComponent_4(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-ticket-not-found", [], null, null, null, _parts_ticket_not_found_ticket_not_found_component_ngfactory__WEBPACK_IMPORTED_MODULE_8__["View_TicketNotFoundComponent_0"], _parts_ticket_not_found_ticket_not_found_component_ngfactory__WEBPACK_IMPORTED_MODULE_8__["RenderType_TicketNotFoundComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _parts_ticket_not_found_ticket_not_found_component__WEBPACK_IMPORTED_MODULE_9__["TicketNotFoundComponent"], [], { isMember: [0, "isMember"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.user.isMember(); _ck(_v, 1, 0, currVal_0); }, null); }
-function View_TicketComponent_1(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 4, "div", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_2)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_4)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](4, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = (_co.reservations.length > 0); _ck(_v, 2, 0, currVal_0); var currVal_1 = (_co.reservations.length === 0); _ck(_v, 4, 0, currVal_1); }, null); }
-function View_TicketComponent_5(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-information", [], null, null, null, _parts_information_information_component_ngfactory__WEBPACK_IMPORTED_MODULE_10__["View_InformationComponent_0"], _parts_information_information_component_ngfactory__WEBPACK_IMPORTED_MODULE_10__["RenderType_InformationComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _parts_information_information_component__WEBPACK_IMPORTED_MODULE_11__["InformationComponent"], [_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_12__["StorageService"]], { isMember: [0, "isMember"] }, null)], function (_ck, _v) { var currVal_0 = false; _ck(_v, 1, 0, currVal_0); }, null); }
-function View_TicketComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵqud"](402653184, 1, { componentRef: 0 }), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵqud"](671088640, 2, { directiveRef: 0 }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](2, 0, null, null, 8, "app-page", [], null, null, null, _parts_page_page_component_ngfactory__WEBPACK_IMPORTED_MODULE_13__["View_PageComponent_0"], _parts_page_page_component_ngfactory__WEBPACK_IMPORTED_MODULE_13__["RenderType_PageComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](3, 114688, null, 0, _parts_page_page_component__WEBPACK_IMPORTED_MODULE_14__["PageComponent"], [], { touch: [0, "touch"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](4, 0, null, 0, 6, "div", [["class", "inner"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](5, 0, null, null, 3, "p", [["class", "mb-3 text-center small-text"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" \u8CFC\u5165\u3057\u305F\u9451\u8CDE\u4F5C\u54C1\u306E\u4E0B\u8A18\u30C1\u30B1\u30C3\u30C8\u306EQR\u30B3\u30FC\u30C9\u3092 "])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](7, 0, null, null, 0, "br", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\u5165\u5834\u53E3\u30B9\u30BF\u30C3\u30D5\u306B\u63D0\u793A\u3057\u3066\u304F\u3060\u3055\u3044\u3002 "])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_1)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](10, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](11, 0, null, null, 1, "app-loading", [], null, null, null, _parts_loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_15__["View_LoadingComponent_0"], _parts_loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_15__["RenderType_LoadingComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](12, 114688, null, 0, _parts_loading_loading_component__WEBPACK_IMPORTED_MODULE_16__["LoadingComponent"], [], { show: [0, "show"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_5)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](14, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.touch; _ck(_v, 3, 0, currVal_0); var currVal_1 = !_co.isLoading; _ck(_v, 10, 0, currVal_1); var currVal_2 = _co.isLoading; _ck(_v, 12, 0, currVal_2); var currVal_3 = !_co.user.isMember(); _ck(_v, 14, 0, currVal_3); }, null); }
-function View_TicketComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-ticket", [], null, null, null, View_TicketComponent_0, RenderType_TicketComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _ticket_component__WEBPACK_IMPORTED_MODULE_17__["TicketComponent"], [_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _services_reservation_reservation_service__WEBPACK_IMPORTED_MODULE_18__["ReservationService"], _services_user_user_service__WEBPACK_IMPORTED_MODULE_19__["UserService"]], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
-var TicketComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-ticket", _ticket_component__WEBPACK_IMPORTED_MODULE_17__["TicketComponent"], View_TicketComponent_Host_0, {}, {}, []);
+    } return ad; }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 5128192, [[2, 4]], 0, ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_5__["SwiperDirective"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["KeyValueDiffers"], [2, ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_5__["SWIPER_CONFIG"]]], { config: [0, "config"] }, { S_SLIDECHANGETRANSITIONEND: "slideChangeTransitionEnd", S_SLIDECHANGETRANSITIONSTART: "slideChangeTransitionStart" }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](3, 0, null, null, 2, "div", [["class", "swiper-wrapper"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_3)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](5, 802816, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]], { ngForOf: [0, "ngForOf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](6, 0, null, null, 1, "div", [["class", "pagination-wrapper"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](7, 0, null, null, 0, "div", [["class", "swiper-pagination"]], null, null, null, null, null))], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.config; _ck(_v, 2, 0, currVal_0); var currVal_1 = _co.reservations; _ck(_v, 5, 0, currVal_1); }, null); }
+function View_TicketComponent_4(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-ticket-not-found", [], null, null, null, _parts_ticket_not_found_ticket_not_found_component_ngfactory__WEBPACK_IMPORTED_MODULE_7__["View_TicketNotFoundComponent_0"], _parts_ticket_not_found_ticket_not_found_component_ngfactory__WEBPACK_IMPORTED_MODULE_7__["RenderType_TicketNotFoundComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _parts_ticket_not_found_ticket_not_found_component__WEBPACK_IMPORTED_MODULE_8__["TicketNotFoundComponent"], [], { isMember: [0, "isMember"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.user.isMember(); _ck(_v, 1, 0, currVal_0); }, null); }
+function View_TicketComponent_1(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 4, "div", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_2)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_4)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](4, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = (_co.reservations.length > 0); _ck(_v, 2, 0, currVal_0); var currVal_1 = (_co.reservations.length === 0); _ck(_v, 4, 0, currVal_1); }, null); }
+function View_TicketComponent_5(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-information", [], null, null, null, _parts_information_information_component_ngfactory__WEBPACK_IMPORTED_MODULE_9__["View_InformationComponent_0"], _parts_information_information_component_ngfactory__WEBPACK_IMPORTED_MODULE_9__["RenderType_InformationComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _parts_information_information_component__WEBPACK_IMPORTED_MODULE_10__["InformationComponent"], [_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_11__["StorageService"]], { isMember: [0, "isMember"] }, null)], function (_ck, _v) { var currVal_0 = false; _ck(_v, 1, 0, currVal_0); }, null); }
+function View_TicketComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵqud"](402653184, 1, { componentRef: 0 }), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵqud"](671088640, 2, { directiveRef: 0 }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](2, 0, null, null, 8, "app-page", [], null, null, null, _parts_page_page_component_ngfactory__WEBPACK_IMPORTED_MODULE_12__["View_PageComponent_0"], _parts_page_page_component_ngfactory__WEBPACK_IMPORTED_MODULE_12__["RenderType_PageComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](3, 114688, null, 0, _parts_page_page_component__WEBPACK_IMPORTED_MODULE_13__["PageComponent"], [], { touch: [0, "touch"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](4, 0, null, 0, 6, "div", [["class", "inner"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](5, 0, null, null, 3, "p", [["class", "mb-3 text-center small-text"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" \u8CFC\u5165\u3057\u305F\u9451\u8CDE\u4F5C\u54C1\u306E\u4E0B\u8A18\u30C1\u30B1\u30C3\u30C8\u306EQR\u30B3\u30FC\u30C9\u3092 "])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](7, 0, null, null, 0, "br", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\u5165\u5834\u53E3\u30B9\u30BF\u30C3\u30D5\u306B\u63D0\u793A\u3057\u3066\u304F\u3060\u3055\u3044\u3002 "])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_1)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](10, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](11, 0, null, null, 6, "app-modal", [], null, [[null, "close"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("close" === en)) {
+        var pd_0 = ((_co.alertModal = false) !== false);
+        ad = (pd_0 && ad);
+    } return ad; }, _parts_modal_modal_component_ngfactory__WEBPACK_IMPORTED_MODULE_14__["View_ModalComponent_0"], _parts_modal_modal_component_ngfactory__WEBPACK_IMPORTED_MODULE_14__["RenderType_ModalComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](12, 114688, null, 0, _parts_modal_modal_component__WEBPACK_IMPORTED_MODULE_15__["ModalComponent"], [], { open: [0, "open"], layout: [1, "layout"] }, { close: "close" }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](13, 0, null, 0, 2, "div", [["class", "modal-ttl large-text text-center mb-3"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](14, 0, null, null, 1, "strong", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\u30A8\u30E9\u30FC\u304C\u767A\u751F\u3057\u307E\u3057\u305F"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](16, 0, null, 0, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](17, null, ["", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](18, 0, null, null, 1, "app-loading", [], null, null, null, _parts_loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_16__["View_LoadingComponent_0"], _parts_loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_16__["RenderType_LoadingComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](19, 114688, null, 0, _parts_loading_loading_component__WEBPACK_IMPORTED_MODULE_17__["LoadingComponent"], [], { show: [0, "show"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketComponent_5)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](21, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.touch; _ck(_v, 3, 0, currVal_0); var currVal_1 = !_co.isLoading; _ck(_v, 10, 0, currVal_1); var currVal_2 = _co.alertModal; var currVal_3 = true; _ck(_v, 12, 0, currVal_2, currVal_3); var currVal_5 = _co.isLoading; _ck(_v, 19, 0, currVal_5); var currVal_6 = !_co.user.isMember(); _ck(_v, 21, 0, currVal_6); }, function (_ck, _v) { var _co = _v.component; var currVal_4 = _co.errorMessage; _ck(_v, 17, 0, currVal_4); }); }
+function View_TicketComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-ticket", [], null, null, null, View_TicketComponent_0, RenderType_TicketComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _ticket_component__WEBPACK_IMPORTED_MODULE_18__["TicketComponent"], [_angular_router__WEBPACK_IMPORTED_MODULE_19__["Router"], _services_reservation_reservation_service__WEBPACK_IMPORTED_MODULE_20__["ReservationService"], _services_user_user_service__WEBPACK_IMPORTED_MODULE_21__["UserService"], _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__["CallNativeService"]], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var TicketComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-ticket", _ticket_component__WEBPACK_IMPORTED_MODULE_18__["TicketComponent"], View_TicketComponent_Host_0, {}, {}, []);
 
 
 
@@ -8240,8 +8250,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-swiper-wrapper */ "../../node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
-/* harmony import */ var _services_reservation_reservation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/reservation/reservation.service */ "./src/app/services/reservation/reservation.service.ts");
-/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/user/user.service */ "./src/app/services/user/user.service.ts");
+/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
+/* harmony import */ var _services_reservation_reservation_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/reservation/reservation.service */ "./src/app/services/reservation/reservation.service.ts");
+/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/user/user.service */ "./src/app/services/user/user.service.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -8285,11 +8296,13 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 var TicketComponent = /** @class */ (function () {
-    function TicketComponent(router, reservation, user) {
+    function TicketComponent(router, reservation, user, native) {
         this.router = router;
         this.reservation = reservation;
         this.user = user;
+        this.native = native;
     }
     /**
      * 初期化
@@ -8297,12 +8310,14 @@ var TicketComponent = /** @class */ (function () {
      */
     TicketComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var pagination, _a, err_1;
+            var pagination, device, _a, err_1;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         this.touch = true;
                         this.isLoading = true;
+                        this.alertModal = false;
+                        this.errorMessage = '';
                         this.reservations = [];
                         pagination = {
                             el: '.swiper-pagination',
@@ -8315,18 +8330,25 @@ var TicketComponent = /** @class */ (function () {
                         this.reservation.isMember = this.user.isMember();
                         _b.label = 1;
                     case 1:
-                        _b.trys.push([1, 3, , 4]);
+                        _b.trys.push([1, 4, , 5]);
+                        return [4 /*yield*/, this.native.device()];
+                    case 2:
+                        device = _b.sent();
+                        if (device === null) {
+                            throw new Error('device is null');
+                        }
+                        this.device = device;
                         _a = this;
                         return [4 /*yield*/, this.reservation.getReservationByAppreciationDayOrder()];
-                    case 2:
-                        _a.reservations = _b.sent();
-                        return [3 /*break*/, 4];
                     case 3:
+                        _a.reservations = _b.sent();
+                        return [3 /*break*/, 5];
+                    case 4:
                         err_1 = _b.sent();
                         this.router.navigate(['/error', { redirect: '/ticket' }]);
                         console.log(err_1);
-                        return [3 /*break*/, 4];
-                    case 4:
+                        return [3 /*break*/, 5];
+                    case 5:
                         this.isLoading = false;
                         return [2 /*return*/];
                 }
@@ -8340,6 +8362,10 @@ var TicketComponent = /** @class */ (function () {
     TicketComponent.prototype.slideChangeTransitionEnd = function () {
         // console.log('slideChangeTransitionEnd');
         this.touch = true;
+    };
+    TicketComponent.prototype.openAlert = function (message) {
+        this.errorMessage = message;
+        this.alertModal = true;
     };
     return TicketComponent;
 }());
@@ -10989,24 +11015,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular2_moment_local_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! angular2-moment/local.pipe */ "../../node_modules/angular2-moment/local.pipe.js");
 /* harmony import */ var angular2_moment_local_pipe__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(angular2_moment_local_pipe__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _pipes_time_format_time_format_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../pipes/time-format/time-format.pipe */ "./src/app/pipes/time-format/time-format.pipe.ts");
-/* harmony import */ var _modal_modal_component_ngfactory__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modal/modal.component.ngfactory */ "./src/app/components/parts/modal/modal.component.ngfactory.js");
-/* harmony import */ var _modal_modal_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modal/modal.component */ "./src/app/components/parts/modal/modal.component.ts");
-/* harmony import */ var _loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../loading/loading.component.ngfactory */ "./src/app/components/parts/loading/loading.component.ngfactory.js");
-/* harmony import */ var _loading_loading_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../loading/loading.component */ "./src/app/components/parts/loading/loading.component.ts");
-/* harmony import */ var _ticket_detail_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ticket-detail.component */ "./src/app/components/parts/ticket-detail/ticket-detail.component.ts");
-/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ticket_detail_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ticket-detail.component */ "./src/app/components/parts/ticket-detail/ticket-detail.component.ts");
+/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
 /**
  * @fileoverview This file was generated by the Angular template compiler. Do not edit.
  *
  * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
  * tslint:disable
  */ 
-
-
-
-
-
 
 
 
@@ -11030,12 +11046,9 @@ function View_TicketDetailComponent_6(_l) { return _angular_core__WEBPACK_IMPORT
 function View_TicketDetailComponent_4(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 13, "div", [["class", "detail"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 8, "div", [["class", "ticket-info"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](2, 0, null, null, 1, "div", [["class", "index small-text"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](3, null, ["", "/", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](4, 0, null, null, 1, "div", [["class", "mb-1 small-text"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](5, null, ["", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](6, 0, null, null, 1, "div", [["class", "large-x-text mb-1"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](7, null, ["", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](8, 0, null, null, 1, "div", [["class", "small-text"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](9, null, ["", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketDetailComponent_5)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](11, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketDetailComponent_6)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](13, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_5 = !_co.showQrCodeList[_v.context.index]; _ck(_v, 11, 0, currVal_5); var currVal_6 = _co.showQrCodeList[_v.context.index]; _ck(_v, 13, 0, currVal_6); }, function (_ck, _v) { var _co = _v.component; var currVal_0 = (_v.context.index + 1); var currVal_1 = _co.reservation.reservedTickets.length; _ck(_v, 3, 0, currVal_0, currVal_1); var currVal_2 = _co.confirmationNumber; _ck(_v, 5, 0, currVal_2); var currVal_3 = _v.context.$implicit.ticketedSeat.seatNumber; _ck(_v, 7, 0, currVal_3); var currVal_4 = _v.context.$implicit.coaTicketInfo.ticketName; _ck(_v, 9, 0, currVal_4); }); }
 function View_TicketDetailComponent_3(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "div", [["class", "details"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketDetailComponent_4)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 802816, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]], { ngForOf: [0, "ngForOf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.reservation.reservedTickets; _ck(_v, 2, 0, currVal_0); }, null); }
 function View_TicketDetailComponent_1(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 27, "div", [["class", "inner"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 22, "div", [["class", "info"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](2, 0, null, null, 5, "dl", [["class", "film mb-0"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](3, 0, null, null, 2, "dt", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](4, 0, null, null, 1, "app-icon", [["height", "15"], ["iconName", "film-name-gray"], ["width", "15"]], null, null, null, _icon_icon_component_ngfactory__WEBPACK_IMPORTED_MODULE_3__["View_IconComponent_0"], _icon_icon_component_ngfactory__WEBPACK_IMPORTED_MODULE_3__["RenderType_IconComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](5, 114688, null, 0, _icon_icon_component__WEBPACK_IMPORTED_MODULE_4__["IconComponent"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"]], { iconName: [0, "iconName"], width: [1, "width"], height: [2, "height"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](6, 0, null, null, 1, "dd", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](7, null, ["", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](8, 0, null, null, 9, "dl", [["class", "date mb-0"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](9, 0, null, null, 2, "dt", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](10, 0, null, null, 1, "app-icon", [["height", "15"], ["iconName", "date-gray"], ["width", "15"]], null, null, null, _icon_icon_component_ngfactory__WEBPACK_IMPORTED_MODULE_3__["View_IconComponent_0"], _icon_icon_component_ngfactory__WEBPACK_IMPORTED_MODULE_3__["RenderType_IconComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](11, 114688, null, 0, _icon_icon_component__WEBPACK_IMPORTED_MODULE_4__["IconComponent"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"]], { iconName: [0, "iconName"], width: [1, "width"], height: [2, "height"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](12, 0, null, null, 5, "dd", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](13, null, [" ", " ", "-", " "])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵppd"](14, 1), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵppd"](15, 2), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵppd"](16, 2), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵppd"](17, 2), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](18, 0, null, null, 5, "dl", [["class", "theater mb-0"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](19, 0, null, null, 2, "dt", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](20, 0, null, null, 1, "app-icon", [["height", "15"], ["iconName", "location-gray"], ["width", "15"]], null, null, null, _icon_icon_component_ngfactory__WEBPACK_IMPORTED_MODULE_3__["View_IconComponent_0"], _icon_icon_component_ngfactory__WEBPACK_IMPORTED_MODULE_3__["RenderType_IconComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](21, 114688, null, 0, _icon_icon_component__WEBPACK_IMPORTED_MODULE_4__["IconComponent"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"]], { iconName: [0, "iconName"], width: [1, "width"], height: [2, "height"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](22, 0, null, null, 1, "dd", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](23, null, [" ", " / ", " "])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketDetailComponent_2)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](25, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketDetailComponent_3)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](27, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = "film-name-gray"; var currVal_1 = "15"; var currVal_2 = "15"; _ck(_v, 5, 0, currVal_0, currVal_1, currVal_2); var currVal_4 = "date-gray"; var currVal_5 = "15"; var currVal_6 = "15"; _ck(_v, 11, 0, currVal_4, currVal_5, currVal_6); var currVal_10 = "location-gray"; var currVal_11 = "15"; var currVal_12 = "15"; _ck(_v, 21, 0, currVal_10, currVal_11, currVal_12); var currVal_15 = !_co.isAuthentication; _ck(_v, 25, 0, currVal_15); var currVal_16 = _co.isAuthentication; _ck(_v, 27, 0, currVal_16); }, function (_ck, _v) { var _co = _v.component; var currVal_3 = _co.reservation.reservationsFor[0].name.ja; _ck(_v, 7, 0, currVal_3); var currVal_7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunv"](_v, 13, 0, _ck(_v, 15, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v.parent, 0), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunv"](_v, 13, 0, _ck(_v, 14, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v.parent, 1), _co.reservation.reservationsFor[0].coaInfo.dateJouei)), "YYYY/MM/DD")); var currVal_8 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunv"](_v, 13, 1, _ck(_v, 16, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v.parent, 2), _co.reservation.reservationsFor[0].startDate, _co.reservation.reservationsFor[0].coaInfo.dateJouei)); var currVal_9 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunv"](_v, 13, 2, _ck(_v, 17, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v.parent, 2), _co.reservation.reservationsFor[0].endDate, _co.reservation.reservationsFor[0].coaInfo.dateJouei)); _ck(_v, 13, 0, currVal_7, currVal_8, currVal_9); var currVal_13 = _co.reservation.reservationsFor[0].superEvent.location.name.ja; var currVal_14 = _co.reservation.reservationsFor[0].location.name.ja; _ck(_v, 23, 0, currVal_13, currVal_14); }); }
-function View_TicketDetailComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpid"](0, angular2_moment_date_format_pipe__WEBPACK_IMPORTED_MODULE_6__["DateFormatPipe"], []), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpid"](0, angular2_moment_local_pipe__WEBPACK_IMPORTED_MODULE_7__["LocalTimePipe"], []), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpid"](0, _pipes_time_format_time_format_pipe__WEBPACK_IMPORTED_MODULE_8__["TimeFormatPipe"], []), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketDetailComponent_1)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](4, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](5, 0, null, null, 6, "app-modal", [], null, [[null, "close"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("close" === en)) {
-        var pd_0 = ((_co.alertModal = false) !== false);
-        ad = (pd_0 && ad);
-    } return ad; }, _modal_modal_component_ngfactory__WEBPACK_IMPORTED_MODULE_9__["View_ModalComponent_0"], _modal_modal_component_ngfactory__WEBPACK_IMPORTED_MODULE_9__["RenderType_ModalComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](6, 114688, null, 0, _modal_modal_component__WEBPACK_IMPORTED_MODULE_10__["ModalComponent"], [], { open: [0, "open"], layout: [1, "layout"] }, { close: "close" }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](7, 0, null, 0, 2, "div", [["class", "modal-ttl large-text text-center mb-3"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](8, 0, null, null, 1, "strong", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\u30A8\u30E9\u30FC\u304C\u767A\u751F\u3057\u307E\u3057\u305F"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](10, 0, null, 0, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](11, null, ["", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](12, 0, null, null, 1, "app-loading", [], null, null, null, _loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_11__["View_LoadingComponent_0"], _loading_loading_component_ngfactory__WEBPACK_IMPORTED_MODULE_11__["RenderType_LoadingComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](13, 114688, null, 0, _loading_loading_component__WEBPACK_IMPORTED_MODULE_12__["LoadingComponent"], [], { show: [0, "show"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = (_co.reservation.reservedTickets.length > 0); _ck(_v, 4, 0, currVal_0); var currVal_1 = _co.alertModal; var currVal_2 = true; _ck(_v, 6, 0, currVal_1, currVal_2); var currVal_4 = _co.isLoading; _ck(_v, 13, 0, currVal_4); }, function (_ck, _v) { var _co = _v.component; var currVal_3 = _co.errorMessage; _ck(_v, 11, 0, currVal_3); }); }
-function View_TicketDetailComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-ticket-detail", [], null, null, null, View_TicketDetailComponent_0, RenderType_TicketDetailComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _ticket_detail_component__WEBPACK_IMPORTED_MODULE_13__["TicketDetailComponent"], [_services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_14__["CallNativeService"], _angular_router__WEBPACK_IMPORTED_MODULE_15__["Router"]], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
-var TicketDetailComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-ticket-detail", _ticket_detail_component__WEBPACK_IMPORTED_MODULE_13__["TicketDetailComponent"], View_TicketDetailComponent_Host_0, { reservation: "reservation" }, { update: "update" }, []);
+function View_TicketDetailComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpid"](0, angular2_moment_date_format_pipe__WEBPACK_IMPORTED_MODULE_6__["DateFormatPipe"], []), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpid"](0, angular2_moment_local_pipe__WEBPACK_IMPORTED_MODULE_7__["LocalTimePipe"], []), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpid"](0, _pipes_time_format_time_format_pipe__WEBPACK_IMPORTED_MODULE_8__["TimeFormatPipe"], []), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_TicketDetailComponent_1)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](4, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = (_co.reservation.reservedTickets.length > 0); _ck(_v, 4, 0, currVal_0); }, null); }
+function View_TicketDetailComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-ticket-detail", [], null, null, null, View_TicketDetailComponent_0, RenderType_TicketDetailComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _ticket_detail_component__WEBPACK_IMPORTED_MODULE_9__["TicketDetailComponent"], [_services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_10__["CallNativeService"]], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var TicketDetailComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-ticket-detail", _ticket_detail_component__WEBPACK_IMPORTED_MODULE_9__["TicketDetailComponent"], View_TicketDetailComponent_Host_0, { reservation: "reservation", device: "device" }, { update: "update", alert: "alert" }, []);
 
 
 
@@ -11074,12 +11087,11 @@ var styles = [".inner[_ngcontent-%COMP%] {\n  padding: 0;\n  background-color: #
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TicketDetailComponent", function() { return TicketDetailComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "../../node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! qrcode */ "../../node_modules/qrcode/lib/browser.js");
-/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qrcode__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "../../node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! qrcode */ "../../node_modules/qrcode/lib/browser.js");
+/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(qrcode__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -11122,12 +11134,11 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
-
 var TicketDetailComponent = /** @class */ (function () {
-    function TicketDetailComponent(native, router) {
+    function TicketDetailComponent(native) {
         this.native = native;
-        this.router = router;
         this.update = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.alert = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     /**
      * 初期化
@@ -11135,7 +11146,7 @@ var TicketDetailComponent = /** @class */ (function () {
      */
     TicketDetailComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var device, i, showQrCode, ticketToken, basicSize, option, qrCode, err_1;
+            var i, showQrCode, ticketToken, basicSize, option, qrCode;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -11143,48 +11154,28 @@ var TicketDetailComponent = /** @class */ (function () {
                         this.showQrCodeList = [];
                         this.qrCodeList = [];
                         this.confirmationNumber = this.reservation.confirmationNumber.split('-')[0];
+                        i = 0;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 7, , 8]);
-                        this.isLoading = true;
-                        return [4 /*yield*/, this.native.device()];
-                    case 2:
-                        device = _a.sent();
-                        if (device === null) {
-                            throw new Error('device is null');
-                        }
-                        this.device = device;
-                        i = 0;
-                        _a.label = 3;
-                    case 3:
-                        if (!(i < this.reservation.reservedTickets.length)) return [3 /*break*/, 6];
-                        showQrCode = moment__WEBPACK_IMPORTED_MODULE_2__(this.reservation.reservationsFor[i].startDate).subtract(24, 'hours').unix() <= moment__WEBPACK_IMPORTED_MODULE_2__().unix();
+                        if (!(i < this.reservation.reservedTickets.length)) return [3 /*break*/, 4];
+                        showQrCode = moment__WEBPACK_IMPORTED_MODULE_1__(this.reservation.reservationsFor[i].startDate).subtract(24, 'hours').unix() <= moment__WEBPACK_IMPORTED_MODULE_1__().unix();
                         this.showQrCodeList.push(showQrCode);
-                        if (!showQrCode) return [3 /*break*/, 5];
+                        if (!showQrCode) return [3 /*break*/, 3];
                         ticketToken = this.reservation.reservedTickets[i].ticketToken;
                         basicSize = 21;
                         option = {
                             margin: 0,
                             scale: (80 / basicSize)
                         };
-                        return [4 /*yield*/, qrcode__WEBPACK_IMPORTED_MODULE_3__["toDataURL"](ticketToken, option)];
-                    case 4:
+                        return [4 /*yield*/, qrcode__WEBPACK_IMPORTED_MODULE_2__["toDataURL"](ticketToken, option)];
+                    case 2:
                         qrCode = _a.sent();
                         this.qrCodeList.push(qrCode);
-                        _a.label = 5;
-                    case 5:
+                        _a.label = 3;
+                    case 3:
                         i++;
-                        return [3 /*break*/, 3];
-                    case 6: return [3 /*break*/, 8];
-                    case 7:
-                        err_1 = _a.sent();
-                        this.errorMessage = err_1.message;
-                        this.alertModal = true;
-                        console.log(this.router.url);
-                        return [3 /*break*/, 8];
-                    case 8:
-                        this.isLoading = false;
-                        return [2 /*return*/];
+                        return [3 /*break*/, 1];
+                    case 4: return [2 /*return*/];
                 }
             });
         });
@@ -11194,34 +11185,28 @@ var TicketDetailComponent = /** @class */ (function () {
      */
     TicketDetailComponent.prototype.authentication = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var authenticationResult, err_2;
+            var authenticationResult, err_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        this.isLoading = true;
-                        _a.label = 1;
-                    case 1:
-                        _a.trys.push([1, 3, , 4]);
+                        _a.trys.push([0, 2, , 3]);
                         return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__["FidoAction"].Authentication,
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__["FidoAction"].Authentication,
                                 user: "" + this.device.uuid
                             })];
-                    case 2:
+                    case 1:
                         authenticationResult = _a.sent();
                         if (!authenticationResult.isSuccess) {
                             throw Error(authenticationResult.error);
                         }
                         this.isAuthentication = true;
                         this.update.emit();
-                        return [3 /*break*/, 4];
-                    case 3:
-                        err_2 = _a.sent();
-                        this.errorMessage = err_2.message;
-                        this.alertModal = true;
-                        return [3 /*break*/, 4];
-                    case 4:
-                        this.isLoading = false;
-                        return [2 /*return*/];
+                        return [3 /*break*/, 3];
+                    case 2:
+                        err_1 = _a.sent();
+                        this.alert.emit(err_1.message);
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
