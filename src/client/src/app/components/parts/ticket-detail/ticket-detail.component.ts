@@ -15,7 +15,6 @@ import { IReservation } from '../../../services/reservation/reservation.service'
 export class TicketDetailComponent implements OnInit {
     @Input() public reservation: IReservation;
     @Input() public device: IDeviceResult;
-    @Output() public update = new EventEmitter();
     @Output() public alert = new EventEmitter();
     @Output() public start = new EventEmitter();
     @Output() public end = new EventEmitter();
@@ -72,7 +71,6 @@ export class TicketDetailComponent implements OnInit {
             this.alert.emit(err.message);
         }
         this.end.emit();
-        this.update.emit();
     }
 
 }

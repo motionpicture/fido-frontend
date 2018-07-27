@@ -85,4 +85,17 @@ export class TicketComponent implements OnInit {
         this.alertModal = true;
     }
 
+    public authStart() {
+        this.isLoading = true;
+        this.touch = false;
+    }
+
+    public authEnd() {
+        this.isLoading = false;
+        if (this.directiveRef !== undefined) {
+            this.directiveRef.update();
+        }
+        this.touch = true;
+    }
+
 }
