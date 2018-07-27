@@ -9,11 +9,12 @@ import { PurchaseSeatComponent } from '../components/pages/purchase/purchase-sea
 import { PurchaseTicketComponent } from '../components/pages/purchase/purchase-ticket/purchase-ticket.component';
 import { PurchaseTransactionComponent } from '../components/pages/purchase/purchase-transaction/purchase-transaction.component';
 import { AuthGuardService } from '../services/auth-guard/auth-guard.service';
+import { FidoGuardService } from '../services/fido-guard/fido-guard.service';
 import { PurchaseGuardService } from '../services/purchase-guard/purchase-guard.service';
 
 export const route = {
     path: 'purchase',
-    canActivate: [AuthGuardService],
+    canActivate: [FidoGuardService, AuthGuardService],
     children: [
         { path: '', redirectTo: '/purchase/schedule', pathMatch: 'full' },
         {

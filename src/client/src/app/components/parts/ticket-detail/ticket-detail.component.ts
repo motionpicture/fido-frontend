@@ -68,11 +68,11 @@ export class TicketDetailComponent implements OnInit {
                 throw Error(authenticationResult.error);
             }
             this.isAuthentication = true;
-            this.update.emit();
         } catch (err) {
             this.alert.emit(err.message);
         }
         this.end.emit();
+        this.update.emit();
     }
 
 }

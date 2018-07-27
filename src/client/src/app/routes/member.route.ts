@@ -8,6 +8,7 @@ import { MemberPointHistoryComponent } from '../components/pages/member/member-p
 import { MemberPointComponent } from '../components/pages/member/member-point/member-point.component';
 import { MemberWithdrawComponent } from '../components/pages/member/member-withdraw/member-withdraw.component';
 import { AuthGuardService } from '../services/auth-guard/auth-guard.service';
+import { FidoGuardService } from '../services/fido-guard/fido-guard.service';
 import { MemberGuardService } from '../services/member-guard/member-guard.service';
 import { ProgramMembershipGuardService } from '../services/program-membership-guard/program-membership-guard.service';
 
@@ -17,7 +18,12 @@ import { ProgramMembershipGuardService } from '../services/program-membership-gu
 export const route = {
     path: 'member',
     component: BaseComponent,
-    canActivate: [AuthGuardService, MemberGuardService, ProgramMembershipGuardService],
+    canActivate: [
+        FidoGuardService,
+        AuthGuardService,
+        MemberGuardService,
+        ProgramMembershipGuardService
+    ],
     children: [
         { path: 'mypage', component: MemberMypageComponent },
         { path: 'withdraw', component: MemberWithdrawComponent },

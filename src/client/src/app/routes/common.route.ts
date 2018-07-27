@@ -6,14 +6,15 @@ import { PolicyComponent } from '../components/pages/policy/policy.component';
 import { PrivacyComponent } from '../components/pages/privacy/privacy.component';
 import { TicketComponent } from '../components/pages/ticket/ticket.component';
 import { AuthGuardService } from '../services/auth-guard/auth-guard.service';
+import { FidoGuardService } from '../services/fido-guard/fido-guard.service';
 
 /**
- * 認証ルーティング
+ * 共通ルーティング
  */
 export const route = {
     path: '',
     component: BaseComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [FidoGuardService, AuthGuardService],
     children: [
         { path: 'ticket', component: TicketComponent },
         { path: 'about', component: AboutComponent },
