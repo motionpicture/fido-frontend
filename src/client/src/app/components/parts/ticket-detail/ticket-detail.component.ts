@@ -62,6 +62,8 @@ export class TicketDetailComponent implements OnInit {
                 }
             }
 
+            console.log(this.qrCodeList);
+
             this.isLoading = false;
         } catch (err) {
             this.router.navigate(['/error']);

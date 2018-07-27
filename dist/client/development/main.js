@@ -2138,42 +2138,33 @@ var FidoRemoveComponent = /** @class */ (function () {
     };
     FidoRemoveComponent.prototype.remove = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var authenticationResult, removeResult, err_2;
+            var removeResult, err_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.isLoading = true;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 4, , 5]);
-                        return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].Authentication,
-                                user: "" + this.device.uuid
-                            })];
-                    case 2:
-                        authenticationResult = _a.sent();
-                        if (!authenticationResult.isSuccess) {
-                            throw Error(authenticationResult.error);
-                        }
+                        _a.trys.push([1, 3, , 4]);
                         return [4 /*yield*/, this.native.fido({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].Remove,
                                 user: "" + this.device.uuid,
                                 handle: this.registerList[0].handle
                             })];
-                    case 3:
+                    case 2:
                         removeResult = _a.sent();
                         if (!removeResult.isSuccess) {
                             throw Error(removeResult.error);
                         }
                         this.router.navigate(['/fido/register']);
-                        return [3 /*break*/, 5];
-                    case 4:
+                        return [3 /*break*/, 4];
+                    case 3:
                         err_2 = _a.sent();
                         this.isLoading = false;
                         this.errorMessage = err_2.message;
                         this.alertModal = true;
-                        return [3 /*break*/, 5];
-                    case 5: return [2 /*return*/];
+                        return [3 /*break*/, 4];
+                    case 4: return [2 /*return*/];
                 }
             });
         });
@@ -11185,6 +11176,7 @@ var TicketDetailComponent = /** @class */ (function () {
                         i++;
                         return [3 /*break*/, 3];
                     case 6:
+                        console.log(this.qrCodeList);
                         this.isLoading = false;
                         return [3 /*break*/, 8];
                     case 7:
