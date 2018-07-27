@@ -11144,7 +11144,7 @@ var TicketDetailComponent = /** @class */ (function () {
      */
     TicketDetailComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var i, showQrCode, ticketToken, basicSize, option, qrCode, device, err_1;
+            var device, i, showQrCode, ticketToken, basicSize, option, qrCode, err_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -11152,13 +11152,24 @@ var TicketDetailComponent = /** @class */ (function () {
                         this.showQrCodeList = [];
                         this.qrCodeList = [];
                         this.confirmationNumber = this.reservation.confirmationNumber.split('-')[0];
-                        i = 0;
                         _a.label = 1;
                     case 1:
-                        if (!(i < this.reservation.reservedTickets.length)) return [3 /*break*/, 4];
+                        _a.trys.push([1, 7, , 8]);
+                        this.isLoading = true;
+                        return [4 /*yield*/, this.native.device()];
+                    case 2:
+                        device = _a.sent();
+                        if (device === null) {
+                            throw new Error('device is null');
+                        }
+                        this.device = device;
+                        i = 0;
+                        _a.label = 3;
+                    case 3:
+                        if (!(i < this.reservation.reservedTickets.length)) return [3 /*break*/, 6];
                         showQrCode = moment__WEBPACK_IMPORTED_MODULE_2__(this.reservation.reservationsFor[i].startDate).subtract(24, 'hours').unix() <= moment__WEBPACK_IMPORTED_MODULE_2__().unix();
                         this.showQrCodeList.push(showQrCode);
-                        if (!showQrCode) return [3 /*break*/, 3];
+                        if (!showQrCode) return [3 /*break*/, 5];
                         ticketToken = this.reservation.reservedTickets[i].ticketToken;
                         basicSize = 21;
                         option = {
@@ -11166,28 +11177,21 @@ var TicketDetailComponent = /** @class */ (function () {
                             scale: (80 / basicSize)
                         };
                         return [4 /*yield*/, qrcode__WEBPACK_IMPORTED_MODULE_3__["toDataURL"](ticketToken, option)];
-                    case 2:
+                    case 4:
                         qrCode = _a.sent();
                         this.qrCodeList.push(qrCode);
-                        _a.label = 3;
-                    case 3:
-                        i++;
-                        return [3 /*break*/, 1];
-                    case 4:
-                        _a.trys.push([4, 6, , 7]);
-                        return [4 /*yield*/, this.native.device()];
+                        _a.label = 5;
                     case 5:
-                        device = _a.sent();
-                        if (device === null) {
-                            throw new Error('device is null');
-                        }
-                        this.device = device;
-                        return [3 /*break*/, 7];
+                        i++;
+                        return [3 /*break*/, 3];
                     case 6:
+                        this.isLoading = false;
+                        return [3 /*break*/, 8];
+                    case 7:
                         err_1 = _a.sent();
                         this.router.navigate(['/error']);
-                        return [3 /*break*/, 7];
-                    case 7: return [2 /*return*/];
+                        return [3 /*break*/, 8];
+                    case 8: return [2 /*return*/];
                 }
             });
         });

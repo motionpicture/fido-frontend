@@ -39,28 +39,30 @@ export class TicketDetailComponent implements OnInit {
         this.showQrCodeList = [];
         this.qrCodeList = [];
         this.confirmationNumber = this.reservation.confirmationNumber.split('-')[0];
-
-        for (let i = 0; i < this.reservation.reservedTickets.length; i++) {
-            // QR生成
-            const showQrCode = moment(this.reservation.reservationsFor[i].startDate).subtract(24, 'hours').unix() <= moment().unix();
-            this.showQrCodeList.push(showQrCode);
-            if (showQrCode) {
-                const ticketToken = this.reservation.reservedTickets[i].ticketToken;
-                const basicSize = 21;
-                const option: qrcode.QRCodeToDataURLOptions = {
-                    margin: 0,
-                    scale: (80 / basicSize)
-                };
-                const qrCode = await qrcode.toDataURL(ticketToken, option);
-                this.qrCodeList.push(qrCode);
-            }
-        }
         try {
+            this.isLoading = true;
             const device = await this.native.device();
             if (device === null) {
                 throw new Error('device is null');
             }
             this.device = device;
+            for (let i = 0; i < this.reservation.reservedTickets.length; i++) {
+                // QR生成
+                const showQrCode = moment(this.reservation.reservationsFor[i].startDate).subtract(24, 'hours').unix() <= moment().unix();
+                this.showQrCodeList.push(showQrCode);
+                if (showQrCode) {
+                    const ticketToken = this.reservation.reservedTickets[i].ticketToken;
+                    const basicSize = 21;
+                    const option: qrcode.QRCodeToDataURLOptions = {
+                        margin: 0,
+                        scale: (80 / basicSize)
+                    };
+                    const qrCode = await qrcode.toDataURL(ticketToken, option);
+                    this.qrCodeList.push(qrCode);
+                }
+            }
+
+            this.isLoading = false;
         } catch (err) {
             this.router.navigate(['/error']);
         }
