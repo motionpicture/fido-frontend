@@ -95,7 +95,9 @@ export class TicketComponent implements OnInit {
         if (this.directiveRef !== undefined) {
             this.directiveRef.update();
         }
-        this.touch = true;
+        setTimeout(() => {
+            this.touch = true;
+        }, 0);
     }
 
 }

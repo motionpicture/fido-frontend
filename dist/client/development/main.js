@@ -8410,11 +8410,14 @@ var TicketComponent = /** @class */ (function () {
         this.touch = false;
     };
     TicketComponent.prototype.authEnd = function () {
+        var _this = this;
         this.isLoading = false;
         if (this.directiveRef !== undefined) {
             this.directiveRef.update();
         }
-        this.touch = true;
+        setTimeout(function () {
+            _this.touch = true;
+        }, 0);
     };
     return TicketComponent;
 }());
