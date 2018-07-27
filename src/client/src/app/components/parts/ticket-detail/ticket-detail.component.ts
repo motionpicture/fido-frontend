@@ -74,7 +74,7 @@ export class TicketDetailComponent implements OnInit {
         try {
             const authenticationResult = await this.native.fido({
                 action: FidoAction.Authentication,
-                user: `fido-frontend-${this.device.uuid}`
+                user: `${this.device.uuid}`
             });
             if (!authenticationResult.isSuccess) {
                 throw Error(authenticationResult.error);

@@ -1898,7 +1898,7 @@ var FidoRegisterComponent = /** @class */ (function () {
                         this.device = device;
                         return [4 /*yield*/, this.native.fido({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].RegisterList,
-                                user: "fido-frontend-" + device.uuid
+                                user: "" + this.device.uuid
                             })];
                     case 3:
                         registerListResult = _a.sent();
@@ -1932,7 +1932,7 @@ var FidoRegisterComponent = /** @class */ (function () {
                         _a.trys.push([1, 3, , 4]);
                         return [4 /*yield*/, this.native.fido({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].Register,
-                                user: "fido-frontend-" + this.device.uuid
+                                user: "" + this.device.uuid
                             })];
                     case 2:
                         registerResult = _a.sent();
@@ -2113,7 +2113,7 @@ var FidoRemoveComponent = /** @class */ (function () {
                         this.device = device;
                         return [4 /*yield*/, this.native.fido({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].RegisterList,
-                                user: "fido-frontend-" + device.uuid
+                                user: "" + this.device.uuid
                             })];
                     case 3:
                         registerListResult = _a.sent();
@@ -2148,7 +2148,7 @@ var FidoRemoveComponent = /** @class */ (function () {
                         _a.trys.push([1, 4, , 5]);
                         return [4 /*yield*/, this.native.fido({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].Authentication,
-                                user: "fido-frontend-" + this.device.uuid
+                                user: "" + this.device.uuid
                             })];
                     case 2:
                         authenticationResult = _a.sent();
@@ -2157,7 +2157,7 @@ var FidoRemoveComponent = /** @class */ (function () {
                         }
                         return [4 /*yield*/, this.native.fido({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].Remove,
-                                user: "fido-frontend-" + this.device.uuid,
+                                user: "" + this.device.uuid,
                                 handle: this.registerList[0].handle
                             })];
                     case 3:
@@ -11207,7 +11207,7 @@ var TicketDetailComponent = /** @class */ (function () {
                         _a.trys.push([1, 3, , 4]);
                         return [4 /*yield*/, this.native.fido({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__["FidoAction"].Authentication,
-                                user: "fido-frontend-" + this.device.uuid
+                                user: "" + this.device.uuid
                             })];
                     case 2:
                         authenticationResult = _a.sent();
@@ -12293,7 +12293,7 @@ var FidoGuardService = /** @class */ (function () {
                         }
                         return [4 /*yield*/, this.native.fido({
                                 action: _call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["FidoAction"].RegisterList,
-                                user: "fido-frontend-" + device.uuid
+                                user: "" + device.uuid
                             })];
                     case 2:
                         registerListResult = _a.sent();

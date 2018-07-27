@@ -30,7 +30,7 @@ export class FidoRemoveComponent implements OnInit {
             this.device = device;
             const registerListResult = await this.native.fido({
                 action: FidoAction.RegisterList,
-                user: `fido-frontend-${device.uuid}`
+                user: `${this.device.uuid}`
             });
             if (!registerListResult.isSuccess) {
                 throw new Error('registerList fail');
@@ -52,14 +52,14 @@ export class FidoRemoveComponent implements OnInit {
         try {
             const authenticationResult = await this.native.fido({
                 action: FidoAction.Authentication,
-                user: `fido-frontend-${this.device.uuid}`
+                user: `${this.device.uuid}`
             });
             if (!authenticationResult.isSuccess) {
                 throw Error(authenticationResult.error);
             }
             const removeResult = await this.native.fido({
                 action: FidoAction.Remove,
-                user: `fido-frontend-${this.device.uuid}`,
+                user: `${this.device.uuid}`,
                 handle: this.registerList[0].handle
             });
             if (!removeResult.isSuccess) {
