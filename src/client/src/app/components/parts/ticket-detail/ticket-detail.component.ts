@@ -61,13 +61,13 @@ export class TicketDetailComponent implements OnInit {
                     this.qrCodeList.push(qrCode);
                 }
             }
-
-            console.log(this.qrCodeList);
-
-            this.isLoading = false;
         } catch (err) {
-            this.router.navigate(['/error']);
+            this.errorMessage = err.message;
+            this.alertModal = true;
+            console.log(this.router.url);
+            // this.router.navigate(['/error']);
         }
+        this.isLoading = false;
     }
 
     /**

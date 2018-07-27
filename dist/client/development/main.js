@@ -11175,15 +11175,16 @@ var TicketDetailComponent = /** @class */ (function () {
                     case 5:
                         i++;
                         return [3 /*break*/, 3];
-                    case 6:
-                        console.log(this.qrCodeList);
-                        this.isLoading = false;
-                        return [3 /*break*/, 8];
+                    case 6: return [3 /*break*/, 8];
                     case 7:
                         err_1 = _a.sent();
-                        this.router.navigate(['/error']);
+                        this.errorMessage = err_1.message;
+                        this.alertModal = true;
+                        console.log(this.router.url);
                         return [3 /*break*/, 8];
-                    case 8: return [2 /*return*/];
+                    case 8:
+                        this.isLoading = false;
+                        return [2 /*return*/];
                 }
             });
         });
@@ -12062,13 +12063,8 @@ var CallNativeService = /** @class */ (function () {
      * @param data {any}
      */
     CallNativeService.prototype.postMessage = function (data) {
-        try {
-            var json = JSON.stringify(data);
-            window.wizViewMessenger.postMessage(json, TARGET_VIEW);
-        }
-        catch (err) {
-            console.error(err);
-        }
+        var json = JSON.stringify(data);
+        window.wizViewMessenger.postMessage(json, TARGET_VIEW);
     };
     /**
      * 受信
@@ -12095,16 +12091,14 @@ var CallNativeService = /** @class */ (function () {
      */
     CallNativeService.prototype.fido = function (args) {
         return __awaiter(this, void 0, void 0, function () {
-            var data, result, err_1;
+            var data, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 4, , 5]);
                         data = {
                             method: 'fido',
                             option: args
                         };
-                        result = void 0;
                         if (!(window.wizViewMessenger !== undefined)) return [3 /*break*/, 2];
                         this.postMessage(data);
                         return [4 /*yield*/, this.reserveMessage()];
@@ -12119,11 +12113,6 @@ var CallNativeService = /** @class */ (function () {
                         };
                         _a.label = 3;
                     case 3: return [2 /*return*/, result];
-                    case 4:
-                        err_1 = _a.sent();
-                        console.error(err_1);
-                        return [2 /*return*/, null];
-                    case 5: return [2 /*return*/];
                 }
             });
         });
@@ -12134,13 +12123,11 @@ var CallNativeService = /** @class */ (function () {
      */
     CallNativeService.prototype.device = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var data, result, browser, err_2;
+            var data, result, browser;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 4, , 5]);
                         data = { method: 'device' };
-                        result = void 0;
                         if (!(window.wizViewMessenger !== undefined)) return [3 /*break*/, 2];
                         this.postMessage(data);
                         return [4 /*yield*/, this.reserveMessage()];
@@ -12159,12 +12146,6 @@ var CallNativeService = /** @class */ (function () {
                                 isVirtual: browser,
                                 serial: browser,
                             }];
-                    case 3: return [3 /*break*/, 5];
-                    case 4:
-                        err_2 = _a.sent();
-                        console.error(err_2);
-                        return [2 /*return*/, null];
-                    case 5: return [2 /*return*/];
                 }
             });
         });
@@ -12175,15 +12156,12 @@ var CallNativeService = /** @class */ (function () {
      * @param args {IinAppBrowserArgs}
      */
     CallNativeService.prototype.inAppBrowser = function (args) {
-        try {
-            var data = {
-                method: 'inAppBrowser',
-                option: args
-            };
+        var data = {
+            method: 'inAppBrowser',
+            option: args
+        };
+        if (window.wizViewMessenger !== undefined) {
             this.postMessage(data);
-        }
-        catch (err) {
-            console.error(err);
         }
     };
     /**
@@ -12192,15 +12170,12 @@ var CallNativeService = /** @class */ (function () {
      * @param args {IlocalNotificationArgs}
      */
     CallNativeService.prototype.localNotification = function (args) {
-        try {
-            var data = {
-                method: 'localNotification',
-                option: args
-            };
+        var data = {
+            method: 'localNotification',
+            option: args
+        };
+        if (window.wizViewMessenger !== undefined) {
             this.postMessage(data);
-        }
-        catch (err) {
-            console.error(err);
         }
     };
     CallNativeService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_0__["defineInjectable"]({ factory: function CallNativeService_Factory() { return new CallNativeService(); }, token: CallNativeService, providedIn: "root" });

@@ -141,12 +141,8 @@ export class CallNativeService {
      * @param data {any}
      */
     private postMessage(data: any) {
-        try {
-            const json: string = JSON.stringify(data);
-            (<any>window).wizViewMessenger.postMessage(json, TARGET_VIEW);
-        } catch (err) {
-            console.error(err);
-        }
+        const json: string = JSON.stringify(data);
+        (<any>window).wizViewMessenger.postMessage(json, TARGET_VIEW);
     }
 
     /**
@@ -173,28 +169,23 @@ export class CallNativeService {
      * @param args {IFidoArgs}
      */
     public async fido(args: IFidoArgs) {
-        try {
-            const data = {
-                method: 'fido',
-                option: args
+        const data = {
+            method: 'fido',
+            option: args
+        };
+        let result;
+        if ((<any>window).wizViewMessenger !== undefined) {
+            this.postMessage(data);
+            result = await this.reserveMessage();
+            console.log(result);
+        } else {
+            result = {
+                isSuccess: true,
+                result: ['test']
             };
-            let result;
-            if ((<any>window).wizViewMessenger !== undefined) {
-                this.postMessage(data);
-                result = await this.reserveMessage();
-                console.log(result);
-            } else {
-                result = {
-                    isSuccess: true,
-                    result: ['test']
-                };
-            }
-
-            return result;
-        } catch (err) {
-            console.error(err);
-            return null;
         }
+
+        return result;
     }
 
     /**
@@ -202,29 +193,24 @@ export class CallNativeService {
      * @method device
      */
     public async device(): Promise<IDeviceResult | null> {
-        try {
-            const data = { method: 'device' };
-            let result;
-            if ((<any>window).wizViewMessenger !== undefined) {
-                this.postMessage(data);
-                result = await this.reserveMessage();
-                console.log(result);
-                return result;
-            } else {
-                const browser = 'browser';
-                return {
-                    cordova: browser,
-                    model: browser,
-                    platform: browser,
-                    uuid: browser,
-                    version: browser,
-                    isVirtual: browser,
-                    serial: browser,
-                };
-            }
-        } catch (err) {
-            console.error(err);
-            return null;
+        const data = { method: 'device' };
+        let result;
+        if ((<any>window).wizViewMessenger !== undefined) {
+            this.postMessage(data);
+            result = await this.reserveMessage();
+            console.log(result);
+            return result;
+        } else {
+            const browser = 'browser';
+            return {
+                cordova: browser,
+                model: browser,
+                platform: browser,
+                uuid: browser,
+                version: browser,
+                isVirtual: browser,
+                serial: browser,
+            };
         }
     }
 
@@ -234,14 +220,12 @@ export class CallNativeService {
      * @param args {IinAppBrowserArgs}
      */
     public inAppBrowser(args: IinAppBrowserArgs) {
-        try {
-            const data = {
-                method: 'inAppBrowser',
-                option: args
-            };
+        const data = {
+            method: 'inAppBrowser',
+            option: args
+        };
+        if ((<any>window).wizViewMessenger !== undefined) {
             this.postMessage(data);
-        } catch (err) {
-            console.error(err);
         }
     }
 
@@ -251,14 +235,12 @@ export class CallNativeService {
      * @param args {IlocalNotificationArgs}
      */
     public localNotification(args: IlocalNotificationArgs) {
-        try {
-            const data = {
-                method: 'localNotification',
-                option: args
-            };
+        const data = {
+            method: 'localNotification',
+            option: args
+        };
+        if ((<any>window).wizViewMessenger !== undefined) {
             this.postMessage(data);
-        } catch (err) {
-            console.error(err);
         }
     }
 }
