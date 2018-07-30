@@ -75,7 +75,7 @@ export class TicketDetailComponent implements OnInit {
                     timeout: 10000
                 });
                 // 情報表示
-                // console.log('geolocation', geolocation);
+                alert(JSON.stringify(geolocation));
                 const reservationsFor = this.reservation.reservationsFor[0];
                 const latitude = 35.674019;
                 const longitude = 139.738420;

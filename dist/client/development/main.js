@@ -11263,6 +11263,8 @@ var TicketDetailComponent = /** @class */ (function () {
                             })];
                     case 4:
                         geolocation = _a.sent();
+                        // 情報表示
+                        alert(JSON.stringify(geolocation));
                         reservationsFor = this.reservation.reservationsFor[0];
                         latitude = 35.674019;
                         longitude = 139.738420;
