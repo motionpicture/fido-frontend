@@ -54,7 +54,7 @@ export class PurchaseCompleteComponent implements OnInit {
             return '';
         }
 
-        return itemOffered.reservationFor.superEvent.location.name.ja;
+        return itemOffered.reservationFor.superEvent.location.name.ja.replace('シネマサンシャイン', 'モーションピクチャー');
     }
 
     /**

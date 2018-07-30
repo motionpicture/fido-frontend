@@ -125,7 +125,7 @@ export class InformationComponent implements OnInit {
         return [
             {
                 id: '2018071700',
-                description: 'シネマサンシャインアプリがパワーアップ!<br>会員登録をしてお得に映画鑑賞しよう。',
+                description: 'モーションピクチャーアプリがパワーアップ!<br>会員登録をしてお得に映画鑑賞しよう。',
                 images: [],
                 button: { label: '会員登録はこちらから', link: '/benefits' }
             }

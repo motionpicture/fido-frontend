@@ -7,7 +7,7 @@
                     <div class="control-label mb-1 small-x-text text-secondary">鑑賞劇場</div>
                     <select class="w-100" name="theater" [(ngModel)]="conditions.theater" (change)="changeConditions()">
                         <option value="">選択してください</option>
-                        <option *ngFor="let theater of theaters" value="{{ theater.location.branchCode }}">{{ theater.name.ja }}</option>
+                        <option *ngFor="let theater of theaters" value="{{ theater.location.branchCode }}">{{ theater.name.ja.replace('シネマサンシャイン', 'モーションピクチャー') }}</option>
                     </select>
                     <div class="btn btn-secondary btn-sm rounded-0 update-button small-text" (click)="update()">
                         <app-icon iconName="update-white" width="12" height="12"></app-icon> 更新</div>

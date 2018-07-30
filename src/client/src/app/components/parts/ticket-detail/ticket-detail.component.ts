@@ -16,8 +16,8 @@ export class TicketDetailComponent implements OnInit {
     @Input() public reservation: IReservation;
     @Input() public device: IDeviceResult;
     @Output() public alert = new EventEmitter();
-    @Output() public start = new EventEmitter();
-    @Output() public end = new EventEmitter();
+    @Output() public authStart = new EventEmitter();
+    @Output() public authEnd = new EventEmitter<IReservation>();
     public showQrCodeList: boolean[];
     public qrCodeList: string[];
     public confirmationNumber: string;
@@ -57,7 +57,7 @@ export class TicketDetailComponent implements OnInit {
      * 認証
      */
     public async authentication() {
-        this.start.emit();
+        this.authStart.emit();
         try {
             const authenticationResult = await this.native.fido({
                 action: FidoAction.Authentication,
@@ -70,7 +70,7 @@ export class TicketDetailComponent implements OnInit {
         } catch (err) {
             this.alert.emit(err.message);
         }
-        this.end.emit();
+        this.authEnd.emit(this.reservation);
     }
 
 }

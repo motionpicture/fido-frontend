@@ -210,7 +210,7 @@ export class PurchaseService {
         }
         const individualScreeningEvent = this.data.individualScreeningEvent;
 
-        return individualScreeningEvent.superEvent.location.name.ja;
+        return individualScreeningEvent.superEvent.location.name.ja.replace('シネマサンシャイン', 'モーションピクチャー');
     }
 
     /**
