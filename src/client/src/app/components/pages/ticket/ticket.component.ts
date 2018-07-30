@@ -3,12 +3,10 @@
  */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import * as moment from 'moment';
 import { SwiperComponent, SwiperConfigInterface, SwiperDirective, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
 import { CallNativeService, IDeviceResult } from '../../../services/call-native/call-native.service';
 import { IReservation, ReservationService } from '../../../services/reservation/reservation.service';
 import { UserService } from '../../../services/user/user.service';
-import { UtilService } from '../../../services/util/util.service';
 
 @Component({
     selector: 'app-ticket',
@@ -37,8 +35,7 @@ export class TicketComponent implements OnInit {
         private router: Router,
         private reservation: ReservationService,
         public user: UserService,
-        private native: CallNativeService,
-        private util: UtilService
+        private native: CallNativeService
     ) { }
 
     /**
@@ -97,38 +94,10 @@ export class TicketComponent implements OnInit {
         this.touch = false;
     }
 
-    public async authEnd(reservation: IReservation) {
-        try {
-            await this.util.sleep(3000);
-            const geolocation = await this.native.geolocation({
-                enableHighAccuracy: true,
-                timeout: 10000
-            });
-            // 情報表示
-            console.log('geolocation', geolocation);
-            const latitude = 35.674019;
-            const longitude = 139.738420;
-            const isLatitude = (latitude - 0.000010 < geolocation.coords.latitude
-                && geolocation.coords.latitude < latitude + 0.000010);
-            const isLongitude = (longitude - 0.000010 < geolocation.coords.longitude
-                && geolocation.coords.longitude < longitude - 0.000010);
-            const isDate = (moment(reservation.reservationsFor[0].startDate).subtract(1, 'days').unix() < moment().unix()
-                && moment().unix() < moment(reservation.reservationsFor[0].endDate).unix());
-            this.infoMessage = `緯度: <strong>${isLatitude}</strong><br>
-            ${latitude - 0.00001} <<br>
-            <strong>${this.util.floor(geolocation.coords.latitude, 6)}</strong><br>
-            < ${this.util.floor(latitude + 0.00001, 6)}<br>
-            経度: <strong>${isLongitude}</strong><br>
-            ${longitude - 0.00001} < <br>
-            <strong>${this.util.floor(geolocation.coords.longitude, 6)}</strong><br>
-            < ${longitude + 0.00001}<br>
-            時間: <strong>${isDate}</strong><br>
-            ${moment(reservation.reservationsFor[0].startDate).subtract(1, 'days').format('YYYY/MM/DD HH:mm')} <<br>
-             <strong>${moment().format('YYYY/MM/DD HH:mm')}</strong> <br>
-             < ${moment(reservation.reservationsFor[0].endDate).format('YYYY/MM/DD HH:mm')}`;
+    public authEnd(message?: string) {
+        if (message !== undefined) {
+            this.infoMessage = message;
             this.infoModal = true;
-        } catch (err) {
-            this.openAlert(err.message);
         }
         if (this.directiveRef !== undefined) {
             this.directiveRef.update();
