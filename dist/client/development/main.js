@@ -11263,8 +11263,6 @@ var TicketDetailComponent = /** @class */ (function () {
                             })];
                     case 4:
                         geolocation = _a.sent();
-                        // 情報表示
-                        console.log('geolocation', geolocation);
                         reservationsFor = this.reservation.reservationsFor[0];
                         latitude = 35.674019;
                         longitude = 139.738420;
@@ -11272,10 +11270,10 @@ var TicketDetailComponent = /** @class */ (function () {
                         isLatitude = (latitude - diff < geolocation.coords.latitude
                             && geolocation.coords.latitude < latitude + diff);
                         isLongitude = (longitude - diff < geolocation.coords.longitude
-                            && geolocation.coords.longitude < longitude - diff);
+                            && geolocation.coords.longitude < longitude + diff);
                         isDate = (moment__WEBPACK_IMPORTED_MODULE_1__(reservationsFor.startDate).subtract(1, 'days').unix() < moment__WEBPACK_IMPORTED_MODULE_1__().unix()
                             && moment__WEBPACK_IMPORTED_MODULE_1__().unix() < moment__WEBPACK_IMPORTED_MODULE_1__(reservationsFor.endDate).unix());
-                        message = "\u7DEF\u5EA6: <strong>" + isLatitude + "</strong><br>\n                " + (latitude - diff) + " <<br>\n                <strong>" + this.util.floor(geolocation.coords.latitude, 6) + "</strong><br>\n                < " + this.util.floor(latitude + diff, 6) + "<br>\n                \u7D4C\u5EA6: <strong>" + isLongitude + "</strong><br>\n                " + (longitude - diff) + " < <br>\n                <strong>" + this.util.floor(geolocation.coords.longitude, 6) + "</strong><br>\n                < " + (longitude + diff) + "<br>\n                \u6642\u9593: <strong>" + isDate + "</strong><br>\n                " + moment__WEBPACK_IMPORTED_MODULE_1__(reservationsFor.startDate).subtract(1, 'days').format('YYYY/MM/DD HH:mm') + " <<br>\n                 <strong>" + moment__WEBPACK_IMPORTED_MODULE_1__().format('YYYY/MM/DD HH:mm') + "</strong> <br>\n                 < " + moment__WEBPACK_IMPORTED_MODULE_1__(reservationsFor.endDate).format('YYYY/MM/DD HH:mm');
+                        message = "\u7DEF\u5EA6: <strong>" + isLatitude + "</strong><br>\n                " + this.util.floor(latitude - diff, 6) + " <<br>\n                <strong>" + this.util.floor(geolocation.coords.latitude, 6) + "</strong><br>\n                < " + this.util.floor(latitude + diff, 6) + "<br>\n                \u7D4C\u5EA6: <strong>" + isLongitude + "</strong><br>\n                " + this.util.floor(longitude - diff, 6) + " < <br>\n                <strong>" + this.util.floor(geolocation.coords.longitude, 6) + "</strong><br>\n                < " + this.util.floor(longitude + diff, 6) + "<br>\n                \u6642\u9593: <strong>" + isDate + "</strong><br>\n                " + moment__WEBPACK_IMPORTED_MODULE_1__(reservationsFor.startDate).subtract(1, 'days').format('YYYY/MM/DD HH:mm') + " <<br>\n                 <strong>" + moment__WEBPACK_IMPORTED_MODULE_1__().format('YYYY/MM/DD HH:mm') + "</strong> <br>\n                 < " + moment__WEBPACK_IMPORTED_MODULE_1__(reservationsFor.endDate).format('YYYY/MM/DD HH:mm');
                         return [3 /*break*/, 6];
                     case 5:
                         err_1 = _a.sent();

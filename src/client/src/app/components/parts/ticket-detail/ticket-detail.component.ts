@@ -75,7 +75,7 @@ export class TicketDetailComponent implements OnInit {
                     timeout: 10000
                 });
                 // 情報表示
-                console.log('geolocation', geolocation);
+                // console.log('geolocation', geolocation);
                 const reservationsFor = this.reservation.reservationsFor[0];
                 const latitude = 35.674019;
                 const longitude = 139.738420;
@@ -83,17 +83,17 @@ export class TicketDetailComponent implements OnInit {
                 const isLatitude = (latitude - diff < geolocation.coords.latitude
                     && geolocation.coords.latitude < latitude + diff);
                 const isLongitude = (longitude - diff < geolocation.coords.longitude
-                    && geolocation.coords.longitude < longitude - diff);
+                    && geolocation.coords.longitude < longitude + diff);
                 const isDate = (moment(reservationsFor.startDate).subtract(1, 'days').unix() < moment().unix()
                     && moment().unix() < moment(reservationsFor.endDate).unix());
                 message = `緯度: <strong>${isLatitude}</strong><br>
-                ${latitude - diff} <<br>
+                ${this.util.floor(latitude - diff, 6)} <<br>
                 <strong>${this.util.floor(geolocation.coords.latitude, 6)}</strong><br>
                 < ${this.util.floor(latitude + diff, 6)}<br>
                 経度: <strong>${isLongitude}</strong><br>
-                ${longitude - diff} < <br>
+                ${this.util.floor(longitude - diff, 6)} < <br>
                 <strong>${this.util.floor(geolocation.coords.longitude, 6)}</strong><br>
-                < ${longitude + diff}<br>
+                < ${this.util.floor(longitude + diff, 6)}<br>
                 時間: <strong>${isDate}</strong><br>
                 ${moment(reservationsFor.startDate).subtract(1, 'days').format('YYYY/MM/DD HH:mm')} <<br>
                  <strong>${moment().format('YYYY/MM/DD HH:mm')}</strong> <br>
