@@ -8433,12 +8433,14 @@ var TicketComponent = /** @class */ (function () {
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);
-                        return [4 /*yield*/, this.util.getGeolocation({
+                        return [4 /*yield*/, this.native.geolocation({
                                 enableHighAccuracy: true,
                                 timeout: 10000
                             })];
                     case 2:
                         geolocation = _a.sent();
+                        // 情報表示
+                        console.log('geolocation', geolocation);
                         latitude = 35.674019;
                         longitude = 139.738420;
                         isLatitude = (latitude - 0.000010 < geolocation.coords.latitude
@@ -12189,7 +12191,6 @@ var CallNativeService = /** @class */ (function () {
                         return [4 /*yield*/, this.reserveMessage()];
                     case 1:
                         result = _a.sent();
-                        console.log(result);
                         return [3 /*break*/, 3];
                     case 2:
                         result = {
@@ -12218,7 +12219,6 @@ var CallNativeService = /** @class */ (function () {
                         return [4 /*yield*/, this.reserveMessage()];
                     case 1:
                         result = _a.sent();
-                        console.log(result);
                         return [2 /*return*/, result];
                     case 2:
                         browser = 'browser';
@@ -12230,6 +12230,38 @@ var CallNativeService = /** @class */ (function () {
                                 version: browser,
                                 isVirtual: browser,
                                 serial: browser,
+                            }];
+                }
+            });
+        });
+    };
+    /**
+     * 位置情報取得
+     * @method getGeolocation
+     */
+    CallNativeService.prototype.geolocation = function (options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var data, result, browser;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        data = {
+                            method: 'geolocation',
+                            option: options
+                        };
+                        if (!(window.wizViewMessenger !== undefined)) return [3 /*break*/, 2];
+                        this.postMessage(data);
+                        return [4 /*yield*/, this.reserveMessage()];
+                    case 1:
+                        result = _a.sent();
+                        return [2 /*return*/, result];
+                    case 2:
+                        browser = 0;
+                        return [2 /*return*/, {
+                                coords: {
+                                    latitude: browser,
+                                    longitude: browser
+                                }
                             }];
                 }
             });
@@ -15123,27 +15155,6 @@ var UtilService = /** @class */ (function () {
         return str.replace(/[\u30a1-\u30f6]/g, function (match) {
             var chr = match.charCodeAt(0) - 0x60;
             return String.fromCharCode(chr);
-        });
-    };
-    /**
-     * 位置情報取得
-     */
-    UtilService.prototype.getGeolocation = function (options) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                return [2 /*return*/, new Promise(function (resolve, reject) {
-                        if (navigator.geolocation === undefined) {
-                            reject(new Error('navigator.geolocation is undefined'));
-                        }
-                        var done = function (position) {
-                            resolve(position);
-                        };
-                        var fail = function (error) {
-                            reject(error);
-                        };
-                        navigator.geolocation.getCurrentPosition(done, fail, options);
-                    })];
-            });
         });
     };
     /**

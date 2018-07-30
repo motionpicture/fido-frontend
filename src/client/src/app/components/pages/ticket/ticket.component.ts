@@ -100,12 +100,12 @@ export class TicketComponent implements OnInit {
     public async authEnd(reservation: IReservation) {
         this.isLoading = false;
         try {
-            const geolocation = await this.util.getGeolocation({
+            const geolocation = await this.native.geolocation({
                 enableHighAccuracy: true,
                 timeout: 10000
             });
             // 情報表示
-            // console.log('reservation', reservation);
+            console.log('geolocation', geolocation);
             const latitude = 35.674019;
             const longitude = 139.738420;
             const isLatitude = (latitude - 0.000010 < geolocation.coords.latitude

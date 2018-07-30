@@ -177,7 +177,6 @@ export class CallNativeService {
         if ((<any>window).wizViewMessenger !== undefined) {
             this.postMessage(data);
             result = await this.reserveMessage();
-            console.log(result);
         } else {
             result = {
                 isSuccess: true,
@@ -198,7 +197,6 @@ export class CallNativeService {
         if ((<any>window).wizViewMessenger !== undefined) {
             this.postMessage(data);
             result = await this.reserveMessage();
-            console.log(result);
             return result;
         } else {
             const browser = 'browser';
@@ -210,6 +208,31 @@ export class CallNativeService {
                 version: browser,
                 isVirtual: browser,
                 serial: browser,
+            };
+        }
+    }
+
+    /**
+     * 位置情報取得
+     * @method getGeolocation
+     */
+    public async geolocation(options?: PositionOptions): Promise<Position> {
+        const data = {
+            method: 'geolocation',
+            option: options
+        };
+        let result;
+        if ((<any>window).wizViewMessenger !== undefined) {
+            this.postMessage(data);
+            result = await this.reserveMessage();
+            return result;
+        } else {
+            const browser = 0;
+            return <any>{
+                coords: {
+                    latitude: browser,
+                    longitude: browser
+                }
             };
         }
     }
