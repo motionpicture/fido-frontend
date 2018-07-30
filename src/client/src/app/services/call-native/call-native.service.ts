@@ -151,7 +151,7 @@ export class CallNativeService {
      */
     private reserveMessage() {
         return new Promise<any>((resolve) => {
-            const time = 600;
+            const time = 500;
             const timer = setInterval(() => {
                 const data = this.reserveData;
                 if (data !== null) {

@@ -8429,10 +8429,10 @@ var TicketComponent = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        this.isLoading = false;
-                        _a.label = 1;
+                        _a.trys.push([0, 3, , 4]);
+                        return [4 /*yield*/, this.util.sleep(3000)];
                     case 1:
-                        _a.trys.push([1, 3, , 4]);
+                        _a.sent();
                         return [4 /*yield*/, this.native.geolocation({
                                 enableHighAccuracy: true,
                                 timeout: 10000
@@ -8462,6 +8462,7 @@ var TicketComponent = /** @class */ (function () {
                         }
                         setTimeout(function () {
                             _this.touch = true;
+                            _this.isLoading = false;
                         }, 0);
                         return [2 /*return*/];
                 }
@@ -12160,7 +12161,7 @@ var CallNativeService = /** @class */ (function () {
     CallNativeService.prototype.reserveMessage = function () {
         var _this = this;
         return new Promise(function (resolve) {
-            var time = 600;
+            var time = 500;
             var timer = setInterval(function () {
                 var data = _this.reserveData;
                 if (data !== null) {

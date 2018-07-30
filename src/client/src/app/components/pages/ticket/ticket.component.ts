@@ -98,8 +98,8 @@ export class TicketComponent implements OnInit {
     }
 
     public async authEnd(reservation: IReservation) {
-        this.isLoading = false;
         try {
+            await this.util.sleep(3000);
             const geolocation = await this.native.geolocation({
                 enableHighAccuracy: true,
                 timeout: 10000
@@ -135,6 +135,7 @@ export class TicketComponent implements OnInit {
         }
         setTimeout(() => {
             this.touch = true;
+            this.isLoading = false;
         }, 0);
     }
 
