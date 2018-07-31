@@ -50,13 +50,13 @@ export class FidoRemoveComponent implements OnInit {
     public async remove() {
         this.isLoading = true;
         try {
-            const authenticationResult = await this.native.fido({
-                action: FidoAction.Authentication,
-                user: `fido-frontend-${this.device.uuid}`
-            });
-            if (!authenticationResult.isSuccess) {
-                throw Error(authenticationResult.error);
-            }
+            // const authenticationResult = await this.native.fido({
+            //     action: FidoAction.Authentication,
+            //     user: `fido-frontend-${this.device.uuid}`
+            // });
+            // if (!authenticationResult.isSuccess) {
+            //     throw Error(authenticationResult.error);
+            // }
             const removeResult = await this.native.fido({
                 action: FidoAction.Remove,
                 user: `fido-frontend-${this.device.uuid}`,
