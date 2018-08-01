@@ -41,6 +41,7 @@ import { PurchaseScheduleComponent } from './components/pages/purchase/purchase-
 import { PurchaseSeatComponent } from './components/pages/purchase/purchase-seat/purchase-seat.component';
 import { PurchaseTicketComponent } from './components/pages/purchase/purchase-ticket/purchase-ticket.component';
 import { PurchaseTransactionComponent } from './components/pages/purchase/purchase-transaction/purchase-transaction.component';
+import { QrcodeComponent } from './components/pages/qrcode/qrcode.component';
 import { RegisterCreditComponent } from './components/pages/register/register-credit/register-credit.component';
 import { RegisterComponent } from './components/pages/register/register-index/register-index.component';
 import {
@@ -75,7 +76,6 @@ import { DateFormatPipe } from './pipes/date-format/date-format.pipe';
 import { DurationPipe } from './pipes/duration/duration.pipe';
 import { LibphonenumberFormatPipe } from './pipes/libphonenumber-format/libphonenumber-format.pipe';
 import { TimeFormatPipe } from './pipes/time-format/time-format.pipe';
-import { QrcodeComponent } from './components/pages/qrcode/qrcode.component';
 
 @NgModule({
     declarations: [

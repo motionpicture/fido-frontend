@@ -13,6 +13,7 @@ export class QrcodeComponent implements OnInit {
     public errorMessage: string;
     public infoModal: boolean;
     public infoMessage: string;
+    public isScan: boolean;
 
     constructor(
         private native: CallNativeService
@@ -22,10 +23,10 @@ export class QrcodeComponent implements OnInit {
         this.alertModal = false;
         this.infoModal = false;
         this.isLoading = false;
+        this.isScan = false;
     }
 
-    public async scan() {
-        this.isLoading = true;
+    public async prepare() {
         try {
             const prepareResult = await this.native.QRScanner({
                 action: QRScannerAction.Prepare
@@ -36,14 +37,17 @@ export class QrcodeComponent implements OnInit {
             await this.native.QRScanner({
                 action: QRScannerAction.Show
             });
+        } catch (err) {
+            this.errorMessage = err.message;
+            this.alertModal = true;
+        }
+    }
+
+    public async scan() {
+        this.isScan = true;
+        try {
             const scanResult = await this.native.QRScanner({
                 action: QRScannerAction.Scan
-            });
-            await this.native.QRScanner({
-                action: QRScannerAction.Hide
-            });
-            await this.native.QRScanner({
-                action: QRScannerAction.Destroy
             });
             if (scanResult.err) {
                 this.infoMessage = scanResult.contents;
@@ -55,7 +59,14 @@ export class QrcodeComponent implements OnInit {
             this.errorMessage = err.message;
             this.alertModal = true;
         }
-        this.isLoading = false;
+        await this.destroy();
+    }
+
+    public async destroy() {
+        await this.native.QRScanner({
+            action: QRScannerAction.Destroy
+        });
+        this.isScan = false;
     }
 
 }

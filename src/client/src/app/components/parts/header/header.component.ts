@@ -33,7 +33,8 @@ const pages = [
     { url: '/member/edit/credit', title: '会員情報変更' },
     { url: '/member/edit/profile', title: '会員情報変更' },
     { url: '/member/withdraw', title: '退会' },
-    { url: '/fido/remove', title: '生体認証削除' }
+    { url: '/fido/remove', title: '生体認証削除' },
+    { url: '/qrcode', title: 'QRコード' }
 ];
 
 @Component({
