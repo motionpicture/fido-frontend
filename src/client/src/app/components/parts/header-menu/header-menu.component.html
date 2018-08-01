@@ -5,62 +5,23 @@
     <ul>
         <li>
             <span routerLink="/" routerLinkActive="active" (click)="close.emit()">
-                <app-icon iconName="home-white" width="15" height="15"></app-icon>HOME画面
+                <i class="fas fa-home mr-2"></i>HOME画面
             </span>
         </li>
-        <!-- <li>
-            <span routerLink="/fido/register" routerLinkActive="active" (click)="close.emit()">
-                <app-icon iconName="home-white" width="15" height="15"></app-icon>fido登録
-            </span>
-        </li>
-        <li>
-            <span routerLink="/fido/remove" routerLinkActive="active" (click)="close.emit()">
-                <app-icon iconName="home-white" width="15" height="15"></app-icon>fido削除
-            </span>
-        </li> -->
-        <!-- <li>
-            <span routerLink="/about" routerLinkActive="active" (click)="close.emit()">
-                <app-icon iconName="about-white" width="15" height="15"></app-icon>このアプリについて
-            </span>
-        </li>
-        <li>
-            <span routerLink="/member/point/benefits" (click)="close.emit()">
-                <app-icon iconName="benefits-white" width="15" height="15"></app-icon>会員特典
-            </span>
-        </li> -->
         <li>
             <span routerLink="/member/edit" (click)="close.emit()">
-                <app-icon iconName="user-white" width="15" height="15"></app-icon>会員情報変更
-            </span>
-        </li>
-        <!-- <li>
-            <span routerLink="/policy" routerLinkActive="active" (click)="close.emit()">
-                <app-icon iconName="text-white" width="15" height="15"></app-icon>利用規約
+                <i class="fas fa-cog mr-2"></i>会員情報変更
             </span>
         </li>
         <li>
-            <span routerLink="/law" routerLinkActive="active" (click)="close.emit()">
-                <app-icon iconName="text-white" width="15" height="15"></app-icon>特定商取引法に基づく表記
+            <span routerLink="/fido/remove" (click)="close.emit()">
+                <i class="fas fa-fingerprint mr-2"></i>生体認証削除
             </span>
         </li>
-        <li>
-            <span routerLink="/privacy" routerLinkActive="active" (click)="close.emit()">
-                <app-icon iconName="text-white" width="15" height="15"></app-icon>プライバシーポリシー
-            </span>
-        </li>
-        <li>
-            <span (click)="openWebBrowse(environment.PORTAL_SITE)">
-                <app-icon iconName="external-link-white" width="15" height="15"></app-icon>モーションピクチャーポータルサイト
-            </span>
-        </li> -->
         <li>
             <span routerLink="/auth/logout" (click)="close.emit()">
-                <app-icon iconName="logout-white" width="15" height="15"></app-icon>ログアウト
+                <i class="fas fa-sign-out-alt mr-2"></i>ログアウト
             </span>
         </li>
-        <!-- <li>
-            <span routerLink="/member/withdraw" routerLinkActive="active" (click)="close.emit()">
-                <app-icon iconName="text-white" width="15" height="15"></app-icon>退会</span>
-        </li> -->
     </ul>
 </div>

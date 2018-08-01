@@ -1,0 +1,28 @@
+<div *ngIf="!isLoading" class="inner position-center">
+    <div class="card text-dark pt-3">
+        <div class="text-center">
+            <i class="fas fa-qrcode"></i>
+        </div>
+        <div class="card-body text-center">
+            <h5 class="card-title">QRコード読み取り</h5>
+            <p class="card-text">QRコード読み取りを読み取りしてください</p>
+            <button type="button" class="btn btn-success btn-block py-3" (click)="scan()">QRコード読み取り</button>
+        </div>
+    </div>
+</div>
+
+<app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
+    <div class="modal-ttl large-text text-center mb-3">
+        <strong>エラーが発生しました</strong>
+    </div>
+    <p>{{ errorMessage }}</p>
+</app-modal>
+
+<app-modal [open]="infoModal" [layout]="true" (close)="infoModal = false">
+    <div class="modal-ttl large-text text-center mb-3">
+        <strong>読み取り成功</strong>
+    </div>
+    <p>{{ infoMessage }}</p>
+</app-modal>
+
+<app-loading [show]="isLoading"></app-loading>

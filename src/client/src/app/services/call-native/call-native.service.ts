@@ -105,6 +105,33 @@ export interface IFidoArgs {
     handle?: string;
 }
 
+export enum QRScannerAction {
+    /**
+     * 準備
+     */
+    Prepare = 'prepare',
+    /**
+     * スキャン
+     */
+    Scan = 'scan',
+    /**
+     * 表示
+     */
+    Show = 'show',
+    /**
+     * 非表示
+     */
+    Hide = 'hide',
+    /**
+     * 破棄
+     */
+    Destroy = 'destroy'
+}
+
+export interface IQRScannerArgs {
+    action: QRScannerAction;
+}
+
 export interface IDeviceResult {
     cordova: string;
     model: string;
@@ -174,7 +201,7 @@ export class CallNativeService {
             option: args
         };
         let result;
-        if ((<any>window).wizViewMessenger !== undefined) {
+        if (!this.isBrowser()) {
             this.postMessage(data);
             result = await this.reserveMessage();
         } else {
@@ -194,7 +221,7 @@ export class CallNativeService {
     public async device(): Promise<IDeviceResult | null> {
         const data = { method: 'device' };
         let result;
-        if ((<any>window).wizViewMessenger !== undefined) {
+        if (!this.isBrowser()) {
             this.postMessage(data);
             result = await this.reserveMessage();
             return result;
@@ -222,7 +249,7 @@ export class CallNativeService {
             option: options
         };
         let result;
-        if ((<any>window).wizViewMessenger !== undefined) {
+        if (!this.isBrowser()) {
             this.postMessage(data);
             result = await this.reserveMessage();
             return result;
@@ -247,7 +274,7 @@ export class CallNativeService {
             method: 'inAppBrowser',
             option: args
         };
-        if ((<any>window).wizViewMessenger !== undefined) {
+        if (!this.isBrowser()) {
             this.postMessage(data);
         }
     }
@@ -262,8 +289,47 @@ export class CallNativeService {
             method: 'localNotification',
             option: args
         };
-        if ((<any>window).wizViewMessenger !== undefined) {
+        if (!this.isBrowser()) {
             this.postMessage(data);
         }
+    }
+
+    /**
+     * QRリーダー呼び出し
+     * @method QRScanner
+     * @param args
+     */
+    public async QRScanner(args: IQRScannerArgs) {
+        const data = {
+            method: 'QRScanner',
+            option: args
+        };
+        let result;
+        if (!this.isBrowser()) {
+            this.postMessage(data);
+            result = await this.reserveMessage();
+        } else {
+            const browser = 'browser';
+            if (args.action === QRScannerAction.Prepare) {
+                return { err: null, status: browser };
+            } else if (args.action === QRScannerAction.Scan) {
+                return { err: null, contents: browser };
+            } else if (args.action === QRScannerAction.Show) {
+                return { status: browser };
+            } else if (args.action === QRScannerAction.Hide) {
+                return { status: browser };
+            } else if (args.action === QRScannerAction.Destroy) {
+                return { status: browser };
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * ブラウザ判定
+     */
+    private isBrowser() {
+        return (<any>window).wizViewMessenger === undefined;
     }
 }

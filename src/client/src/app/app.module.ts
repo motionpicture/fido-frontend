@@ -75,6 +75,7 @@ import { DateFormatPipe } from './pipes/date-format/date-format.pipe';
 import { DurationPipe } from './pipes/duration/duration.pipe';
 import { LibphonenumberFormatPipe } from './pipes/libphonenumber-format/libphonenumber-format.pipe';
 import { TimeFormatPipe } from './pipes/time-format/time-format.pipe';
+import { QrcodeComponent } from './components/pages/qrcode/qrcode.component';
 
 @NgModule({
     declarations: [
@@ -142,7 +143,8 @@ import { TimeFormatPipe } from './pipes/time-format/time-format.pipe';
         ButtonsComponent,
         ExpiredComponent,
         FidoRegisterComponent,
-        FidoRemoveComponent
+        FidoRemoveComponent,
+        QrcodeComponent
     ],
     imports: [
         BrowserModule,
