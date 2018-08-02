@@ -12029,7 +12029,7 @@ var CallNativeService = /** @class */ (function () {
      * Webview判定
      */
     CallNativeService.prototype.isWebview = function () {
-        return window.wizViewMessenger === undefined;
+        return window.wizViewMessenger !== undefined;
     };
     CallNativeService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_0__["defineInjectable"]({ factory: function CallNativeService_Factory() { return new CallNativeService(); }, token: CallNativeService, providedIn: "root" });
     return CallNativeService;

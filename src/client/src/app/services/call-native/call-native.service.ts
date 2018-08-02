@@ -311,6 +311,6 @@ export class CallNativeService {
      * Webview判定
      */
     private isWebview() {
-        return (<any>window).wizViewMessenger === undefined;
+        return (<any>window).wizViewMessenger !== undefined;
     }
 }
