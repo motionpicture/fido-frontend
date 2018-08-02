@@ -13,7 +13,6 @@ export class QrcodeComponent implements OnInit {
     public errorMessage: string;
     public infoModal: boolean;
     public infoMessage: string;
-    public isScan: boolean;
 
     constructor(
         private native: CallNativeService
@@ -23,11 +22,9 @@ export class QrcodeComponent implements OnInit {
         this.alertModal = false;
         this.infoModal = false;
         this.isLoading = false;
-        this.isScan = false;
     }
 
     public async scan() {
-        this.isScan = true;
         try {
             const scanResult = await this.native.QRScanner({
                 action: QRScannerAction.Show

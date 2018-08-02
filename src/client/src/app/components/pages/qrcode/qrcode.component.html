@@ -6,14 +6,9 @@
         <div class="card-body text-center">
             <h5 class="card-title">QRコード読み取り</h5>
             <p class="card-text">QRコード読み取りを読み取りしてください</p>
-            <button type="button" class="btn btn-success btn-block py-3" (click)="prepare()">QRコード読み取り</button>
+            <button type="button" class="btn btn-success btn-block py-3" (click)="scan()">QRコード読み取り</button>
         </div>
     </div>
-</div>
-
-<div *ngIf="isScan" class="inner position-center fixed-top fixed-bottom">
-    <button type="button" class="btn btn-success py-3" (click)="scan()">スキャン</button>
-    <button type="button" class="btn btn-success py-3" (click)="destroy()">キャンセル</button>
 </div>
 
 <app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
