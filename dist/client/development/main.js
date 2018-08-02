@@ -6828,26 +6828,22 @@ var QrcodeComponent = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 2, , 4]);
+                        _a.trys.push([0, 2, , 3]);
                         return [4 /*yield*/, this.native.QRScanner({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Show
                             })];
                     case 1:
                         scanResult = _a.sent();
-                        if (scanResult.result !== null) {
-                            this.infoMessage = scanResult.contents;
-                            this.infoModal = true;
-                        }
-                        return [3 /*break*/, 4];
+                        this.infoMessage = JSON.stringify(scanResult);
+                        this.infoModal = true;
+                        return [3 /*break*/, 3];
                     case 2:
                         err_1 = _a.sent();
-                        return [4 /*yield*/, this.native.QRScanner({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Hide
-                            })];
-                    case 3:
-                        _a.sent();
-                        return [3 /*break*/, 4];
-                    case 4: return [2 /*return*/];
+                        this.native.QRScanner({
+                            action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Hide
+                        });
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
