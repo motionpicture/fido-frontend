@@ -26,47 +26,21 @@ export class QrcodeComponent implements OnInit {
         this.isScan = false;
     }
 
-    public async prepare() {
-        try {
-            const prepareResult = await this.native.QRScanner({
-                action: QRScannerAction.Prepare
-            });
-            if (prepareResult.err) {
-                throw prepareResult.err;
-            }
-            await this.native.QRScanner({
-                action: QRScannerAction.Show
-            });
-        } catch (err) {
-            this.errorMessage = err.message;
-            this.alertModal = true;
-        }
-    }
-
     public async scan() {
         this.isScan = true;
         try {
             const scanResult = await this.native.QRScanner({
-                action: QRScannerAction.Scan
+                action: QRScannerAction.Show
             });
-            if (scanResult.err) {
+            if (scanResult.result !== null) {
                 this.infoMessage = scanResult.contents;
                 this.infoModal = true;
-            } else {
-                throw scanResult.err;
             }
         } catch (err) {
-            this.errorMessage = err.message;
-            this.alertModal = true;
+            await this.native.QRScanner({
+                action: QRScannerAction.Hide
+            });
         }
-        await this.destroy();
-    }
-
-    public async destroy() {
-        await this.native.QRScanner({
-            action: QRScannerAction.Destroy
-        });
-        this.isScan = false;
     }
 
 }

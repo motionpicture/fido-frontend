@@ -6830,84 +6830,35 @@ var QrcodeComponent = /** @class */ (function () {
             });
         });
     };
-    QrcodeComponent.prototype.prepare = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var prepareResult, err_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 3, , 4]);
-                        return [4 /*yield*/, this.native.QRScanner({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Prepare
-                            })];
-                    case 1:
-                        prepareResult = _a.sent();
-                        if (prepareResult.err) {
-                            throw prepareResult.err;
-                        }
-                        return [4 /*yield*/, this.native.QRScanner({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Show
-                            })];
-                    case 2:
-                        _a.sent();
-                        return [3 /*break*/, 4];
-                    case 3:
-                        err_1 = _a.sent();
-                        this.errorMessage = err_1.message;
-                        this.alertModal = true;
-                        return [3 /*break*/, 4];
-                    case 4: return [2 /*return*/];
-                }
-            });
-        });
-    };
     QrcodeComponent.prototype.scan = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var scanResult, err_2;
+            var scanResult, err_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.isScan = true;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 3, , 4]);
+                        _a.trys.push([1, 3, , 5]);
                         return [4 /*yield*/, this.native.QRScanner({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Scan
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Show
                             })];
                     case 2:
                         scanResult = _a.sent();
-                        if (scanResult.err) {
+                        if (scanResult.result !== null) {
                             this.infoMessage = scanResult.contents;
                             this.infoModal = true;
                         }
-                        else {
-                            throw scanResult.err;
-                        }
-                        return [3 /*break*/, 4];
+                        return [3 /*break*/, 5];
                     case 3:
-                        err_2 = _a.sent();
-                        this.errorMessage = err_2.message;
-                        this.alertModal = true;
-                        return [3 /*break*/, 4];
-                    case 4: return [4 /*yield*/, this.destroy()];
-                    case 5:
+                        err_1 = _a.sent();
+                        return [4 /*yield*/, this.native.QRScanner({
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Hide
+                            })];
+                    case 4:
                         _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    QrcodeComponent.prototype.destroy = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.native.QRScanner({
-                            action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Destroy
-                        })];
-                    case 1:
-                        _a.sent();
-                        this.isScan = false;
-                        return [2 /*return*/];
+                        return [3 /*break*/, 5];
+                    case 5: return [2 /*return*/];
                 }
             });
         });
@@ -11865,14 +11816,6 @@ var FidoAction;
 var QRScannerAction;
 (function (QRScannerAction) {
     /**
-     * 準備
-     */
-    QRScannerAction["Prepare"] = "prepare";
-    /**
-     * スキャン
-     */
-    QRScannerAction["Scan"] = "scan";
-    /**
      * 表示
      */
     QRScannerAction["Show"] = "show";
@@ -11880,10 +11823,6 @@ var QRScannerAction;
      * 非表示
      */
     QRScannerAction["Hide"] = "hide";
-    /**
-     * 破棄
-     */
-    QRScannerAction["Destroy"] = "destroy";
 })(QRScannerAction || (QRScannerAction = {}));
 var CallNativeService = /** @class */ (function () {
     function CallNativeService() {
@@ -11943,7 +11882,7 @@ var CallNativeService = /** @class */ (function () {
                             method: 'fido',
                             option: args
                         };
-                        if (!!this.isBrowser()) return [3 /*break*/, 2];
+                        if (!this.isWebview()) return [3 /*break*/, 2];
                         this.postMessage(data);
                         return [4 /*yield*/, this.reserveMessage()];
                     case 1:
@@ -11971,7 +11910,7 @@ var CallNativeService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         data = { method: 'device' };
-                        if (!!this.isBrowser()) return [3 /*break*/, 2];
+                        if (!this.isWebview()) return [3 /*break*/, 2];
                         this.postMessage(data);
                         return [4 /*yield*/, this.reserveMessage()];
                     case 1:
@@ -12006,7 +11945,7 @@ var CallNativeService = /** @class */ (function () {
                             method: 'geolocation',
                             option: options
                         };
-                        if (!!this.isBrowser()) return [3 /*break*/, 2];
+                        if (!this.isWebview()) return [3 /*break*/, 2];
                         this.postMessage(data);
                         return [4 /*yield*/, this.reserveMessage()];
                     case 1:
@@ -12034,7 +11973,7 @@ var CallNativeService = /** @class */ (function () {
             method: 'inAppBrowser',
             option: args
         };
-        if (!this.isBrowser()) {
+        if (this.isWebview()) {
             this.postMessage(data);
         }
     };
@@ -12048,7 +11987,7 @@ var CallNativeService = /** @class */ (function () {
             method: 'localNotification',
             option: args
         };
-        if (!this.isBrowser()) {
+        if (this.isWebview()) {
             this.postMessage(data);
         }
     };
@@ -12059,7 +11998,7 @@ var CallNativeService = /** @class */ (function () {
      */
     CallNativeService.prototype.QRScanner = function (args) {
         return __awaiter(this, void 0, void 0, function () {
-            var data, result, browser;
+            var data, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -12067,28 +12006,18 @@ var CallNativeService = /** @class */ (function () {
                             method: 'QRScanner',
                             option: args
                         };
-                        if (!!this.isBrowser()) return [3 /*break*/, 2];
+                        if (!this.isWebview()) return [3 /*break*/, 2];
                         this.postMessage(data);
                         return [4 /*yield*/, this.reserveMessage()];
                     case 1:
                         result = _a.sent();
                         return [3 /*break*/, 3];
                     case 2:
-                        browser = 'browser';
-                        if (args.action === QRScannerAction.Prepare) {
-                            return [2 /*return*/, { err: null, status: browser }];
-                        }
-                        else if (args.action === QRScannerAction.Scan) {
-                            return [2 /*return*/, { err: null, contents: browser }];
-                        }
-                        else if (args.action === QRScannerAction.Show) {
-                            return [2 /*return*/, { status: browser }];
+                        if (args.action === QRScannerAction.Show) {
+                            return [2 /*return*/, { result: null }];
                         }
                         else if (args.action === QRScannerAction.Hide) {
-                            return [2 /*return*/, { status: browser }];
-                        }
-                        else if (args.action === QRScannerAction.Destroy) {
-                            return [2 /*return*/, { status: browser }];
+                            return [2 /*return*/, { result: null }];
                         }
                         _a.label = 3;
                     case 3: return [2 /*return*/, result];
@@ -12097,9 +12026,9 @@ var CallNativeService = /** @class */ (function () {
         });
     };
     /**
-     * ブラウザ判定
+     * Webview判定
      */
-    CallNativeService.prototype.isBrowser = function () {
+    CallNativeService.prototype.isWebview = function () {
         return window.wizViewMessenger === undefined;
     };
     CallNativeService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_0__["defineInjectable"]({ factory: function CallNativeService_Factory() { return new CallNativeService(); }, token: CallNativeService, providedIn: "root" });

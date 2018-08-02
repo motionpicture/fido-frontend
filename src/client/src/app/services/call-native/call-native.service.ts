@@ -107,25 +107,13 @@ export interface IFidoArgs {
 
 export enum QRScannerAction {
     /**
-     * 準備
-     */
-    Prepare = 'prepare',
-    /**
-     * スキャン
-     */
-    Scan = 'scan',
-    /**
      * 表示
      */
     Show = 'show',
     /**
      * 非表示
      */
-    Hide = 'hide',
-    /**
-     * 破棄
-     */
-    Destroy = 'destroy'
+    Hide = 'hide'
 }
 
 export interface IQRScannerArgs {
@@ -201,7 +189,7 @@ export class CallNativeService {
             option: args
         };
         let result;
-        if (!this.isBrowser()) {
+        if (this.isWebview()) {
             this.postMessage(data);
             result = await this.reserveMessage();
         } else {
@@ -221,7 +209,7 @@ export class CallNativeService {
     public async device(): Promise<IDeviceResult | null> {
         const data = { method: 'device' };
         let result;
-        if (!this.isBrowser()) {
+        if (this.isWebview()) {
             this.postMessage(data);
             result = await this.reserveMessage();
             return result;
@@ -249,7 +237,7 @@ export class CallNativeService {
             option: options
         };
         let result;
-        if (!this.isBrowser()) {
+        if (this.isWebview()) {
             this.postMessage(data);
             result = await this.reserveMessage();
             return result;
@@ -274,7 +262,7 @@ export class CallNativeService {
             method: 'inAppBrowser',
             option: args
         };
-        if (!this.isBrowser()) {
+        if (this.isWebview()) {
             this.postMessage(data);
         }
     }
@@ -289,7 +277,7 @@ export class CallNativeService {
             method: 'localNotification',
             option: args
         };
-        if (!this.isBrowser()) {
+        if (this.isWebview()) {
             this.postMessage(data);
         }
     }
@@ -305,21 +293,14 @@ export class CallNativeService {
             option: args
         };
         let result;
-        if (!this.isBrowser()) {
+        if (this.isWebview()) {
             this.postMessage(data);
             result = await this.reserveMessage();
         } else {
-            const browser = 'browser';
-            if (args.action === QRScannerAction.Prepare) {
-                return { err: null, status: browser };
-            } else if (args.action === QRScannerAction.Scan) {
-                return { err: null, contents: browser };
-            } else if (args.action === QRScannerAction.Show) {
-                return { status: browser };
+            if (args.action === QRScannerAction.Show) {
+                return { result: null };
             } else if (args.action === QRScannerAction.Hide) {
-                return { status: browser };
-            } else if (args.action === QRScannerAction.Destroy) {
-                return { status: browser };
+                return { result: null };
             }
         }
 
@@ -327,9 +308,9 @@ export class CallNativeService {
     }
 
     /**
-     * ブラウザ判定
+     * Webview判定
      */
-    private isBrowser() {
+    private isWebview() {
         return (<any>window).wizViewMessenger === undefined;
     }
 }
