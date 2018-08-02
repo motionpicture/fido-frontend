@@ -29,12 +29,10 @@ export class QrcodeComponent implements OnInit {
             const scanResult = await this.native.QRScanner({
                 action: QRScannerAction.Show
             });
-            this.infoMessage = JSON.stringify(scanResult);
-            this.infoModal = true;
-            // if (scanResult.result !== null) {
-            //     this.infoMessage = scanResult.contents;
-            //     this.infoModal = true;
-            // }
+            if (scanResult.result !== null) {
+                this.infoMessage = scanResult.result;
+                this.infoModal = true;
+            }
         } catch (err) {
             this.native.QRScanner({
                 action: QRScannerAction.Hide

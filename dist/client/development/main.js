@@ -6834,8 +6834,10 @@ var QrcodeComponent = /** @class */ (function () {
                             })];
                     case 1:
                         scanResult = _a.sent();
-                        this.infoMessage = JSON.stringify(scanResult);
-                        this.infoModal = true;
+                        if (scanResult.result !== null) {
+                            this.infoMessage = scanResult.result;
+                            this.infoModal = true;
+                        }
                         return [3 /*break*/, 3];
                     case 2:
                         err_1 = _a.sent();
