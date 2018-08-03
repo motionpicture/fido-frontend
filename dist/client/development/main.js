@@ -6835,7 +6835,10 @@ var QrcodeComponent = /** @class */ (function () {
                     case 1:
                         scanResult = _a.sent();
                         if (scanResult.result !== null) {
-                            this.infoMessage = JSON.stringify(scanResult.result);
+                            if (scanResult.result.cancelled === 1) {
+                                return [2 /*return*/];
+                            }
+                            this.infoMessage = scanResult.result.text;
                             this.infoModal = true;
                         }
                         else {
