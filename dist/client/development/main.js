@@ -6835,15 +6835,17 @@ var QrcodeComponent = /** @class */ (function () {
                     case 1:
                         scanResult = _a.sent();
                         if (scanResult.result !== null) {
-                            this.infoMessage = scanResult.result;
+                            this.infoMessage = JSON.stringify(scanResult.result);
                             this.infoModal = true;
+                        }
+                        else {
+                            this.errorMessage = scanResult.error.message;
+                            this.alertModal = true;
                         }
                         return [3 /*break*/, 3];
                     case 2:
                         err_1 = _a.sent();
-                        this.native.QRScanner({
-                            action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["QRScannerAction"].Hide
-                        });
+                        console.error(err_1);
                         return [3 /*break*/, 3];
                     case 3: return [2 /*return*/];
                 }
