@@ -95,9 +95,15 @@
         <div *ngIf="confirmForm.controls['notes'].invalid && (confirmForm.controls['notes'].dirty || confirmForm.controls['notes'].touched)"
             class="validation-text">利用規約に同意してください</div>
     </div> -->
-        <app-buttons nextLabel="購入完了" prevLabel="戻る" prevLink="/purchase/input"></app-buttons>
+        <app-buttons nextLabel="購入完了" prevLabel="戻る" prevLink="/purchase/ticket"></app-buttons>
     </form>
 </div>
 
+<app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
+    <div class="modal-ttl large-text text-center mb-3">
+        <strong>エラーが発生しました</strong>
+    </div>
+    <p>{{ errorMessage }}</p>
+</app-modal>
 
 <app-loading [show]="isLoading"></app-loading>

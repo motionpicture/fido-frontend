@@ -34,7 +34,9 @@ const pages = [
     { url: '/member/edit/profile', title: '会員情報変更' },
     { url: '/member/withdraw', title: '退会' },
     { url: '/fido/remove', title: '生体認証削除' },
-    { url: '/qrcode', title: 'QRコード' }
+    { url: '/qrcode', title: 'QRコード' },
+    { url: '/qrcode/confirm', title: 'QRコード' },
+    { url: '/qrcode/complete', title: 'QRコード' }
 ];
 
 @Component({

@@ -41,7 +41,9 @@ import { PurchaseScheduleComponent } from './components/pages/purchase/purchase-
 import { PurchaseSeatComponent } from './components/pages/purchase/purchase-seat/purchase-seat.component';
 import { PurchaseTicketComponent } from './components/pages/purchase/purchase-ticket/purchase-ticket.component';
 import { PurchaseTransactionComponent } from './components/pages/purchase/purchase-transaction/purchase-transaction.component';
-import { QrcodeComponent } from './components/pages/qrcode/qrcode.component';
+import { QrcodeCompleteComponent } from './components/pages/qrcode/qrcode-complete/qrcode-complete.component';
+import { QrcodeConfirmComponent } from './components/pages/qrcode/qrcode-confirm/qrcode-confirm.component';
+import { QrcodeIndexComponent } from './components/pages/qrcode/qrcode-index/qrcode-index.component';
 import { RegisterCreditComponent } from './components/pages/register/register-credit/register-credit.component';
 import { RegisterComponent } from './components/pages/register/register-index/register-index.component';
 import {
@@ -144,7 +146,9 @@ import { TimeFormatPipe } from './pipes/time-format/time-format.pipe';
         ExpiredComponent,
         FidoRegisterComponent,
         FidoRemoveComponent,
-        QrcodeComponent
+        QrcodeIndexComponent,
+        QrcodeConfirmComponent,
+        QrcodeCompleteComponent
     ],
     imports: [
         BrowserModule,

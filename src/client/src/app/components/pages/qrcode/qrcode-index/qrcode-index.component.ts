@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CallNativeService, QRScannerAction } from '../../../services/call-native/call-native.service';
+import { Router } from '@angular/router';
+import { CallNativeService, QRScannerAction } from '../../../../services/call-native/call-native.service';
 
 @Component({
-    selector: 'app-qrcode',
-    templateUrl: './qrcode.component.html',
-    styleUrls: ['./qrcode.component.scss']
+    selector: 'app-qrcode-index',
+    templateUrl: './qrcode-index.component.html',
+    styleUrls: ['./qrcode-index.component.scss']
 })
-export class QrcodeComponent implements OnInit {
+export class QrcodeIndexComponent implements OnInit {
 
     public isLoading: boolean;
     public alertModal: boolean;
@@ -15,7 +16,8 @@ export class QrcodeComponent implements OnInit {
     public infoMessage: string;
 
     constructor(
-        private native: CallNativeService
+        private native: CallNativeService,
+        private router: Router
     ) { }
 
     public async ngOnInit() {
@@ -30,11 +32,14 @@ export class QrcodeComponent implements OnInit {
                 action: QRScannerAction.Show
             });
             if (scanResult.result !== null) {
-                if (scanResult.result.cancelled === 1) {
+                if (scanResult.result.cancelled === 1
+                    || scanResult.result.text === undefined
+                    || scanResult.result.text === '') {
                     return;
                 }
-                this.infoMessage = scanResult.result.text;
-                this.infoModal = true;
+                // this.infoMessage = scanResult.result.text;
+                // this.infoModal = true;
+                this.router.navigate(['/qrcode/confirm']);
             } else {
                 this.errorMessage = scanResult.error.message;
                 this.alertModal = true;

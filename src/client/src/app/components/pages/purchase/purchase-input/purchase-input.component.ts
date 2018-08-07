@@ -51,7 +51,7 @@ export class PurchaseInputComponent implements OnInit {
 
     public async ngOnInit() {
         window.scrollTo(0, 0);
-        this.isLoading = false;
+        this.isLoading = true;
         this.cardExpiration = {
             year: [],
             month: []
@@ -87,7 +87,14 @@ export class PurchaseInputComponent implements OnInit {
                 this.inputForm.controls.emailConfirm.setValue(contacts.email);
                 this.inputForm.controls.telephone.setValue(contacts.telephone.replace(/-/g, ''));
 
+                // デモ用
+                if (this.user.isRegisteredCreditCards) {
+                    await this.changeRegisteredCreditCard();
+                    await this.onSubmit();
+                }
+
             }
+            this.isLoading = false;
         } catch (err) {
             this.router.navigate(['/error']);
         }

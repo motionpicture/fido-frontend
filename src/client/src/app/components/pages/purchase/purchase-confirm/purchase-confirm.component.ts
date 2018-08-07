@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
+import { CallNativeService, FidoAction } from '../../../../services/call-native/call-native.service';
 import { PurchaseService } from '../../../../services/purchase/purchase.service';
 import { UserService } from '../../../../services/user/user.service';
 
@@ -15,12 +16,15 @@ export class PurchaseConfirmComponent implements OnInit {
     public isLoading: boolean;
     public disable: boolean;
     public environment = environment;
+    public alertModal: boolean;
+    public errorMessage: string;
 
     constructor(
         public purchase: PurchaseService,
         public user: UserService,
         private formBuilder: FormBuilder,
-        private router: Router
+        private router: Router,
+        private native: CallNativeService
     ) { }
 
     public ngOnInit() {
@@ -33,6 +37,26 @@ export class PurchaseConfirmComponent implements OnInit {
     }
 
     public async onSubmit() {
+        this.isLoading = true;
+        // デモ用
+        try {
+            const device = await this.native.device();
+            if (device === null) {
+                throw new Error('device is null');
+            }
+            const authenticationResult = await this.native.fido({
+                action: FidoAction.Authentication,
+                user: `fido-frontend-${device.uuid}`
+            });
+            if (!authenticationResult.isSuccess) {
+                throw Error(authenticationResult.error);
+            }
+        } catch (err) {
+            this.isLoading = false;
+            this.errorMessage = err.message;
+            this.alertModal = true;
+            return;
+        }
         if (this.disable) {
             return;
         }
@@ -42,7 +66,6 @@ export class PurchaseConfirmComponent implements OnInit {
             return;
         }
         this.disable = true;
-        this.isLoading = true;
         if (this.purchase.isExpired()) {
             this.router.navigate(['expired']);
 

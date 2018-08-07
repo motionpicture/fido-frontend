@@ -94,11 +94,11 @@ export class TicketComponent implements OnInit {
         this.touch = false;
     }
 
-    public authEnd(message?: string) {
-        if (message !== undefined) {
-            this.infoMessage = message;
-            this.infoModal = true;
-        }
+    public authEnd() {
+        // if (message !== undefined) {
+        //     this.infoMessage = message;
+        //     this.infoModal = true;
+        // }
         if (this.directiveRef !== undefined) {
             this.directiveRef.update();
         }

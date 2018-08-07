@@ -1,0 +1,34 @@
+<div *ngIf="!isLoading" class="inner position-center">
+    <div class="card text-dark">
+        <div class="card-body">
+            <h5 class="text-center card-title">購入確認</h5>
+            <p class="card-text">ご購入内容をご確認頂き「購入完了」ボタンを押して購入を確定してください。</p>
+            <div class="mb-4">
+                <div class="mb-2"><i class="fas fa-shopping-cart mr-2"></i>商品一覧</div>
+                <ul>
+                    <li class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                        <div class="text-left">ポップコーン</div>
+                        <div class="text-right">500円</div>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                        <div class="text-left">ドリンク</div>
+                        <div class="text-right">300円</div>
+                    </li>
+                </ul>
+                <div class="text-right large-text">合計金額 800円</div>
+            </div>
+            <button type="button" class="btn btn-success btn-block py-3 mb-2" (click)="onSubmit()">購入完了</button>
+            <button type="button" class="btn btn-outline-success btn-block py-3" routerLink="/qrcode">QR読み取りへ戻る</button>
+        </div>
+    </div>
+</div>
+
+<app-modal [open]="alertModal" [layout]="true" (close)="alertModal = false">
+    <div class="modal-ttl large-text text-center mb-3">
+        <strong>エラーが発生しました</strong>
+    </div>
+    <p>{{ errorMessage }}</p>
+</app-modal>
+
+
+<app-loading [show]="isLoading"></app-loading>

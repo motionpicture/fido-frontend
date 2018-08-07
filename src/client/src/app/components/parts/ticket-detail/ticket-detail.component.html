@@ -22,7 +22,8 @@
         </dl>
     </div>
     <div *ngIf="!isAuthentication" class="details p-3">
-        <button type="button" class="small-text btn btn-success center btn-block py-3 rounded-0" (click)="authentication()">認証して詳細表示</button>
+        <button *ngIf="isShowQR" type="button" class="small-text btn btn-success center btn-block py-3 rounded-0" (click)="authentication()">認証して詳細表示</button>
+        <button *ngIf="!isShowQR" type="button" class="small-text btn btn-secondary center btn-block py-3 rounded-0" disabled> 鑑賞日前日から詳細表示できます</button>
     </div>
     <div *ngIf="isAuthentication" class="details">
         <div *ngFor="let reservedTicket of reservation.reservedTickets; let index = index;" class="detail">
@@ -32,14 +33,14 @@
                 <div class="large-x-text mb-1">{{ reservedTicket.ticketedSeat.seatNumber }}</div>
                 <div class="small-text">{{ reservedTicket.coaTicketInfo.ticketName }}</div>
             </div>
-            <div *ngIf="!showQrCodeList[index]" class="not-qr">
+            <div *ngIf="!isShowQR" class="not-qr">
                 <p class="inner small-text text-center">
                     鑑賞日前日から
                     <br>QRコードが
                     <br>表示されます。
                 </p>
             </div>
-            <div *ngIf="showQrCodeList[index]" class="qr">
+            <div *ngIf="isShowQR" class="qr">
                 <img [src]="qrCodeList[index]">
             </div>
         </div>

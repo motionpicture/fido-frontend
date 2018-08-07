@@ -8,7 +8,9 @@
         <li class="mb-3">
             <div class="mb-2">予約番号</div>
             <div>
-                <strong class="red-text large-x-text mb-2">{{ data.order.confirmationNumber }}</strong>
+                <div class="large-x-text mb-2">
+                    <strong>{{ data.order.confirmationNumber }}</strong>
+                </div>
                 <div class="small-x-text">※チケットの発行等に必要な番号となりますので必ず忘れないようにしてください。</div>
             </div>
         </li>
@@ -41,12 +43,12 @@
             <div class="mb-2">メールアドレス</div>
             <div>{{ data.order.customer.email }}</div>
         </li>
-        <li *ngIf="user.isMember()">
+        <!-- <li *ngIf="user.isMember()">
             <div class="mb-2">獲得ポイント</div>
             <div>
                 <strong class="red-text">{{ data.incentive }}ポイント</strong>
             </div>
-        </li>
+        </li> -->
     </ul>
 
     <button type="button" class="small-text btn btn-primary btn-block py-3 rounded-0 mx-auto" routerLink="/ticket">チケットホルダーに戻る</button>

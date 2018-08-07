@@ -19,7 +19,7 @@ export class TicketDetailComponent implements OnInit {
     @Output() public alert = new EventEmitter();
     @Output() public authStart = new EventEmitter();
     @Output() public authEnd = new EventEmitter<string | undefined>();
-    public showQrCodeList: boolean[];
+    public isShowQR: boolean;
     public qrCodeList: string[];
     public confirmationNumber: string;
     public isAuthentication: boolean;
@@ -35,14 +35,12 @@ export class TicketDetailComponent implements OnInit {
      */
     public async ngOnInit() {
         this.isAuthentication = false;
-        this.showQrCodeList = [];
+        this.isShowQR = moment(this.reservation.reservationsFor[0].startDate).subtract(24, 'hours').unix() <= moment().unix();
         this.qrCodeList = [];
         this.confirmationNumber = this.reservation.confirmationNumber.split('-')[0];
         for (let i = 0; i < this.reservation.reservedTickets.length; i++) {
             // QR生成
-            const showQrCode = moment(this.reservation.reservationsFor[i].startDate).subtract(24, 'hours').unix() <= moment().unix();
-            this.showQrCodeList.push(showQrCode);
-            if (showQrCode) {
+            if (this.isShowQR) {
                 const ticketToken = this.reservation.reservedTickets[i].ticketToken;
                 const basicSize = 21;
                 const option: qrcode.QRCodeToDataURLOptions = {
