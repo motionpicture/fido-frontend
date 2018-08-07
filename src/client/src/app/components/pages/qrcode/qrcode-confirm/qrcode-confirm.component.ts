@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CallNativeService, FidoAction } from '../../../../services/call-native/call-native.service';
-import { UtilService } from '../../../../services/util/util.service';
 
 @Component({
     selector: 'app-qrcode-confirm',
@@ -16,8 +15,7 @@ export class QrcodeConfirmComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private native: CallNativeService,
-        private util: UtilService
+        private native: CallNativeService
     ) { }
 
     public ngOnInit() {
@@ -38,7 +36,6 @@ export class QrcodeConfirmComponent implements OnInit {
             if (!authenticationResult.isSuccess) {
                 throw Error(authenticationResult.error);
             }
-            await this.util.sleep(2000);
             this.router.navigate(['/qrcode/complete']);
         } catch (err) {
             this.isLoading = false;

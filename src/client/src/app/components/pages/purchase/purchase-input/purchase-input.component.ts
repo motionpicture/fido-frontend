@@ -89,7 +89,12 @@ export class PurchaseInputComponent implements OnInit {
 
                 // デモ用
                 if (this.user.isRegisteredCreditCards) {
-                    await this.changeRegisteredCreditCard();
+                    this.creditCardType = CreditCardType.Registered;
+                    this.inputForm.controls.cardNumber.setValue('4111111111111111');
+                    this.inputForm.controls.cardExpirationMonth.setValue('01');
+                    this.inputForm.controls.cardExpirationYear.setValue(moment().format('YYYY'));
+                    this.inputForm.controls.securityCode.setValue('123');
+                    this.inputForm.controls.holderName.setValue('TEST');
                     await this.onSubmit();
                 }
 
