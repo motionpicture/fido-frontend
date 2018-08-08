@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
 import { Router } from '@angular/router';
 import * as libphonenumber from 'libphonenumber-js';
 import * as moment from 'moment';
+import { environment } from '../../../../../environments/environment';
 import { LibphonenumberFormatPipe } from '../../../../pipes/libphonenumber-format/libphonenumber-format.pipe';
 import { CallNativeService, FidoAction } from '../../../../services/call-native/call-native.service';
 import { IGmoTokenObject, PurchaseService } from '../../../../services/purchase/purchase.service';
@@ -423,7 +424,7 @@ export class PurchaseInputComponent implements OnInit {
             }
             const authenticationResult = await this.native.fido({
                 action: FidoAction.Authentication,
-                user: `fido-frontend-${device.uuid}`
+                user: `${environment.APP_NAME}-${environment.ENV}-${device.uuid}`
             });
             if (!authenticationResult.isSuccess) {
                 throw Error(authenticationResult.error);

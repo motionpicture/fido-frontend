@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../../../../environments/environment';
 import { CallNativeService, FidoAction } from '../../../../services/call-native/call-native.service';
 
 @Component({
@@ -31,7 +32,7 @@ export class QrcodeConfirmComponent implements OnInit {
             }
             const authenticationResult = await this.native.fido({
                 action: FidoAction.Authentication,
-                user: `fido-frontend-${device.uuid}`
+                user: `${environment.APP_NAME}-${environment.ENV}-${device.uuid}`
             });
             if (!authenticationResult.isSuccess) {
                 throw Error(authenticationResult.error);

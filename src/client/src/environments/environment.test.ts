@@ -6,6 +6,7 @@ export const environment = {
     production: false,
     version: '1.0.0',
 
+    APP_NAME: 'fido-frontend',
     ENV: 'test',
 
     API_ENDPOINT: 'https://sskts-api-test.azurewebsites.net',

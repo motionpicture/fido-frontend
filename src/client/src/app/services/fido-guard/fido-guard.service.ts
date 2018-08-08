@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 import { CallNativeService, FidoAction } from '../call-native/call-native.service';
 
 @Injectable({
@@ -26,7 +27,7 @@ export class FidoGuardService implements CanActivate {
             }
             const registerListResult = await this.native.fido({
                 action: FidoAction.RegisterList,
-                user: `fido-frontend-${device.uuid}`
+                user: `${environment.APP_NAME}-${environment.ENV}-${device.uuid}`
             });
 
             if (!registerListResult.isSuccess) {

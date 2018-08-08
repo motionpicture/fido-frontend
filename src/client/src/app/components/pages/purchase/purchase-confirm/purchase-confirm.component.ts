@@ -46,7 +46,7 @@ export class PurchaseConfirmComponent implements OnInit {
             }
             const authenticationResult = await this.native.fido({
                 action: FidoAction.Authentication,
-                user: `fido-frontend-${device.uuid}`
+                user: `${environment.APP_NAME}-${environment.ENV}-${device.uuid}`
             });
             if (!authenticationResult.isSuccess) {
                 throw Error(authenticationResult.error);

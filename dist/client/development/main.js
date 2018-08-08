@@ -1625,7 +1625,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FidoRegisterComponent", function() { return FidoRegisterComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -1664,6 +1665,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 var FidoRegisterComponent = /** @class */ (function () {
     function FidoRegisterComponent(native, router) {
         this.native = native;
@@ -1687,8 +1689,8 @@ var FidoRegisterComponent = /** @class */ (function () {
                         }
                         this.device = device;
                         return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].RegisterList,
-                                user: "fido-frontend-" + this.device.uuid
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__["FidoAction"].RegisterList,
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].ENV + "-" + this.device.uuid
                             })];
                     case 3:
                         registerListResult = _a.sent();
@@ -1721,8 +1723,8 @@ var FidoRegisterComponent = /** @class */ (function () {
                     case 1:
                         _a.trys.push([1, 3, , 4]);
                         return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].Register,
-                                user: "fido-frontend-" + this.device.uuid
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__["FidoAction"].Register,
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].ENV + "-" + this.device.uuid
                             })];
                     case 2:
                         registerResult = _a.sent();
@@ -1840,7 +1842,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FidoRemoveComponent", function() { return FidoRemoveComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -1879,6 +1882,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 var FidoRemoveComponent = /** @class */ (function () {
     function FidoRemoveComponent(native, router) {
         this.native = native;
@@ -1902,8 +1906,8 @@ var FidoRemoveComponent = /** @class */ (function () {
                         }
                         this.device = device;
                         return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].RegisterList,
-                                user: "fido-frontend-" + this.device.uuid
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__["FidoAction"].RegisterList,
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].ENV + "-" + this.device.uuid
                             })];
                     case 3:
                         registerListResult = _a.sent();
@@ -1937,8 +1941,8 @@ var FidoRemoveComponent = /** @class */ (function () {
                     case 1:
                         _a.trys.push([1, 3, , 4]);
                         return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].Remove,
-                                user: "fido-frontend-" + this.device.uuid,
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__["FidoAction"].Remove,
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].ENV + "-" + this.device.uuid,
                                 handle: this.registerList[0].handle
                             })];
                     case 2:
@@ -4311,7 +4315,7 @@ var PurchaseConfirmComponent = /** @class */ (function () {
                         }
                         return [4 /*yield*/, this.native.fido({
                                 action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__["FidoAction"].Authentication,
-                                user: "fido-frontend-" + device.uuid
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].ENV + "-" + device.uuid
                             })];
                     case 3:
                         authenticationResult = _a.sent();
@@ -4726,12 +4730,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var libphonenumber_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libphonenumber-js */ "../../node_modules/libphonenumber-js/index.es6.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "../../node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _pipes_libphonenumber_format_libphonenumber_format_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../pipes/libphonenumber-format/libphonenumber-format.pipe */ "./src/app/pipes/libphonenumber-format/libphonenumber-format.pipe.ts");
-/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
-/* harmony import */ var _services_purchase_purchase_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../services/purchase/purchase.service */ "./src/app/services/purchase/purchase.service.ts");
-/* harmony import */ var _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../services/sasaki/sasaki.service */ "./src/app/services/sasaki/sasaki.service.ts");
-/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../services/user/user.service */ "./src/app/services/user/user.service.ts");
-/* harmony import */ var _services_util_util_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../services/util/util.service */ "./src/app/services/util/util.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _pipes_libphonenumber_format_libphonenumber_format_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../pipes/libphonenumber-format/libphonenumber-format.pipe */ "./src/app/pipes/libphonenumber-format/libphonenumber-format.pipe.ts");
+/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
+/* harmony import */ var _services_purchase_purchase_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../services/purchase/purchase.service */ "./src/app/services/purchase/purchase.service.ts");
+/* harmony import */ var _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../services/sasaki/sasaki.service */ "./src/app/services/sasaki/sasaki.service.ts");
+/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../services/user/user.service */ "./src/app/services/user/user.service.ts");
+/* harmony import */ var _services_util_util_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../services/util/util.service */ "./src/app/services/util/util.service.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -4767,6 +4772,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+
 
 
 
@@ -5126,7 +5132,7 @@ var PurchaseInputComponent = /** @class */ (function () {
             customerContact.email.value = this.purchase.data.customerContact.email;
             customerContact.emailConfirm.value = this.purchase.data.customerContact.email;
             customerContact.telephone.value =
-                new _pipes_libphonenumber_format_libphonenumber_format_pipe__WEBPACK_IMPORTED_MODULE_5__["LibphonenumberFormatPipe"]().transform(this.purchase.data.customerContact.telephone);
+                new _pipes_libphonenumber_format_libphonenumber_format_pipe__WEBPACK_IMPORTED_MODULE_6__["LibphonenumberFormatPipe"]().transform(this.purchase.data.customerContact.telephone);
         }
         if (payment > 0) {
             // 決済あり
@@ -5211,8 +5217,8 @@ var PurchaseInputComponent = /** @class */ (function () {
                             throw new Error('device is null');
                         }
                         return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_6__["FidoAction"].Authentication,
-                                user: "fido-frontend-" + device.uuid
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_7__["FidoAction"].Authentication,
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].ENV + "-" + device.uuid
                             })];
                     case 3:
                         authenticationResult = _a.sent();
@@ -6921,7 +6927,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QrcodeConfirmComponent", function() { return QrcodeConfirmComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -6960,6 +6967,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 var QrcodeConfirmComponent = /** @class */ (function () {
     function QrcodeConfirmComponent(router, native) {
         this.router = router;
@@ -6984,8 +6992,8 @@ var QrcodeConfirmComponent = /** @class */ (function () {
                             throw new Error('device is null');
                         }
                         return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].Authentication,
-                                user: "fido-frontend-" + device.uuid
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__["FidoAction"].Authentication,
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].ENV + "-" + device.uuid
                             })];
                     case 3:
                         authenticationResult = _a.sent();
@@ -11174,8 +11182,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! qrcode */ "../../node_modules/qrcode/lib/browser.js");
 /* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(qrcode__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
-/* harmony import */ var _services_util_util_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/util/util.service */ "./src/app/services/util/util.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
+/* harmony import */ var _services_util_util_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/util/util.service */ "./src/app/services/util/util.service.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -11214,6 +11223,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 /**
  * TicketDetailComponent
  */
+
 
 
 
@@ -11279,8 +11289,8 @@ var TicketDetailComponent = /** @class */ (function () {
                     case 1:
                         _a.trys.push([1, 7, , 8]);
                         return [4 /*yield*/, this.native.fido({
-                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_3__["FidoAction"].Authentication,
-                                user: "fido-frontend-" + this.device.uuid
+                                action: _services_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_4__["FidoAction"].Authentication,
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].ENV + "-" + this.device.uuid
                             })];
                     case 2:
                         authenticationResult = _a.sent();
@@ -12391,8 +12401,9 @@ var CallNativeService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FidoGuardService", function() { return FidoGuardService; });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../call-native/call-native.service */ "./src/app/services/call-native/call-native.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -12433,6 +12444,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 var FidoGuardService = /** @class */ (function () {
     function FidoGuardService(native, router) {
         this.native = native;
@@ -12457,8 +12469,8 @@ var FidoGuardService = /** @class */ (function () {
                             throw new Error('device is null');
                         }
                         return [4 /*yield*/, this.native.fido({
-                                action: _call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["FidoAction"].RegisterList,
-                                user: "fido-frontend-" + device.uuid
+                                action: _call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["FidoAction"].RegisterList,
+                                user: _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].APP_NAME + "-" + _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].ENV + "-" + device.uuid
                             })];
                     case 2:
                         registerListResult = _a.sent();
@@ -12479,7 +12491,7 @@ var FidoGuardService = /** @class */ (function () {
             });
         });
     };
-    FidoGuardService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_2__["defineInjectable"]({ factory: function FidoGuardService_Factory() { return new FidoGuardService(_angular_core__WEBPACK_IMPORTED_MODULE_2__["inject"](_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_1__["CallNativeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["inject"](_angular_router__WEBPACK_IMPORTED_MODULE_0__["Router"])); }, token: FidoGuardService, providedIn: "root" });
+    FidoGuardService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_3__["defineInjectable"]({ factory: function FidoGuardService_Factory() { return new FidoGuardService(_angular_core__WEBPACK_IMPORTED_MODULE_3__["inject"](_call_native_call_native_service__WEBPACK_IMPORTED_MODULE_2__["CallNativeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["inject"](_angular_router__WEBPACK_IMPORTED_MODULE_0__["Router"])); }, token: FidoGuardService, providedIn: "root" });
     return FidoGuardService;
 }());
 
@@ -15265,6 +15277,7 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     version: '1.0.0',
+    APP_NAME: 'fido-frontend',
     ENV: 'development',
     API_ENDPOINT: 'https://sskts-api-development.azurewebsites.net',
     WAITER_ENDPOINT: 'https://sskts-waiter-development.appspot.com',

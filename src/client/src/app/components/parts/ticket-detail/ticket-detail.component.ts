@@ -4,6 +4,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import * as moment from 'moment';
 import * as qrcode from 'qrcode';
+import { environment } from '../../../../environments/environment';
 import { CallNativeService, FidoAction, IDeviceResult } from '../../../services/call-native/call-native.service';
 import { IReservation } from '../../../services/reservation/reservation.service';
 import { UtilService } from '../../../services/util/util.service';
@@ -61,7 +62,7 @@ export class TicketDetailComponent implements OnInit {
         try {
             const authenticationResult = await this.native.fido({
                 action: FidoAction.Authentication,
-                user: `fido-frontend-${this.device.uuid}`
+                user: `${environment.APP_NAME}-${environment.ENV}-${this.device.uuid}`
             });
             if (!authenticationResult.isSuccess) {
                 throw Error(authenticationResult.error);
