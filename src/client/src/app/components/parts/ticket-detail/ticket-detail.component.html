@@ -21,11 +21,13 @@
             </dd>
         </dl>
     </div>
-    <div *ngIf="!isAuthentication" class="details p-3">
+    <div *ngIf="!isAuthentication" class="details p-3 border-0">
         <button *ngIf="isShowQR" type="button" class="small-text btn btn-success center btn-block py-3 rounded-0" (click)="authentication()">認証して詳細表示</button>
         <button *ngIf="!isShowQR" type="button" class="small-text btn btn-secondary center btn-block py-3 rounded-0" disabled> 鑑賞日前日から詳細表示できます</button>
     </div>
-    <div *ngIf="isAuthentication" class="details">
+    <div *ngIf="isAuthentication" class="details" [ngStyle]="{ 
+        'border-color': color
+    }">
         <div *ngFor="let reservedTicket of reservation.reservedTickets; let index = index;" class="detail">
             <div class="ticket-info">
                 <div class="index small-text">{{ (index + 1) }}/{{ reservation.reservedTickets.length }}</div>
