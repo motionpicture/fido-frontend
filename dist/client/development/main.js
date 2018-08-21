@@ -1858,7 +1858,6 @@ var FidoGuardService = /** @class */ (function () {
     /**
      * 認証
      * @method canActivate
-     * @returns {Promise<boolean>}
      */
     FidoGuardService.prototype.canActivate = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -1882,7 +1881,9 @@ var FidoGuardService = /** @class */ (function () {
                         if (!registerListResult.isSuccess) {
                             throw new Error('registerList fail');
                         }
-                        if (registerListResult.result.length === 0) {
+                        if (registerListResult.result === undefined
+                            || registerListResult === null
+                            || registerListResult.result.length === 0) {
                             throw new Error('registerList not found');
                         }
                         return [2 /*return*/, true];

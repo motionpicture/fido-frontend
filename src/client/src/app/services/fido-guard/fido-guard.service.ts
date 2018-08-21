@@ -16,9 +16,8 @@ export class FidoGuardService implements CanActivate {
     /**
      * 認証
      * @method canActivate
-     * @returns {Promise<boolean>}
      */
-    public async canActivate(): Promise<boolean> {
+    public async canActivate() {
         // console.log('FidoGuardService');
         try {
             const device = await this.native.device();
@@ -34,7 +33,9 @@ export class FidoGuardService implements CanActivate {
                 throw new Error('registerList fail');
             }
 
-            if (registerListResult.result.length === 0) {
+            if (registerListResult.result === undefined
+                || registerListResult === null
+                || registerListResult.result.length === 0) {
                 throw new Error('registerList not found');
             }
 
