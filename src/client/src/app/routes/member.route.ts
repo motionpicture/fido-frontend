@@ -10,7 +10,6 @@ import { MemberWithdrawComponent } from '../components/pages/member/member-withd
 import { AuthGuardService } from '../services/auth-guard/auth-guard.service';
 import { FidoGuardService } from '../services/fido-guard/fido-guard.service';
 import { MemberGuardService } from '../services/member-guard/member-guard.service';
-import { ProgramMembershipGuardService } from '../services/program-membership-guard/program-membership-guard.service';
 
 /**
  * 会員ルーティング
@@ -21,8 +20,7 @@ export const route = {
     canActivate: [
         FidoGuardService,
         AuthGuardService,
-        MemberGuardService,
-        ProgramMembershipGuardService
+        MemberGuardService
     ],
     children: [
         { path: 'mypage', component: MemberMypageComponent },
